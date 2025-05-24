@@ -1,0 +1,86 @@
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  --lines: black;
+  --bg-1: rgb(222, 222, 222);
+  --bg-2: rgb(255, 226, 226);
+  --bg-2-lighter: rgb(255, 237, 237);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+  overflow: hidden
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+.display {
+  background-color: var(--bg-1);
+  border: 3px solid var(--lines);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.canvas-container {
+  width: 90%;
+  aspect-ratio: 1.3333;
+  display: inline-flex;
+}
+
+.box {
+  border: 1px solid black;
+  display: block;
+  padding: 5px;
+  margin: 5px;
+  border-radius: 10px;
+}
+
+.app-container {
+  width: 90%;
+  max-width: 700px;
+  height: 90vh;
+  overflow: scroll;
+}
+
+#app {
+  max-width: 700px;
+  height: 90vh;
+  overflow: scroll;
+}
+
+img {
+  border-radius: 10px;
+}
+
+button {
+  border-radius: 8px;
+  border: 3px solid var(--lines);
+  background-color: var(--bg-2);
+  padding: 10px;
+  margin: 10px;
+}
+
+button:hover {
+  background-color: var(--bg-2-lighter)
+}
+
+#app {
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
