@@ -4,7 +4,7 @@ import type { ScreenId } from "./tree-type";
  * Actions represent the 
  */
 export type Action = {
-    dest: ScreenId | undefined;
+    dest?: ScreenId;
     label: string;
 };
 
