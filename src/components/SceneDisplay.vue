@@ -4,8 +4,7 @@ import { type Scene } from '../game/scene';
 import { SceneRenderer } from '../game/scene-renderer';
 
 const props = defineProps<{
-    scene: Scene,
-    debug?: boolean
+    scene: Scene
 }>();
 
 var renderer: SceneRenderer | undefined = undefined;
@@ -26,8 +25,8 @@ const render = () => {
 
 onMounted(() => {
     const canvas = getCanvas();
-    renderer = new SceneRenderer({ canvas, debug: props.debug ?? false });
-    interval = setInterval(() => render(), 100);
+    renderer = new SceneRenderer({ canvas });
+    interval = setInterval(() => render(), 1000 / 60);
 });
 onUnmounted(() => {
     clearInterval(interval);

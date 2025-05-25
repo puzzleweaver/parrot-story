@@ -1,12 +1,12 @@
 import type { Action } from "./action";
-import { nodeId0, tree } from "./tree";
-import type { StoryNode } from "./story-node";
+import { tree } from "./tree";
+import type { Screen } from "./screen";
 
 export class GameState {
-    node: StoryNode;
+    node: Screen;
 
     constructor({ node }: {
-        node: StoryNode,
+        node: Screen,
     }) {
         this.node = node;
     }
@@ -19,7 +19,7 @@ export class GameState {
 
     step(action: Action): GameState {
         return new GameState({
-            node: tree[action.dest],
+            node: tree[action.dest!],
         });
     }
 }

@@ -1,4 +1,3 @@
-import type { Animation } from "./animation";
 import { Assets } from "./asset";
 
 export type Actor = {
@@ -7,8 +6,11 @@ export type Actor = {
     img: string;
     scale: number;
     angle: number;
-    animation?: Animation;
+    animation?: AnimationStyle;
 };
+
+export const animationStyles = ["default", "spin", "bob"];
+export type AnimationStyle = (typeof animationStyles)[number];
 
 export class ActorUtil {
     static empty(): Actor {

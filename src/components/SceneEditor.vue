@@ -38,26 +38,25 @@ const removeActor = (index: number) => {
 </script>
 
 <template>
-    <div style="position: fixed; right: 20px; top: 20px; width: 30vw; height: 20vh">
-        <SceneDisplay :scene="scene" :debug="true" />
-    </div>
-    <h3>Edit Scene</h3>
     <div class="display">
-        <br>
-        <p>
+        <div style="position: fixed; right: 20px; top: 20px; width: 30vw; height: 20vh">
+            <SceneDisplay :scene="scene" />
+        </div>
+        <p style="background-color: #eee; width: 60vw">
             Background:
             <select v-model="background">
                 <option v-for="src in Assets.bg" :value="src">{{ src }}</option>
             </select>
         </p>
 
-        Edit Actors:
-        <hr>
-        <ActorEditor v-for="index in Object.keys(actors).map(index => parseInt(index))" :index="index"
-            :set-actor="(newActor: Actor) => setActor(index, newActor)" :actor="actors[index]"
-            :remove-actor="() => removeActor(index)" style="padding: 5px; margin: 10px; border: 1px solid black" />
-        <button @click="addActor">
-            + New Actor
-        </button>
+        Edit Actors<br>
+        <div style="display: grid; grid-template-columns: repeat(4, 1fr); width: 90%">
+            <ActorEditor v-for="index in Object.keys(actors).map(index => parseInt(index))" :index="index"
+                :set-actor="(newActor: Actor) => setActor(index, newActor)" :actor="actors[index]"
+                :remove-actor="() => removeActor(index)" style="padding: 5px; margin: 10px; border: 1px solid black" />
+            <button @click="addActor">
+                + New Actor
+            </button>
+        </div>
     </div>
 </template>

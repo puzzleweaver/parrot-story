@@ -7,7 +7,6 @@ import type { Action } from '../game/action';
 const props = defineProps<{
     gameState: GameState,
     doAction: (action: Action) => void,
-    debug?: boolean,
 }>();
 const node = computed(() => props.gameState.node);
 </script>
@@ -15,7 +14,7 @@ const node = computed(() => props.gameState.node);
 <template>
     <div class="display">
         <p>
-            <SceneDisplay :scene="node.scene" :debug="debug" />
+            <SceneDisplay :scene="node.scene" />
         </p>
 
         <p>

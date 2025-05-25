@@ -14,7 +14,7 @@
     <div class="app-container" id="app"></div>
     <script type="module" src="/src/developer/main.ts"></script>
     <script>
-        // history.pushState(null, null, location.href);
+        history.pushState(null, null, location.href);
         window.onpopstate = function (e) {
             e.preventDefault();
             alert("Navigating that way would reset this page. Don't close it or refresh until you've saved your work!!");
