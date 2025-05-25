@@ -8,9 +8,18 @@
     <title>Parrot Story!!</title>
 </head>
 
-<body style="background-image: url('/src/assets/images/bg/shop.png'); background-size: cover">
+<body>
+    <h1>DEVELOPER PAGE!</h1>
+    <br>
     <div class="app-container" id="app"></div>
     <script type="module" src="/src/developer/main.ts"></script>
+    <script>
+        // history.pushState(null, null, location.href);
+        window.onpopstate = function (e) {
+            e.preventDefault();
+            alert("Navigating that way would reset this page. Don't close it or refresh until you've saved your work!!");
+        };
+    </script>
 </body>
 
 </html>

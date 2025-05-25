@@ -1,7 +1,10 @@
 <script setup lang="ts">
-import SceneEditor from '../components/SceneEditor.vue';
+import GlobalEditor from '../components/GlobalEditor.vue';
+import './simple.css';
 </script>
 
 <template>
-  <SceneEditor />
+  <div style="position: absolute; left: 0px; width: 90%; margin: 20px">
+    <GlobalEditor />
+  </div>
 </template>

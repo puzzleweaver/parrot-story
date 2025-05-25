@@ -1,36 +1,24 @@
+import type { Animation } from "./animation";
 import { Assets } from "./asset";
-import type { Asset } from "./scene";
 
-export class Actor {
+export type Actor = {
     x: number;
     y: number;
-    img: Asset;
+    img: string;
     scale: number;
     angle: number;
-    // TODO:
-    // anim: Animation;
+    animation?: Animation;
+};
 
-    constructor({ x, y, img, scale = 1, angle = 0 }: {
-        x: number,
-        y: number,
-        img: Asset,
-        scale?: number,
-        angle?: number
-    }) {
-        this.x = x;
-        this.y = y;
-        this.img = img;
-        this.scale = scale;
-        this.angle = angle;
-    }
-
+export class ActorUtil {
     static empty(): Actor {
-        return new Actor({
+        return {
             x: Math.random(),
             y: Math.random(),
             scale: 0.5,
+            angle: 0.0,
             img: Assets.character.parrot["in-transit"],
-        });
+        };
     }
 
     static indexColor(index: number): string {
@@ -44,17 +32,5 @@ export class Actor {
             "brown",
             "white",
         ][index];
-    }
-
-    static toTS(actor: Actor): string {
-        return [
-            "new Actor({",
-            `x: ${actor.x},`,
-            `y: ${actor.y},`,
-            `img: "${actor.img}",`,
-            `scale: ${actor.scale},`,
-            `angle: ${actor.angle},`,
-            "})",
-        ].join("\n");
     }
 }

@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { onMounted, onUnmounted, onUpdated, ref } from 'vue';
-import { Scene } from '../game/scene';
+import { onMounted, onUnmounted, ref } from 'vue';
+import { type Scene } from '../game/scene';
 import { SceneRenderer } from '../game/scene-renderer';
 
 const props = defineProps<{

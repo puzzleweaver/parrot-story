@@ -1,25 +1,25 @@
 import type { Action } from "./action";
-import { exampleNode } from "./example-story";
+import { nodeId0, tree } from "./tree";
 import type { StoryNode } from "./story-node";
 
 export class GameState {
-    scene: StoryNode;
+    node: StoryNode;
 
-    constructor({ scene }: {
-        scene: StoryNode,
+    constructor({ node }: {
+        node: StoryNode,
     }) {
-        this.scene = scene;
+        this.node = node;
     }
 
     static initial(): GameState {
         return new GameState({
-            scene: exampleNode,
+            node: tree[Object.keys(tree)[0]],
         });
     }
 
     step(action: Action): GameState {
         return new GameState({
-            scene: action.dest(),
+            node: tree[action.dest],
         });
     }
 }

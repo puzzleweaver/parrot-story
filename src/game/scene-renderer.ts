@@ -1,4 +1,4 @@
-import { Actor } from "./actor";
+import { ActorUtil, type Actor } from "./actor";
 import type { Scene } from "./scene";
 
 const cachedImages: { [key: string]: HTMLImageElement } = {};
@@ -69,7 +69,7 @@ export class SceneRenderer {
         if (this.debug) {
             this.ctx.save();
             this.ctx.globalCompositeOperation = "source-over"
-            this.ctx.fillStyle = Actor.indexColor(index);
+            this.ctx.fillStyle = ActorUtil.indexColor(index);
         }
         return this.drawImage({
             src: actor.img,

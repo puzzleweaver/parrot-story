@@ -1,17 +1,17 @@
-import type { StoryNode } from "./story-node";
 
 /**
  * Actions represent the 
  */
-export class Action {
-    dest: () => StoryNode;
+export type Action = {
+    dest: string;
     label: string;
+};
 
-    constructor({ label, dest }: {
-        label: string,
-        dest: () => StoryNode,
-    }) {
-        this.label = label;
-        this.dest = dest;
+export class ActionUtil {
+    static empty(): Action {
+        return {
+            dest: "TODO",
+            label: "Do something?",
+        };
     }
 };

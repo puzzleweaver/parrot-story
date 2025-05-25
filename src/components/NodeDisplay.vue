@@ -9,7 +9,7 @@ const props = defineProps<{
     doAction: (action: Action) => void,
     debug?: boolean,
 }>();
-const node = computed(() => props.gameState.scene);
+const node = computed(() => props.gameState.node);
 </script>
 
 <template>
@@ -18,12 +18,12 @@ const node = computed(() => props.gameState.scene);
             <SceneDisplay :scene="node.scene" :debug="debug" />
         </p>
 
-        <p style="font-size: 2em">
+        <p>
             {{ node.text }}
         </p>
 
         <p>
-            <button v-for="action in node.actions" style="font-size: 2em" @click="doAction(action)">
+            <button v-for="action in node.actions" @click="doAction(action)">
                 {{ action.label }}
             </button>
         </p>
