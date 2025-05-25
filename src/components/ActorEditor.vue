@@ -41,12 +41,10 @@ watch(animation, () => actor.value = { ...actor.value, animation: animation.valu
         <img :src="`/src/assets/images/${img}`"
             style="background-color: white; height: 2rem; width: auto; vertical-align: text-bottom" />
         <hr>
-        <!-- <input v-model="img" list="asset-list">
-        <button @click="submitImage">submit</button>
-        <button @click="resetImage">reset</button> -->
-        <select v-model="img">
-            <option v-for="asset in AssetList" :value="asset">{{ asset }}</option>
-        </select>
+        <input v-model="img" list="asset-list" />
+        <datalist id="asset-list">
+            <option v-for="asset in AssetList" :value="asset" />
+        </datalist>
         <br>
 
         <div style="display: inline-flex; flex-direction: column">

@@ -1,9 +1,13 @@
 import { type Actor } from "./actor";
+import { AssetList } from "./asset";
 import type { Scene } from "./scene";
 
 const cachedImages: { [key: string]: HTMLImageElement } = {};
 
 const withImage = (src: string, callback: (img: HTMLImageElement) => any): Promise<void> => {
+    if (src !== "prop/error.png" && !AssetList.includes(src)) {
+        return withImage("prop/error.png", callback);
+    }
     return new Promise((resolve, _) => {
         if (cachedImages[src]?.complete ?? false) {
             callback(cachedImages[src]);
