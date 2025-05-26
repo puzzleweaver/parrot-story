@@ -8,6 +8,7 @@ import ActionEditor from './ActionEditor.vue';
 import { type ScreenId, type Tree } from '../game/tree-type';
 import SaveButton from './SaveButton.vue';
 import IncomingOptions from './IncomingOptions.vue';
+import ScreenSymbols from './ScreenSymbols.vue';
 
 const props = defineProps<{
     screen: Screen
@@ -30,6 +31,15 @@ watch(label, () => {
     props.saveScreen({
         ...props.screen,
         label: label.value,
+    });
+})
+
+
+const endgame: Ref<"win" | "lose" | undefined> = ref(props.screen.endgame);
+watch(endgame, () => {
+    props.saveScreen({
+        ...props.screen,
+        endgame: endgame.value,
     });
 })
 
@@ -81,10 +91,17 @@ const addAction = () => {
     </p>
 
     <p style="background-color: #eee; padding: 10px; margin: 5px; width: 60vw">
-        <span v-if="props.screen.id === 0" style="color: orange">&#x2605;</span>
+        <ScreenSymbols :screen="props.screen" />
         Label&nbsp;<input v-model="label" />
         <br>
         <sub>(the user does not see this! it's just for finding/linking story nodes as a developer!!)</sub>
+    </p>
+    <p>
+        Endgame <select v-model="endgame">
+            <option :value="undefined">none</option>
+            <option value="win">Win</option>
+            <option value="lose">Lose</option>
+        </select>
     </p>
     <p style="display: inline-flex; gap: 10px">
         <span style="width: 60vw; padding: 10px; background-color: #eee">

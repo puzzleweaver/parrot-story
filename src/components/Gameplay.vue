@@ -11,5 +11,6 @@ const doAction = (action: Action) => {
 </script>
 
 <template>
+    <!-- {{ gameState.flags }} -->
     <NodeDisplay :game-state="gameState" :do-action="doAction" />
 </template>

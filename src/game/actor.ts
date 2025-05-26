@@ -7,6 +7,7 @@ export type Actor = {
     scale: number;
     angle: number;
     animation?: AnimationStyle;
+    flipped?: boolean;
 };
 
 export const animationStyles = ["default", "spin", "bob"];

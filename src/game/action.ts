@@ -1,3 +1,4 @@
+import type { GameState } from "./game";
 import type { ScreenId } from "./tree-type";
 
 /**
@@ -6,6 +7,8 @@ import type { ScreenId } from "./tree-type";
 export type Action = {
     dest?: ScreenId;
     label: string;
+    addsFlags?: string[];
+    needsFlags?: string[];
 };
 
 export class ActionUtil {
@@ -14,5 +17,22 @@ export class ActionUtil {
             dest: undefined,
             label: "Option",
         };
+    }
+    static visible(state: GameState, action: Action): boolean {
+        const screenFlags: string[] = state.flags;
+        const neededFlags: string[] = action.needsFlags ?? [];
+        for (const neededFlag of neededFlags) {
+            if (neededFlag.length === 0) {
+                alert("FLAG ISSUE");
+                continue;
+            }
+            if (neededFlag.charAt(0) === "!") {
+                const excludedFlag = neededFlag.substring(1);
+                if (screenFlags.includes(excludedFlag)) return false;
+            } else {
+                if (!screenFlags.includes(neededFlag)) return false;
+            }
+        }
+        return true;
     }
 };

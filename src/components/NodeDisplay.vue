@@ -2,7 +2,8 @@
 import { computed } from 'vue';
 import { GameState } from '../game/game';
 import SceneDisplay from './SceneDisplay.vue';
-import type { Action } from '../game/action';
+import { ActionUtil, type Action } from '../game/action';
+import EndgameDisplay from './EndgameDisplay.vue';
 
 const props = defineProps<{
     gameState: GameState,
@@ -22,9 +23,12 @@ const node = computed(() => props.gameState.node);
         </p>
 
         <p>
-            <button v-for="action in node.actions" @click="doAction(action)">
-                {{ action.label }}
-            </button>
+            <EndgameDisplay v-if="node.endgame !== undefined" :endgame="node.endgame" />
+            <span v-else v-for="action in node.actions">
+                <button v-if="ActionUtil.visible(gameState, action)" @click="doAction(action)">
+                    {{ action.label }}
+                </button>
+            </span>
         </p>
     </div>
 </template>

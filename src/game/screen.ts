@@ -7,6 +7,7 @@ import type { ScreenId } from "./tree-type";
  */
 export type Screen = {
     id: ScreenId;
+    endgame?: "win" | "lose";
     label: string;
     scene: Scene;
     text: string;

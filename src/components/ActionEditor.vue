@@ -23,6 +23,34 @@ watch(label, () => {
     });
 });
 
+const addedFlags: Ref<string> = ref(props.action.addsFlags?.join(", ") ?? "");
+watch(addedFlags, () => {
+    try {
+        var newFlags: string[] | undefined = addedFlags.value.split(",").map(flag => flag.trim());
+        if (newFlags.length === 0) newFlags = undefined;
+        props.setAction({
+            ...props.action,
+            addsFlags: newFlags,
+        })
+    } catch {
+        // partial input, ignore.
+    }
+});
+
+const neededFlags: Ref<string> = ref(props.action.needsFlags?.join(", ") ?? "");
+watch(neededFlags, () => {
+    try {
+        var newFlags: string[] | undefined = neededFlags.value.split(",").map(flag => flag.trim());
+        if (newFlags.length === 0) newFlags = undefined;
+        props.setAction({
+            ...props.action,
+            needsFlags: newFlags,
+        });
+    } catch {
+        // partial input, ignore.
+    }
+});
+
 const dest: Ref<ScreenId | undefined> = ref(props.action.dest);
 watch(dest, () => {
     props.setAction({
@@ -52,8 +80,12 @@ const nodeIds = computed(() => Object.keys(props.tree));
 
 <template>
     <div style="margin: 5px; padding: 5px; border: 1px solid black">
-        {{ index + 1 }} <input v-model="label" style="display: inline; width: 75%" />
-        <button @click="() => props.removeAction(props.index)" style="float: right">X</button>
+        <div style="display: flex">
+            {{ index + 1 }}
+            <input v-model="label" style="display: inline" />
+            <button @click="() => props.removeAction(props.index)" style="float: right">X</button>
+        </div>
+
         Outcome
         <select v-model="dest">
             <option v-for="nodeId in nodeIds" :value="nodeId">
@@ -71,20 +103,18 @@ const nodeIds = computed(() => Object.keys(props.tree));
             Screen "{{ tree[dest].label }}"
             <SceneDisplay :scene="tree[dest].scene" />
         </button>
-        <!-- <div style="display: inline-flex; align-items: center">
-            Next Screen
-            &nbsp;
-            <input v-model="dest" list="dest-list" />
+
+        Flags
+        <div style="background-color: #ddd; text-align: center">
+            <div style="display: flex">
+                Sets: <input v-model="addedFlags" />
+            </div>
+            <div style="display: flex">
+                Needs: <input v-model="neededFlags" />
+            </div>
+            <!-- Adds {{ props.action.addsFlags }}<br>
+            Needs {{ props.action.needsFlags }} -->
         </div>
-        Goes to:
-      <div style="width: 33%; background-color: #ddd">
-            <SceneDisplay :scene="tree[dest].scene" />
-            {{ tree[dest].label }}
-        </div>
-        <datalist id=" dest-list">
-            <option v-for="nodeId in nodeIds" :value="nodeId">
-                {{ tree[nodeId].label }}
-            </option>
-        </datalist> -->
+
     </div>
 </template>

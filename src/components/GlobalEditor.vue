@@ -7,6 +7,8 @@ import { ScreenUtil, type Screen } from '../game/screen';
 import { tree as oldTree } from '../game/tree';
 import SaveButton from './SaveButton.vue';
 import ScreenEditor from './ScreenEditor.vue';
+import ScreenSymbols from './ScreenSymbols.vue';
+import SceneDisplay from './SceneDisplay.vue';
 
 const tree: Ref<{ [key: string]: Screen }> = ref(oldTree);
 
@@ -51,12 +53,12 @@ const removeScene = (index: string | number) => {
         <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 5px">
             <div v-for="(node, i) in tree" style="background-color: #eee; padding: 5px">
                 <div>
-                    <span v-if="node.id === 0" style="color: orange">&#x2605;</span>
+                    <ScreenSymbols :screen="node" />
                     {{ node.label }}
                     <button style="background-color: red; float: right" @click="() => removeScene(i)">X</button>
                 </div>
                 <button class="red" @click="() => selectIndex(i)">
-                    <NodeDisplay :game-state="new GameState({ node })" :do-action="() => { }" />
+                    <SceneDisplay :scene="node.scene" />
                 </button>
             </div>
             <button @click="addNode">+ New Scene</button>
