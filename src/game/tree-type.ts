@@ -6,8 +6,7 @@ export type Tree = { [id: ScreenId]: Screen };
 
 export class TreeUtil {
     static getDownloadLink(tree: Tree) {
-        // const json = JSON.stringify(tree.value);
-        const json = JSON.stringify(tree);
+        const json = JSON.stringify(tree, null, "\t");
         const file = `
             export const tree: Tree = ${json};
         `;

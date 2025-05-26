@@ -10,7 +10,7 @@ export type Actor = {
     flipped?: boolean;
 };
 
-export const animationStyles = ["default", "spin", "bob"];
+export const animationStyles = ["default", "bob"];
 export type AnimationStyle = (typeof animationStyles)[number];
 
 export class ActorUtil {
@@ -24,16 +24,21 @@ export class ActorUtil {
         };
     }
 
-    static indexColor(index: number): string {
-        return [
-            "red",
-            "green",
-            "blue",
-            "magenta",
-            "yellow",
-            "cyan",
-            "brown",
-            "white",
-        ][index];
+    static animated(actor: Actor): Actor {
+        switch (actor.animation) {
+            case undefined:
+                const period = 500;
+                const osc = Date.now() % period < period / 2 ? -0.1 : 0.1;
+                return {
+                    ...actor,
+                    angle: (actor.angle ?? 0) + osc,
+                };
+            case "spin":
+                return {
+                    ...actor,
+                    angle: 6.283 * Date.now() / 1000,
+                };
+        }
+        return actor;
     }
 }

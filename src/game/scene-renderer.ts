@@ -1,4 +1,4 @@
-import { type Actor } from "./actor";
+import { ActorUtil, type Actor } from "./actor";
 import { AssetList } from "./asset";
 import type { Scene } from "./scene";
 
@@ -19,7 +19,7 @@ const withImage = (src: string, callback: (img: HTMLImageElement) => any): Promi
             callback(img);
             resolve();
         };
-        img.src = `/src/assets/images/${src}`;
+        img.src = `/images/${src}`;
     });
 };
 
@@ -66,14 +66,13 @@ export class SceneRenderer {
     }
 
     async drawActor(actor: Actor): Promise<void> {
-        const period = 500;
-        const osc = Date.now() % period < period / 2 ? -0.1 : 0.1;
+        actor = ActorUtil.animated(actor);
         return this.drawImage({
             src: actor.img,
             x: actor.x,
             y: actor.y,
             scale: actor.scale ?? 1,
-            rotation: (actor.angle ?? 0) + osc,
+            rotation: (actor.angle ?? 0),
         }).then(() => {
             this.ctx.restore();
         });

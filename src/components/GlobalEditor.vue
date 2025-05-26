@@ -1,8 +1,6 @@
 <script setup lang="ts">
 import { ref, type Ref } from 'vue';
-import NodeDisplay from './NodeDisplay.vue';
 
-import { GameState } from '../game/game';
 import { ScreenUtil, type Screen } from '../game/screen';
 import { tree as oldTree } from '../game/tree';
 import SaveButton from './SaveButton.vue';

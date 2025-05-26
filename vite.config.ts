@@ -5,13 +5,12 @@ import { resolve } from 'path';
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [vue()],
-  assetsInclude: ['src/assets/images/**/*.png'],
   base: '/',
   build: {
     rollupOptions: {
       input: {
         main: resolve(__dirname, 'index.html'),
-        login: resolve(__dirname, 'developer/index.html'),
+        // developer: resolve(__dirname, 'developer/index.html'),
       },
     },
   },
