@@ -56,7 +56,7 @@ const removeScene = (index: string | number) => {
                     <button style="background-color: red; float: right" @click="() => removeScene(i)">X</button>
                 </div>
                 <button class="red" @click="() => selectIndex(i)">
-                    <SceneDisplay :scene="node.scene" />
+                    <SceneDisplay :scene="node.scene" :animate="false" />
                 </button>
             </div>
             <button @click="addNode">+ New Scene</button>

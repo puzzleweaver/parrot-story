@@ -15,6 +15,14 @@ const props = defineProps<{
     tree: Tree,
 }>();
 
+const setFromProps = () => {
+    label.value = props.action.label;
+    addedFlags.value = props.action.addsFlags?.join(", ") ?? "";
+    neededFlags.value = props.action.needsFlags?.join(", ") ?? "";
+    dest.value = props.action.dest;
+};
+watch(props, setFromProps);
+
 const label: Ref<string> = ref(props.action.label);
 watch(label, () => {
     props.setAction({
@@ -72,7 +80,7 @@ const linkNewScreen = () => {
     const newScreen = ScreenUtil.empty();
     newScreen.label = "New Screen";
     props.saveScreen(newScreen);
-    dest.value = newScreen.id;
+    setTimeout(() => dest.value = newScreen.id, 100);
 };
 
 const nodeIds = computed(() => Object.keys(props.tree));
@@ -101,7 +109,7 @@ const nodeIds = computed(() => Object.keys(props.tree));
         </button>
         <button v-else @click="toDest()">
             Screen "{{ tree[dest].label }}"
-            <SceneDisplay :scene="tree[dest].scene" />
+            <SceneDisplay :scene="tree[dest].scene" :animate="false" />
         </button>
 
         Flags

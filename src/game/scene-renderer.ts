@@ -48,18 +48,27 @@ export class SceneRenderer {
         });
     }
 
-    drawImage({ src, x, y, scale, rotation }: {
+    drawImage({ src, x, y, scale, rotation, flipped }: {
         src: string,
         x: number,
         y: number,
         scale: number,
         rotation: number,
+        flipped: boolean,
     }): Promise<void> {
         return withImage(src, (img) => {
             scale = scale * this.canvas.height / img.height;
             this.ctx.save();
-            this.ctx.setTransform(scale, 0, 0, scale, x * this.canvas.width, y * this.canvas.height);
-            this.ctx.rotate(rotation);
+            const flippedSign = flipped ? -1 : 1;
+            this.ctx.setTransform(
+                scale * flippedSign,
+                0,
+                0,
+                scale,
+                x * this.canvas.width,
+                y * this.canvas.height,
+            );
+            this.ctx.rotate(rotation * flippedSign);
             this.ctx.drawImage(img, -img.width / 2, -img.height / 2);
             this.ctx.restore();
         });
@@ -73,6 +82,7 @@ export class SceneRenderer {
             y: actor.y,
             scale: actor.scale ?? 1,
             rotation: (actor.angle ?? 0),
+            flipped: actor.flipped ?? false,
         }).then(() => {
             this.ctx.restore();
         });

@@ -10,38 +10,73 @@ const props = defineProps<{
     removeActor: () => void,
 }>();
 
-const actor = ref(props.actor);
-watch(actor, () => props.setActor(actor.value));
+const setFromProps = () => {
+    x.value = "" + props.actor.x;
+    y.value = "" + props.actor.y;
+    flipped.value = props.actor.flipped;
+    scale.value = "" + props.actor.scale;
+    angle.value = "" + props.actor.angle;
+    img.value = props.actor.img;
+    animation.value = props.actor.animation;
+}
 
-const x: Ref<string> = ref("" + props.actor.x);
-watch(x, () => actor.value = { ...actor.value, x: parseFloat(x.value) });
+const x: Ref<string> = ref("");
+watch(x, () => props.setActor({
+    ...props.actor,
+    x: parseFloat(x.value),
+}));
 
-const y: Ref<string> = ref("" + props.actor.y);
+const y: Ref<string> = ref("");
 watch(y, () => {
-    actor.value = { ...actor.value, y: parseFloat(y.value) };
+    props.setActor({
+        ...props.actor,
+        y: parseFloat(y.value),
+    });
 });
 
-const scale: Ref<string> = ref("" + props.actor.scale);
-watch(scale, () => actor.value = { ...actor.value, scale: parseFloat(scale.value) });
+const scale: Ref<string> = ref("");
+watch(scale, () => props.setActor({
+    ...props.actor,
+    scale: parseFloat(scale.value),
+}));
 
-const angle: Ref<string> = ref("" + props.actor.angle);
-watch(angle, () => actor.value = { ...actor.value, angle: parseFloat(angle.value) });
+const angle: Ref<string> = ref("");
+watch(angle, () => props.setActor({
+    ...props.actor,
+    angle: parseFloat(angle.value),
+}));
 
 const img: Ref<string> = ref(props.actor.img);
-watch(img, () => actor.value = { ...actor.value, img: img.value });
+watch(img, () => props.setActor({
+    ...props.actor,
+    img: img.value
+}));
 
 const animation: Ref<AnimationStyle | undefined> = ref(props.actor.animation);
-watch(animation, () => actor.value = { ...actor.value, animation: animation.value });
+watch(animation, () => props.setActor({
+    ...props.actor,
+    animation: animation.value
+}));
+
+const flipped: Ref<boolean | undefined> = ref(props.actor.flipped);
+watch(flipped, () => props.setActor({
+    ...props.actor,
+    flipped: flipped.value,
+}));
+
+watch(props, setFromProps);
+setFromProps();
 </script>
 
 <template>
     <div style="background-color: #eee; display: inline-block">
         Actor {{ index + 1 }}
         <button style="float: right" @click="removeActor">X</button>
-        <img :src="`/src/assets/images/${img}`"
+        <img :src="`/images/${img}`"
             style="background-color: white; height: 2rem; width: auto; vertical-align: text-bottom" />
         <hr>
         <input v-model="img" list="asset-list" />
+        <input type="checkbox" v-model="flipped" /> flipped
         <datalist id="asset-list">
             <option v-for="asset in AssetList" :value="asset" />
         </datalist>
@@ -63,7 +98,7 @@ watch(animation, () => actor.value = { ...actor.value, animation: animation.valu
             <span>
                 animate:
                 <select v-model="actor.animation">
-                    <option v-for="style in animationStyles" :value="style">{{ style.toUpperCase() }}</option>
+                    <option v-for="style in animationStyles" :value="style">{{ style ?? "default" }}</option>
                 </select>
             </span>
         </div>
