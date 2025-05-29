@@ -13,6 +13,7 @@ const props = defineProps<{
     saveScreen: (screen: Screen) => void,
     goToScreen: (id: ScreenId) => void,
     tree: Tree,
+    screen: Screen,
 }>();
 
 const setFromProps = () => {
@@ -83,6 +84,22 @@ const linkNewScreen = () => {
     setTimeout(() => dest.value = newScreen.id, 100);
 };
 
+const linkDuplicate = () => {
+    const newScreen: Screen = {
+        ...props.screen,
+        id: ScreenUtil.newId(),
+        text: "",
+        actions: [],
+    };
+    const words = newScreen.label.split(" ");
+    const lastWord = words[words.length - 1];
+    const num = parseInt(lastWord);
+    if (isNaN(num)) newScreen.label += " 2";
+    else newScreen.label = [...words.slice(0, words.length - 1), num + 1].join(" ");
+    props.saveScreen(newScreen);
+    setTimeout(() => dest.value = newScreen.id, 100);
+};
+
 const nodeIds = computed(() => Object.keys(props.tree));
 </script>
 
@@ -104,12 +121,17 @@ const nodeIds = computed(() => Object.keys(props.tree));
             </option>
         </select>
         <button style="float: right" @click="dest = undefined"> reset </button>
-        <button v-if="dest === undefined" @click="linkNewScreen">
-            or Create New Screen ->
-        </button>
+        <div v-if="dest === undefined">
+            <button @click="linkNewScreen">
+                Link to New Empty Screen
+            </button>
+            <button @click="linkDuplicate">
+                Link to Duplicate Screen
+            </button>
+        </div>
         <button v-else @click="toDest()">
             Screen "{{ tree[dest].label }}"
-            <SceneDisplay :scene="tree[dest].scene" :animate="false" />
+            <SceneDisplay :scene="tree[dest].scene" :animate="false" :low-res="true" />
         </button>
 
         Flags

@@ -15,9 +15,13 @@ export type Screen = {
 };
 
 export class ScreenUtil {
+    static newId() {
+        return `${Math.floor(100000 * Math.random())}`
+    }
+
     static empty(): Screen {
         return {
-            id: `${Math.floor(100000 * Math.random())}`,
+            id: ScreenUtil.newId(),
             label: "Empty Screen",
             text: "lorem ipsum dolor sit amet and so on and so forth...",
             scene: SceneUtil.empty(),

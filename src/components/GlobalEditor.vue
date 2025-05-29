@@ -7,6 +7,7 @@ import SaveButton from './SaveButton.vue';
 import ScreenEditor from './ScreenEditor.vue';
 import ScreenSymbols from './ScreenSymbols.vue';
 import SceneDisplay from './SceneDisplay.vue';
+import GraphButton from './GraphButton.vue';
 
 const tree: Ref<{ [key: string]: Screen }> = ref(oldTree);
 
@@ -19,7 +20,7 @@ const saveScreen = (newNode: Screen) => {
 const selectIndex = (index?: string | number) => {
     selected.value = index;
     tree.value = { ...tree.value };
-    window.scrollTo(0, 0);
+    setTimeout(() => window.scrollTo(0, 0), 30);
 };
 
 const addNode = () => {
@@ -35,7 +36,6 @@ const removeScene = (index: string | number) => {
     delete tree.value[index];
     tree.value = { ...tree.value };
 };
-
 </script>
 
 <template>
@@ -45,18 +45,19 @@ const removeScene = (index: string | number) => {
     </div>
     <div v-else>
         <div>
-            <input placeholder="search? (todo)" />
             <SaveButton :tree="tree" />
+            &nbsp;
+            <GraphButton :tree="tree" />
         </div>
         <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 5px">
             <div v-for="(node, i) in tree" style="background-color: #eee; padding: 5px">
-                <div>
+                <div style="display: flex">
                     <ScreenSymbols :screen="node" />
                     {{ node.label }}
-                    <button style="background-color: red; float: right" @click="() => removeScene(i)">X</button>
+                    <button style="background-color: red; height: 2em" @click="() => removeScene(i)">X</button>
                 </div>
-                <button class="red" @click="() => selectIndex(i)">
-                    <SceneDisplay :scene="node.scene" :animate="false" />
+                <button @click="() => selectIndex(i)" style="width: 100%">
+                    <SceneDisplay :scene="node.scene" :animate="false" :low-res="true" />
                 </button>
             </div>
             <button @click="addNode">+ New Scene</button>

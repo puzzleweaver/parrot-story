@@ -10,7 +10,7 @@ const downloadLink = computed(() => TreeUtil.getDownloadLink(props.tree));
 </script>
 
 <template>
-    <a :href="downloadLink" style="float: right" download="tree.ts">
+    <a :href="downloadLink" download="tree.ts">
         <button>SAVE &#x2913;</button>
     </a>
 </template>

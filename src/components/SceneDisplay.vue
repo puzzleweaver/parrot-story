@@ -6,6 +6,7 @@ import { SceneRenderer } from '../game/scene-renderer';
 const props = defineProps<{
     scene: Scene,
     animate: boolean,
+    lowRes: boolean,
 }>();
 
 var renderer: SceneRenderer | undefined = undefined;
@@ -45,7 +46,8 @@ if (!props.animate) watch(props, render);
 
 <template>
     <div class="canvas-container">
-        <canvas style="width:0px; height: 0px" width=900 height=600 :id="canvasId"></canvas>
+        <canvas style="width:0px; height: 0px" :width="lowRes ? 180 : 300" :height="lowRes ? 120 : 200"
+            :id="canvasId"></canvas>
         <img style="width: 100%; height: 100%" :src="canvasSrc" />
     </div>
 </template>

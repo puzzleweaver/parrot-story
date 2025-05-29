@@ -84,16 +84,16 @@ setFromProps();
 
         <div style="display: inline-flex; flex-direction: column">
             <span>
-                x: <input v-model="x" type="range" min="0" max="1" step="0.05" />
+                x: <input v-model="x" type="range" min="0" max="1" step="0.005" />
             </span>
             <span>
-                y: <input v-model="y" type="range" min="0" max="1" step="0.05" />
+                y: <input v-model="y" type="range" min="0" max="1" step="0.005" />
             </span>
             <span>
-                scale: <input v-model="scale" type="range" min="0.1" max="2.0" step="0.05" />
+                scale: <input v-model="scale" type="range" min="0.1" max="2.0" step="0.005" />
             </span>
             <span>
-                angle: <input v-model="angle" type="range" min="-3.14" max="3.14" step="0.05" />
+                angle: <input v-model="angle" type="range" min="-3.14" max="3.14" step="0.005" />
             </span>
             <span>
                 animate:

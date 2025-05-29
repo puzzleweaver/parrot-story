@@ -74,7 +74,7 @@ const addAction = () => {
     props.saveScreen({
         ...props.screen,
         actions: [...props.screen.actions, ActionUtil.empty()],
-    })
+    });
 };
 
 </script>
@@ -119,7 +119,7 @@ const addAction = () => {
         <ActionEditor v-for="(action, i) in screen.actions" :action="action"
             :set-action="(newAction) => setAction(i, newAction)" :remove-action="removeAction" :tree="tree"
             style="background-color: #eee; padding: 5px; margin: 5px" :index="i" :saveScreen="saveScreen"
-            :go-to-screen="props.goToScreen" />
+            :go-to-screen="props.goToScreen" :screen="props.screen" />
         <button @click="addAction">+ New Option</button>
     </div>
     <div style="height: 200px"></div>

@@ -15,7 +15,7 @@ const node = computed(() => props.gameState.node);
 <template>
     <div class="display">
         <p>
-            <SceneDisplay :scene="node.scene" :animate="true" />
+            <SceneDisplay :scene="node.scene" :animate="true" :low-res="false" />
         </p>
 
         <p>

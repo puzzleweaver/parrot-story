@@ -1,5 +1,12 @@
-# Vue 3 + TypeScript + Vite
+Hi Diana 👋
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+# Running the project
+It's just Vite, so you can run the server using `npm run dev` and it will tell you the URL to go to. Then, `<THAT URL>/developer/` is where you can find the developer page.
 
-Learn more about the recommended Project Setup and IDE Support in the [Vue Docs TypeScript Guide](https://vuejs.org/guide/typescript/overview.html#project-setup).
+# Story Editor Notes
+
+## To make changes to the story permanent
+After making changes on the developer page, export them using the "SAVE" button in on the global editor screen. This will download a file, replace the contents of `/src/game/tree.ts` with the contents of the downloaded file. Then, subsequent reloads of the developer pages will start from the state as of the "save"ing.
+
+## To generate a graph of the screens.
+Copy the code of a python script that generates the graph by pressing the "copy screen graph" button on the global edit page, then run that script. You'll probably need to do some environment setup first lol

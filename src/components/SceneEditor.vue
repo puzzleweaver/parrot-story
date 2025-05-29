@@ -40,7 +40,7 @@ const removeActor = (index: number) => {
 <template>
     <div class="display">
         <div style="position: fixed; right: 20px; top: 20px; width: 30vw; height: 20vh">
-            <SceneDisplay :scene="scene" :animate="true" />
+            <SceneDisplay :scene="scene" :animate="true" :low-res="false" />
         </div>
         <p style="background-color: #eee; width: 60vw">
             Background:
