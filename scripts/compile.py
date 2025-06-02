@@ -2,11 +2,11 @@
 import json
 from file import File
 
-dirs = File.getDirectories("/src/assets/images")
+dirs = File.getDirectories("public/images")
 print(dirs)
 
 def getWords(path):
-    return path.split("/")[3:]
+    return path.split("/")[2:]
 
 assetTree = {}
 assetList = []
