@@ -4,8 +4,10 @@ export const tree: Tree = {
     "0": {
         "actions": [
             {
+                "addsFlags": [],
                 "dest": "71284",
-                "label": "Let's go!"
+                "label": "Let's go!",
+                "needsFlags": []
             }
         ],
         "id": 0,
@@ -124,8 +126,10 @@ export const tree: Tree = {
     "4443": {
         "actions": [
             {
+                "addsFlags": [],
                 "dest": "49884",
-                "label": "..."
+                "label": "...",
+                "needsFlags": []
             }
         ],
         "id": "4443",
@@ -1058,6 +1062,7 @@ export const tree: Tree = {
     "31710": {
         "actions": [
             {
+                "addsFlags": [],
                 "dest": "1826",
                 "label": "give dachshund martini",
                 "needsFlags": [
@@ -1065,6 +1070,7 @@ export const tree: Tree = {
                 ]
             },
             {
+                "addsFlags": [],
                 "dest": "75760",
                 "label": "give dachshund cosmopolitan",
                 "needsFlags": [
@@ -1072,8 +1078,10 @@ export const tree: Tree = {
                 ]
             },
             {
+                "addsFlags": [],
                 "dest": "85550",
-                "label": "Back to Dog Park"
+                "label": "Back to Dog Park",
+                "needsFlags": []
             }
         ],
         "id": "31710",
@@ -2130,10 +2138,13 @@ export const tree: Tree = {
                 ]
             },
             {
+                "addsFlags": [],
                 "dest": "13631",
-                "label": "Go back to the city"
+                "label": "Go back to the city",
+                "needsFlags": []
             },
             {
+                "addsFlags": [],
                 "dest": "22841",
                 "label": "Go to Hotel Pool",
                 "needsFlags": [
@@ -2387,16 +2398,22 @@ export const tree: Tree = {
     "74372": {
         "actions": [
             {
+                "addsFlags": [],
                 "dest": "84301",
-                "label": "Look for rocks to make a sacrifice"
+                "label": "Look for rocks to make a sacrifice",
+                "needsFlags": []
             },
             {
+                "addsFlags": [],
                 "dest": "34620",
-                "label": "Cool off in a hot spring"
+                "label": "Cool off in a hot spring",
+                "needsFlags": []
             },
             {
+                "addsFlags": [],
                 "dest": "90619",
-                "label": "Back to the Jungle"
+                "label": "Back to the Jungle",
+                "needsFlags": []
             }
         ],
         "id": "74372",
