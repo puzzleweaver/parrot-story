@@ -33,7 +33,7 @@ const incomingOptions = computed(() => {
 <template>
     Options that point here:
     <span v-if="incomingOptions.length === 0" style="color: red">(none)</span>
-    <div style="display: grid; grid-template-columns: repeat(3, 1fr);">
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 5px">
         <button v-for="option in incomingOptions" @click="props.goToScreen(option.screenId)">
             <SceneDisplay :scene="tree[option.screenId].scene" :animate="false" :low-res="true" />
             Selected<br>

@@ -70,7 +70,7 @@ const removeAction = (index: number) => {
 };
 
 const switchActions = (index: number, offset: number) => {
-    if (index + offset >= props.screen.actions.length) {
+    if (index + offset < 0 || index + offset >= props.screen.actions.length) {
         alert("Can't do that.");
         return;
     }

@@ -646,12 +646,22 @@ export const tree: Tree = {
     "18822": {
         "actions": [
             {
+                "addsFlags": [],
                 "dest": "65138",
-                "label": "Ask for a drink"
+                "label": "Ask for a drink",
+                "needsFlags": []
             },
             {
+                "addsFlags": [],
                 "dest": "47626",
-                "label": "Use their bathroom"
+                "label": "Use their bathroom",
+                "needsFlags": []
+            },
+            {
+                "addsFlags": [],
+                "dest": "61921",
+                "label": "Leave Bar",
+                "needsFlags": []
             }
         ],
         "id": "18822",
@@ -980,12 +990,16 @@ export const tree: Tree = {
     "27595": {
         "actions": [
             {
+                "addsFlags": [],
                 "dest": "59840",
-                "label": "Go inside"
+                "label": "Go inside",
+                "needsFlags": []
             },
             {
+                "addsFlags": [],
                 "dest": "13631",
-                "label": "Wander city instead"
+                "label": "Wander city instead",
+                "needsFlags": []
             }
         ],
         "id": "27595",
@@ -1844,34 +1858,6 @@ export const tree: Tree = {
         },
         "text": "Your egg is broken forever, and you fear you can't move on."
     },
-    "51829": {
-        "actions": [
-            {
-                "label": "Ask the worker, \"Are you Jen?\""
-            },
-            {
-                "label": "Ask to purchase flowers"
-            },
-            {
-                "label": "Leave flower shop"
-            }
-        ],
-        "id": "51829",
-        "label": "Inside flower shop",
-        "scene": {
-            "actors": [
-                {
-                    "angle": 0,
-                    "img": "character/parrot/in-transit.png",
-                    "scale": 0.5,
-                    "x": 0.2886990416966655,
-                    "y": 0.5557797267123598
-                }
-            ],
-            "bg": "bg/shop.png"
-        },
-        "text": "You walk up to the counter to find a small animal. "
-    },
     "53122": {
         "actions": [
             {
@@ -1902,18 +1888,10 @@ export const tree: Tree = {
     "53381": {
         "actions": [
             {
-                "addsFlags": [
-                    "youHaveTalkedToBeagle"
-                ],
-                "dest": "12073",
-                "label": "Continue conversing",
-                "needsFlags": [
-                    "!youHaveTalkedToBeagle"
-                ]
-            },
-            {
+                "addsFlags": [],
                 "dest": "85550",
-                "label": "Back to Dog Park"
+                "label": "Back to Dog Park",
+                "needsFlags": []
             }
         ],
         "id": "53381",
@@ -2139,8 +2117,8 @@ export const tree: Tree = {
             },
             {
                 "addsFlags": [],
-                "dest": "13631",
-                "label": "Go back to the city",
+                "dest": "27595",
+                "label": "Exit Hotel",
                 "needsFlags": []
             },
             {
@@ -2186,16 +2164,20 @@ export const tree: Tree = {
     "61921": {
         "actions": [
             {
+                "addsFlags": [],
                 "dest": "18822",
-                "label": "Go in"
+                "label": "Go inside",
+                "needsFlags": []
             },
             {
+                "addsFlags": [],
                 "dest": "13631",
-                "label": "Wander city instead"
+                "label": "Wander city",
+                "needsFlags": []
             }
         ],
         "id": "61921",
-        "label": "Arrive at bar",
+        "label": "Bar Exterior",
         "scene": {
             "actors": [
                 {
@@ -2358,18 +2340,10 @@ export const tree: Tree = {
     "73855": {
         "actions": [
             {
-                "addsFlags": [
-                    "youHaveTalkedToBeagle"
-                ],
-                "dest": "12073",
-                "label": "continue conversing",
-                "needsFlags": [
-                    "!youHaveTalkedToBeagle"
-                ]
-            },
-            {
+                "addsFlags": [],
                 "dest": "85550",
-                "label": "Back to Dog Park"
+                "label": "Back to Dog Park",
+                "needsFlags": []
             }
         ],
         "id": "73855",
@@ -2572,13 +2546,13 @@ export const tree: Tree = {
     "82129": {
         "actions": [
             {
+                "addsFlags": [],
                 "dest": "59840",
-                "label": "..."
+                "label": "...",
+                "needsFlags": []
             },
             {
-                "addsFlags": [
-                    ""
-                ],
+                "addsFlags": [],
                 "dest": "95956",
                 "label": "Give her the beagle's gift",
                 "needsFlags": [
@@ -2657,6 +2631,7 @@ export const tree: Tree = {
                 ]
             },
             {
+                "addsFlags": [],
                 "dest": "73855",
                 "label": "Give beagle a martini",
                 "needsFlags": [
@@ -2664,6 +2639,7 @@ export const tree: Tree = {
                 ]
             },
             {
+                "addsFlags": [],
                 "dest": "53381",
                 "label": "Give beagle a cosmopolitan",
                 "needsFlags": [
@@ -2671,8 +2647,10 @@ export const tree: Tree = {
                 ]
             },
             {
+                "addsFlags": [],
                 "dest": "85550",
-                "label": "Return to Dog Park"
+                "label": "Return to Dog Park",
+                "needsFlags": []
             }
         ],
         "id": "85368",
@@ -2716,20 +2694,28 @@ export const tree: Tree = {
     "85550": {
         "actions": [
             {
+                "addsFlags": [],
                 "dest": "85368",
-                "label": "Play with beagle"
+                "label": "Play with beagle",
+                "needsFlags": []
             },
             {
+                "addsFlags": [],
                 "dest": "31710",
-                "label": "Play with dachshund"
+                "label": "Play with dachshund",
+                "needsFlags": []
             },
             {
+                "addsFlags": [],
                 "dest": "11635",
-                "label": "Play with doberman"
+                "label": "Play with doberman",
+                "needsFlags": []
             },
             {
+                "addsFlags": [],
                 "dest": "13631",
-                "label": "Return to wandering city"
+                "label": "Return to wandering city",
+                "needsFlags": []
             }
         ],
         "id": "85550",
