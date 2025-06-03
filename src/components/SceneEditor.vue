@@ -1,7 +1,7 @@
 <script setup lang='ts'>
 import { ref, watch } from 'vue';
 import { type Scene } from '../game/scene';
-import { Assets } from '../game/asset';
+import { Assets } from '../game/generated_asset';
 import SceneDisplay from './SceneDisplay.vue';
 import ActorEditor from './ActorEditor.vue';
 import { type Actor, ActorUtil as ActorUtil } from '../game/actor';

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref, watch, type Ref } from 'vue';
 import { animationStyles, type Actor, type AnimationStyle } from '../game/actor';
-import { AssetList } from "../game/asset";
+import { AssetList } from "../game/generated_asset";
 
 const props = defineProps<{
     index: number,
@@ -50,13 +50,13 @@ watch(angle, () => props.setActor({
 const img: Ref<string> = ref(props.actor.img);
 watch(img, () => props.setActor({
     ...props.actor,
-    img: img.value
+    img: img.value,
 }));
 
 const animation: Ref<AnimationStyle | undefined> = ref(props.actor.animation);
 watch(animation, () => props.setActor({
     ...props.actor,
-    animation: animation.value
+    animation: animation.value,
 }));
 
 const flipped: Ref<boolean | undefined> = ref(props.actor.flipped);

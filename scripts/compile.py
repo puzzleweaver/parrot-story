@@ -39,7 +39,7 @@ listJson = json.dumps(assetList)
 
 fileContents = f"""
 export const Assets = {treeJson};
-export const AssetList: Asset[] = {listJson};
+export const AssetList: string[] = {listJson};
 """
 
 File.writeText("src/game/generated_asset.ts", fileContents)

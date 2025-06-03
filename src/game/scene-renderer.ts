@@ -1,5 +1,5 @@
 import { ActorUtil, type Actor } from "./actor";
-import { AssetList } from "./asset";
+import { AssetList } from "./generated_asset";
 import type { Scene } from "./scene";
 
 const cachedImages: { [key: string]: HTMLImageElement } = {};

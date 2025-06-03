@@ -1,4 +1,4 @@
-import { Assets } from "./asset";
+import { Assets } from "./generated_asset";
 
 export type Actor = {
     x: number;
