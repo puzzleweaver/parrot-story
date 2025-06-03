@@ -293,11 +293,14 @@ export const tree: Tree = {
                     "holeDiscovered"
                 ],
                 "dest": "87223",
-                "label": "Follow the rats through the hole"
+                "label": "Follow the rats through the hole",
+                "needsFlags": []
             },
             {
+                "addsFlags": [],
                 "dest": "18822",
-                "label": "Leave the Bathroom"
+                "label": "Leave the Bathroom",
+                "needsFlags": []
             }
         ],
         "id": "9785",
@@ -853,12 +856,16 @@ export const tree: Tree = {
     "19418": {
         "actions": [
             {
+                "addsFlags": [],
                 "dest": "9785",
-                "label": "Follow the rats"
+                "label": "Follow the rats",
+                "needsFlags": []
             },
             {
+                "addsFlags": [],
                 "dest": "18822",
-                "label": "Leave the Bathroom"
+                "label": "Leave the Bathroom",
+                "needsFlags": []
             }
         ],
         "id": "19418",
@@ -4268,6 +4275,6 @@ export const tree: Tree = {
             ],
             "bg": "bg/gray.png"
         },
-        "text": "You turn right and follow the rights down the tunnel."
+        "text": "You turn right and follow the rats down the tunnel."
     }
 };
