@@ -1386,8 +1386,10 @@ export const tree: Tree = {
     "45412": {
         "actions": [
             {
+                "addsFlags": [],
                 "dest": "18822",
-                "label": "Inspection Complete"
+                "label": "Inspection Complete",
+                "needsFlags": []
             }
         ],
         "id": "45412",
@@ -1404,7 +1406,7 @@ export const tree: Tree = {
             ],
             "bg": "bg/bar.png"
         },
-        "text": "That's a good-looking martini!"
+        "text": "That's a good-looking martini! You look like a fyish."
     },
     "45463": {
         "actions": [
@@ -1912,8 +1914,10 @@ export const tree: Tree = {
                 ]
             },
             {
+                "addsFlags": [],
                 "dest": "85550",
-                "label": "Back to Dog Park"
+                "label": "Back to Dog Park",
+                "needsFlags": []
             }
         ],
         "id": "53381",
@@ -1937,7 +1941,7 @@ export const tree: Tree = {
             ],
             "bg": "bg/shop.png"
         },
-        "text": "\"Oh my goodness, thank you so much!\" the beagle exclaims as he takes the cosmopolitan from you. You wonder whether dogs actually drink."
+        "text": "\"Oh my goodness, thank you so much!\" the beagle exclaims as he takes the cosmopolitan from you. You wonder whether dogs actually drink. You smell SOOOO bad dude"
     },
     "55660": {
         "actions": [
