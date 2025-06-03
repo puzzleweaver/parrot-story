@@ -1,13 +1,14 @@
 <script setup lang="ts">
-import { ref, type Ref } from 'vue';
+import { computed, ref, type ComputedRef, type Ref } from 'vue';
 
 import { ScreenUtil, type Screen } from '../game/screen';
 import { tree as oldTree } from '../game/tree';
 import SaveButton from './SaveButton.vue';
 import ScreenEditor from './ScreenEditor.vue';
-import ScreenSymbols from './ScreenSymbols.vue';
 import SceneDisplay from './SceneDisplay.vue';
 import GraphButton from './GraphButton.vue';
+import GlobalScreenWarnings from './GlobalScreenWarnings.vue';
+import type { Tree } from '../game/tree-type';
 
 const tree: Ref<{ [key: string]: Screen }> = ref(oldTree);
 
@@ -19,8 +20,8 @@ const saveScreen = (newNode: Screen) => {
 
 const selectIndex = (index?: string | number) => {
     selected.value = index;
-    tree.value = { ...tree.value };
     setTimeout(() => window.scrollTo(0, 0), 30);
+    searchTerm.value = "";
 };
 
 const addNode = () => {
@@ -36,6 +37,24 @@ const removeScene = (index: string | number) => {
     delete tree.value[index];
     tree.value = { ...tree.value };
 };
+
+const searchTerm = ref("");
+const filteredTree: ComputedRef<Tree> = computed(() => {
+    return Object.keys(tree.value)
+        .filter(
+            (id) => tree.value[id].label.toLowerCase().includes(
+                searchTerm.value.toLowerCase()
+            ),
+        )
+        .reduce(
+            (total, id) => ({
+                ...total,
+                [id]: tree.value[id],
+            }),
+            {},
+        );
+});
+
 </script>
 
 <template>
@@ -48,19 +67,35 @@ const removeScene = (index: string | number) => {
             <SaveButton :tree="tree" />
             &nbsp;
             <GraphButton :tree="tree" />
+            &nbsp; <input v-model="searchTerm" />
         </div>
-        <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 5px">
-            <div v-for="(node, i) in tree" style="background-color: #eee; padding: 5px">
-                <div style="display: flex">
-                    <ScreenSymbols :screen="node" />
+        <div style="display: grid; grid-template-columns: repeat(9, 1fr); gap: 10px">
+            <div v-for="(node, id) in filteredTree" style="background-color: #eee; padding: 5px">
+                <SceneDisplay :scene="node.scene" :animate="false" :low-res="true" />
+                <button @click="() => selectIndex(id)">View</button>
+                <button class="angry-button" style="width: 2em; float: right" @click="() => removeScene(id)">X</button>
+                <div style="display: flex; color: black">
                     {{ node.label }}
-                    <button style="background-color: red; height: 2em" @click="() => removeScene(i)">X</button>
                 </div>
-                <button @click="() => selectIndex(i)" style="width: 100%">
-                    <SceneDisplay :scene="node.scene" :animate="false" :low-res="true" />
-                </button>
+                <GlobalScreenWarnings :tree="tree" :screen="node" />
             </div>
             <button @click="addNode">+ New Scene</button>
         </div>
     </div>
 </template>
+
+<style scoped>
+.sceneDisplayButton {
+    width: 100%;
+}
+
+.angry-button {
+    background-color: red;
+    border-color: red;
+}
+
+.angry-button:hover {
+    background-color: #f66;
+    border-color: #f66;
+}
+</style>

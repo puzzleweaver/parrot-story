@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import type { Action } from '../game/action';
 import type { Tree } from '../game/tree-type';
 
 
@@ -8,8 +9,19 @@ const generateGraphText = () => {
     var edges = "";
 
     const escape = (node: any) => {
-        return '"' + `${node}`.replace(/\"/g, "\\\"") + '"';
+        return '"' + `${node}`.replace(/\n/g, "\\n").replace(/\"/g, "\\\"") + '"';
     }
+
+    const getEdgeCaption = (action: Action): string => {
+        const lines = [action.label];
+        const addedFlags = (action.addsFlags ?? []).filter(flag => flag !== ""),
+            neededFlags = (action.needsFlags ?? []).filter(flag => flag !== "");
+        if (neededFlags.length > 0)
+            lines.push(`(if ${neededFlags.join()})`);
+        if (addedFlags.length > 0)
+            lines.push(`Adds ${addedFlags.join()}`);
+        return lines.join("\n");
+    };
 
     for (const node of Object.values(props.tree)) {
         const name = escape(node?.label);
@@ -24,7 +36,17 @@ const generateGraphText = () => {
             const nextNode = props.tree[action.dest ?? "BAD"];
             if (action.dest === undefined || nextNode === undefined) continue;
             // graph.edge('A', 'B', 'Edge from A to B')
-            edges += `graph.edge(${escape(node.id)}, ${escape(nextNode.id)}, ${escape(action.label)})\n`;
+            edges += [
+                `graph.edge(`,
+                escape(node.id),
+                ",",
+                escape(nextNode.id),
+                ",",
+                escape(
+                    getEdgeCaption(action),
+                ),
+                ")\n",
+            ].join('');
         }
     }
 

@@ -4,12 +4,14 @@ import type { Action } from '../game/action';
 import type { Tree, ScreenId } from '../game/tree-type';
 import { ScreenUtil, type Screen } from '../game/screen';
 import SceneDisplay from './SceneDisplay.vue';
+import FlagListInput from './FlagListInput.vue';
 
 const props = defineProps<{
     index: number,
     action: Action,
     setAction: (newAction: Action) => void,
     removeAction: (index: number) => void,
+    switchActions: (index: number, to: number) => void,
     saveScreen: (screen: Screen) => void,
     goToScreen: (id: ScreenId) => void,
     tree: Tree,
@@ -18,9 +20,10 @@ const props = defineProps<{
 
 const setFromProps = () => {
     label.value = props.action.label;
-    addedFlags.value = props.action.addsFlags?.join(", ") ?? "";
-    neededFlags.value = props.action.needsFlags?.join(", ") ?? "";
+    addedFlags.value = props.action.addsFlags ?? [];
+    neededFlags.value = props.action.needsFlags ?? [];
     dest.value = props.action.dest;
+    destName.value = getDestName();
 };
 watch(props, setFromProps);
 
@@ -32,32 +35,20 @@ watch(label, () => {
     });
 });
 
-const addedFlags: Ref<string> = ref(props.action.addsFlags?.join(", ") ?? "");
+const addedFlags: Ref<string[]> = ref(props.action.addsFlags ?? []);
 watch(addedFlags, () => {
-    try {
-        var newFlags: string[] | undefined = addedFlags.value.split(",").map(flag => flag.trim());
-        if (newFlags.length === 0) newFlags = undefined;
-        props.setAction({
-            ...props.action,
-            addsFlags: newFlags,
-        })
-    } catch {
-        // partial input, ignore.
-    }
+    props.setAction({
+        ...props.action,
+        addsFlags: addedFlags.value,
+    });
 });
 
-const neededFlags: Ref<string> = ref(props.action.needsFlags?.join(", ") ?? "");
+const neededFlags: Ref<string[]> = ref(props.action.needsFlags ?? []);
 watch(neededFlags, () => {
-    try {
-        var newFlags: string[] | undefined = neededFlags.value.split(",").map(flag => flag.trim());
-        if (newFlags.length === 0) newFlags = undefined;
-        props.setAction({
-            ...props.action,
-            needsFlags: newFlags,
-        });
-    } catch {
-        // partial input, ignore.
-    }
+    props.setAction({
+        ...props.action,
+        needsFlags: neededFlags.value,
+    });
 });
 
 const dest: Ref<ScreenId | undefined> = ref(props.action.dest);
@@ -66,6 +57,22 @@ watch(dest, () => {
         ...props.action,
         dest: dest.value,
     });
+});
+
+const getDestName = () => {
+    const id = props.action.dest;
+    if (id === undefined) return "";
+    return props.tree[id]?.label ?? "";
+}
+const destName: Ref<string> = ref(getDestName());
+watch(destName, () => {
+    for (const id of Object.keys(screenNamesById.value)) {
+        if (screenNamesById.value[id] === destName.value) {
+            dest.value = id;
+            return;
+        }
+    }
+    dest.value = undefined;
 });
 
 const toDest = () => {
@@ -79,71 +86,84 @@ const toDest = () => {
 
 const linkNewScreen = () => {
     const newScreen = ScreenUtil.empty();
-    newScreen.label = "New Screen";
+    newScreen.label = destName.value;
     props.saveScreen(newScreen);
     setTimeout(() => dest.value = newScreen.id, 100);
 };
 
 const linkDuplicate = () => {
+    const currentDestScreen = props.tree[dest.value ?? ""];
+    if (dest.value === undefined || currentDestScreen === undefined) {
+        alert("Broken.");
+        return;
+    }
     const newScreen: Screen = {
-        ...props.screen,
+        ...currentDestScreen,
         id: ScreenUtil.newId(),
         text: "",
         actions: [],
     };
-    const words = newScreen.label.split(" ");
-    const lastWord = words[words.length - 1];
-    const num = parseInt(lastWord);
-    if (isNaN(num)) newScreen.label += " 2";
-    else newScreen.label = [...words.slice(0, words.length - 1), num + 1].join(" ");
+    newScreen.label += " (copy)"
     props.saveScreen(newScreen);
     setTimeout(() => dest.value = newScreen.id, 100);
 };
 
-const nodeIds = computed(() => Object.keys(props.tree));
+const screenNamesById = computed(() => {
+    const ret: { [id: string]: string } = {};
+    for (const node of Object.values(props.tree)) {
+        ret[node.id] = node.label;
+    }
+    return ret;
+});
 </script>
 
 <template>
-    <div style="margin: 5px; padding: 5px; border: 1px solid black">
-        <div style="display: flex">
+    <div style="border: 1px solid black; width: 20vw">
+
+        <div style="text-align: center">
             {{ index + 1 }}
-            <input v-model="label" style="display: inline" />
-            <button @click="() => props.removeAction(props.index)" style="float: right">X</button>
+            <button @click="() => props.switchActions(index, -1)">&lt;</button>
+            &nbsp;
+            <button @click="() => props.removeAction(index)">X</button>
+            &nbsp;
+            <button @click="() => props.switchActions(index, 1)">&gt;</button>
         </div>
 
+        <input v-model="label" style="display: inline" />
         Outcome
-        <select v-model="dest">
-            <option v-for="nodeId in nodeIds" :value="nodeId">
-                {{ tree[nodeId].label }}
-            </option>
-            <option :value="undefined">
-                unchosen (!)
-            </option>
-        </select>
-        <button style="float: right" @click="dest = undefined"> reset </button>
+        <div style="display: flex; flex-direction: row; gap: 10px   ">
+
+            <input v-model="destName" list="screen-names" placeholder="enter existing screen label..." />
+            <datalist id="screen-names">
+                <option v-for="name in Object.values(screenNamesById)" :value="name">
+                    {{ name }}
+                </option>
+                <option :value="undefined">
+                    unchosen (!)
+                </option>
+            </datalist>
+        </div>
         <div v-if="dest === undefined">
-            <button @click="linkNewScreen">
+            <button @click="linkNewScreen" style="width: 100%">
                 Link to New Empty Screen
             </button>
-            <button @click="linkDuplicate">
-                Link to Duplicate Screen
-            </button>
         </div>
-        <button v-else @click="toDest()">
-            Screen "{{ tree[dest].label }}"
-            <SceneDisplay :scene="tree[dest].scene" :animate="false" :low-res="true" />
-        </button>
+        <div v-else>
+            <button @click="toDest()" style="width: 100%">
+                Screen "{{ tree[dest].label }}"
+                <SceneDisplay :scene="tree[dest].scene" :animate="false" :low-res="true" />
+            </button>
+            <button style="width: 100%" @click="linkDuplicate">Duplicate this Screen</button>
+        </div>
 
-        Flags
-        <div style="background-color: #ddd; text-align: center">
-            <div style="display: flex">
-                Sets: <input v-model="addedFlags" />
-            </div>
-            <div style="display: flex">
-                Needs: <input v-model="neededFlags" />
-            </div>
-            <!-- Adds {{ props.action.addsFlags }}<br>
-            Needs {{ props.action.needsFlags }} -->
+        <div style="background-color: #ddd; margin: 5px">
+            Sets Flags
+            <FlagListInput :tree="tree" :flags="addedFlags" :set-flags="(newFlags) => addedFlags = newFlags" />
+        </div>
+
+        <div style="background-color: #ddd; margin: 5px">
+            Needs Flags
+            <FlagListInput :tree="tree" :flags="neededFlags" :set-flags="(newFlags) => neededFlags = newFlags" />
         </div>
 
     </div>

@@ -23,7 +23,17 @@ if (FREEZE) {
 }
 
 export const animationStyles = [
-    undefined, "still", "hop_slow", "hop_fast", "shake_slow", "shake_fast", "spin_slow", "spin_fast"
+    "still",
+    undefined,
+    "wobble_fast",
+    "hop_slow",
+    "hop_fast",
+    "shake_slow",
+    "shake_fast",
+    "spin_slow",
+    "spin_fast",
+    "zoom_slow",
+    "zoom_fast",
 ];
 export type AnimationStyle = (typeof animationStyles)[number];
 
@@ -50,6 +60,11 @@ export class ActorUtil {
                     ...actor,
                     angle: (actor.angle ?? 0) + getOsc(500, 0.1),
                 };
+            case "wobble_fast": // faster default
+                return {
+                    ...actor,
+                    angle: (actor.angle ?? 0) + getOsc(159, 0.1),
+                };
             case "still": return actor;
             case "hop_slow":
                 return {
@@ -69,7 +84,17 @@ export class ActorUtil {
             case "shake_fast":
                 return {
                     ...actor,
-                    x: actor.x + getOsc(160, 0.05),
+                    x: actor.x + getOsc(160, 0.02),
+                };
+            case "zoom_slow":
+                return {
+                    ...actor,
+                    scale: actor.scale * (1 + getOsc(510, 0.03)),
+                };
+            case "zoom_fast":
+                return {
+                    ...actor,
+                    scale: actor.scale * (1 + getOsc(160, 0.03)),
                 };
             case "spin_fast":
                 return {

@@ -7,7 +7,8 @@ const props = defineProps<{
     index: number,
     actor: Actor,
     setActor: (newActor: Actor) => void,
-    removeActor: () => void,
+    removeActor: (index: number) => void,
+    switchActors: (index: number, offset: number) => void,
 }>();
 
 const setFromProps = () => {
@@ -71,10 +72,18 @@ setFromProps();
 <template>
     <div style="background-color: #eee; display: inline-block">
         Actor {{ index + 1 }}
-        <button style="float: right" @click="removeActor">X</button>
         <img :src="`/images/${img}`"
             style="background-color: white; height: 2rem; width: auto; vertical-align: text-bottom" />
-        <hr>
+        <br>
+
+        <div style="text-align: center">
+            <button @click="() => switchActors(index, -1)">&lt;</button>
+            &nbsp;
+            <button @click="() => removeActor(index)">X</button>
+            &nbsp;
+            <button @click="() => switchActors(index, 1)">&gt;</button>
+        </div>
+
         <input v-model="img" list="asset-list" />
         <input type="checkbox" v-model="flipped" /> flipped
         <datalist id="asset-list">
@@ -98,7 +107,7 @@ setFromProps();
             <span>
                 animate:
                 <select v-model="actor.animation">
-                    <option v-for="style in animationStyles" :value="style">{{ style ?? "default" }}</option>
+                    <option v-for="style in animationStyles" :value="style">{{ style ?? "wobble_slow" }}</option>
                 </select>
             </span>
         </div>

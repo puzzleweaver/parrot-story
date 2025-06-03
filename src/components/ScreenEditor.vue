@@ -8,7 +8,6 @@ import ActionEditor from './ActionEditor.vue';
 import { type ScreenId, type Tree } from '../game/tree-type';
 import SaveButton from './SaveButton.vue';
 import IncomingOptions from './IncomingOptions.vue';
-import ScreenSymbols from './ScreenSymbols.vue';
 
 const props = defineProps<{
     screen: Screen
@@ -70,6 +69,20 @@ const removeAction = (index: number) => {
     });
 };
 
+const switchActions = (index: number, offset: number) => {
+    if (index + offset >= props.screen.actions.length) {
+        alert("Can't do that.");
+        return;
+    }
+    const newActions = [...props.screen.actions];
+    newActions[index] = props.screen.actions[index + offset]
+    newActions[index + offset] = props.screen.actions[index];
+    props.saveScreen({
+        ...props.screen,
+        actions: newActions,
+    });
+};
+
 const addAction = () => {
     props.saveScreen({
         ...props.screen,
@@ -114,13 +127,15 @@ const addAction = () => {
 
     <br>
 
-    Edit Options
-    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px">
-        <ActionEditor v-for="(action, i) in screen.actions" :action="action"
-            :set-action="(newAction) => setAction(i, newAction)" :remove-action="removeAction" :tree="tree"
-            style="background-color: #eee; padding: 5px; margin: 5px" :index="i" :saveScreen="saveScreen"
-            :go-to-screen="props.goToScreen" :screen="props.screen" />
-        <button @click="addAction">+ New Option</button>
+    <div v-if="endgame === undefined">
+        Edit Options
+        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px">
+            <ActionEditor v-for="(action, i) in screen.actions" :action="action"
+                :set-action="(newAction) => setAction(i, newAction)" :remove-action="removeAction"
+                :switch-actions="switchActions" :tree="tree" style="background-color: #eee; padding: 5px; margin: 5px"
+                :index="i" :saveScreen="saveScreen" :go-to-screen="props.goToScreen" :screen="props.screen" />
+            <button @click="addAction">+ New Option</button>
+        </div>
     </div>
     <div style="height: 200px"></div>
 </template>

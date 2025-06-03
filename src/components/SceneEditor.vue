@@ -35,6 +35,16 @@ const removeActor = (index: number) => {
     actors.value.splice(index, 1);
     actors.value = [...actors.value];
 };
+const switchActors = (index: number, offset: number) => {
+    if (index + offset < 0 || index + offset >= actors.value.length) {
+        console.log("Can't switch ${index} and ${index + offset}.");
+        return;
+    }
+    const newActors = [...actors.value];
+    newActors[index] = actors.value[index + offset];
+    newActors[index + offset] = actors.value[index];
+    actors.value = newActors;
+};
 </script>
 
 <template>
@@ -53,7 +63,8 @@ const removeActor = (index: number) => {
         <div style="display: grid; grid-template-columns: repeat(4, 1fr); width: 90%">
             <ActorEditor v-for="index in Object.keys(actors).map(index => parseInt(index))" :index="index"
                 :set-actor="(newActor: Actor) => setActor(index, newActor)" :actor="actors[index]"
-                :remove-actor="() => removeActor(index)" style="padding: 5px; margin: 10px; border: 1px solid black" />
+                :remove-actor="removeActor" :switch-actors="switchActors"
+                style="padding: 5px; margin: 10px; border: 1px solid black" />
             <button @click="addActor">
                 + New Actor
             </button>

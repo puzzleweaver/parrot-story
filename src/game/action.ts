@@ -18,6 +18,23 @@ export class ActionUtil {
             label: "Option",
         };
     }
+
+    static getFlagsUsed(action: Action): string[] {
+        const allFlagsUnprocessed = [
+            ...(action.addsFlags ?? []),
+            ...(action.needsFlags ?? []),
+        ];
+        return [...new Set(
+            allFlagsUnprocessed
+                .filter(flag => flag !== "")
+                .map(flag => {
+                    if (flag.charAt(0) === "!")
+                        return flag.substring(1);
+                    return flag;
+                }),
+        )];
+    }
+
     static visible(state: GameState, action: Action): boolean {
         if (action.dest === undefined) {
             console.log(`Hiding "${action.label}" because of undefined destination`);
