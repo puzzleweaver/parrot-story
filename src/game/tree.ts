@@ -74,12 +74,21 @@ export const tree: Tree = {
     "2739": {
         "actions": [
             {
+                "addsFlags": [
+                    "koalaHasGoneOffRails"
+                ],
                 "dest": "14923",
-                "label": "Continue talking to koala"
+                "label": "Continue talking to koala",
+                "needsFlags": [
+                    "koalaHasTalkedTwice",
+                    "!koalaHasGoneOffRails"
+                ]
             },
             {
+                "addsFlags": [],
                 "dest": "20907",
-                "label": "Wander jungle to get away from this conversation"
+                "label": "Return to animals to get away from this conversation",
+                "needsFlags": []
             }
         ],
         "id": "2739",
@@ -181,15 +190,62 @@ export const tree: Tree = {
         },
         "text": "The possum comes over to you and spreads its mouth in offense. \"No, I'm Pat! Why does everyone keep calling me Jen?\" Your face feels hot. You aren't sure what you were thinking."
     },
+    "7769": {
+        "actions": [
+            {
+                "addsFlags": [],
+                "dest": "69799",
+                "label": "Next",
+                "needsFlags": []
+            }
+        ],
+        "id": "7769",
+        "label": "Rat Leader 1",
+        "scene": {
+            "actors": [
+                {
+                    "angle": 0,
+                    "img": "character/rat/leader_talking.png",
+                    "scale": 1.055,
+                    "x": 0.555,
+                    "y": 0.575
+                }
+            ],
+            "bg": "bg/gray.png"
+        },
+        "text": "\"My dear brothers and sisters,\" the leader rat begins, \"we are coming up on an unprecedented time in the universe. The fifth dimension is here. It's upon us. Our minds are open to the secrets of the universe, filling us with warmth and happiness. Happiness is all there is.\" "
+    },
     "9403": {
         "actions": [
             {
+                "addsFlags": [],
                 "dest": "28035",
-                "label": "inspect drink"
+                "label": "inspect drink",
+                "needsFlags": []
             },
             {
-                "dest": "18822",
-                "label": "Say \"Thanks!\""
+                "addsFlags": [
+                    "meetTherapyMouse"
+                ],
+                "dest": "26946",
+                "label": "Say \"thanks!\" and leave bar",
+                "needsFlags": [
+                    "!meetTherapyMouse"
+                ]
+            },
+            {
+                "addsFlags": [],
+                "dest": "94709",
+                "label": "Say \"thanks!\" and ask for another drink",
+                "needsFlags": []
+            },
+            {
+                "addsFlags": [],
+                "dest": "77796",
+                "label": "Say \"thanks!\" and leave the bar",
+                "needsFlags": [
+                    "meetTherapyMouse"
+                ]
             }
         ],
         "id": "9403",
@@ -278,6 +334,7 @@ export const tree: Tree = {
     "10255": {
         "actions": [
             {
+                "addsFlags": [],
                 "dest": "11989",
                 "label": "Dig through the fountain and look for treasure",
                 "needsFlags": [
@@ -285,10 +342,13 @@ export const tree: Tree = {
                 ]
             },
             {
+                "addsFlags": [],
                 "dest": "13631",
-                "label": "Wander the city again"
+                "label": "Wander the city again",
+                "needsFlags": []
             },
             {
+                "addsFlags": [],
                 "dest": "11989",
                 "label": "Dig through the fountain and look for treasure",
                 "needsFlags": [
@@ -348,6 +408,7 @@ export const tree: Tree = {
     "11989": {
         "actions": [
             {
+                "addsFlags": [],
                 "dest": "18632",
                 "label": "Next",
                 "needsFlags": [
@@ -499,24 +560,46 @@ export const tree: Tree = {
     "13631": {
         "actions": [
             {
+                "addsFlags": [],
                 "dest": "27595",
-                "label": "Go to hotel"
+                "label": "Go to hotel",
+                "needsFlags": []
             },
             {
+                "addsFlags": [],
                 "dest": "85550",
-                "label": "Go to dog park"
+                "label": "Go to dog park",
+                "needsFlags": []
             },
             {
+                "addsFlags": [],
                 "dest": "61921",
-                "label": "Go to bar"
+                "label": "Go to bar",
+                "needsFlags": []
             },
             {
+                "addsFlags": [],
                 "dest": "13097",
-                "label": "Go to flower shop"
+                "label": "Go to flower shop",
+                "needsFlags": []
             },
             {
+                "addsFlags": [
+                    "haveSeenFountain"
+                ],
                 "dest": "10255",
-                "label": "Visit city fountain"
+                "label": "Visit city fountain",
+                "needsFlags": [
+                    "!haveSeenFountain"
+                ]
+            },
+            {
+                "addsFlags": [],
+                "dest": "26526",
+                "label": "Visit city fountain again",
+                "needsFlags": [
+                    "haveSeenFountain"
+                ]
             }
         ],
         "id": "13631",
@@ -591,8 +674,10 @@ export const tree: Tree = {
     "14923": {
         "actions": [
             {
+                "addsFlags": [],
                 "dest": "20907",
-                "label": "Back to the animals"
+                "label": "Back to the animals",
+                "needsFlags": []
             }
         ],
         "id": "14923",
@@ -611,6 +696,38 @@ export const tree: Tree = {
             "bg": "bg/jungle.png"
         },
         "text": "He continues, with increased pitch and fervor: \n\"Out in the mindless void the daemon bore me\nPast the bright clusters of dimensioned space,\nTill neither time nor matter stretched before me,\nBut only Chaos, without form or place.\"\nYou decide it's time to leave."
+    },
+    "17556": {
+        "actions": [
+            {
+                "addsFlags": [],
+                "dest": "20907",
+                "label": "Return to other animals",
+                "needsFlags": []
+            }
+        ],
+        "id": "17556",
+        "label": "Koala Follow Up",
+        "scene": {
+            "actors": [
+                {
+                    "angle": 0,
+                    "img": "character/koala/talking.png",
+                    "scale": 0.445,
+                    "x": 0.74,
+                    "y": 0.815
+                },
+                {
+                    "angle": 0,
+                    "img": "character/parrot/back.png",
+                    "scale": 0.5,
+                    "x": 0.155,
+                    "y": 0.875
+                }
+            ],
+            "bg": "bg/jungle.png"
+        },
+        "text": "You are terrified of this koala but something possesses you to reinitiate a conversation. He sounds different now, with a smooth, silky voice. \"Hey, what's up?\" You are at a loss for words."
     },
     "18632": {
         "actions": [
@@ -665,7 +782,7 @@ export const tree: Tree = {
             }
         ],
         "id": "18822",
-        "label": "Inside bar",
+        "label": "",
         "scene": {
             "actors": [
                 {
@@ -795,16 +912,30 @@ export const tree: Tree = {
     "20907": {
         "actions": [
             {
+                "addsFlags": [
+                    "jaguarTired"
+                ],
                 "dest": "87811",
-                "label": "Play with the jaguar"
+                "label": "Play with the jaguar",
+                "needsFlags": [
+                    "!jaguarTired"
+                ]
             },
             {
+                "addsFlags": [],
                 "dest": "78752",
-                "label": "Play with the small man"
+                "label": "Play with the small man",
+                "needsFlags": []
             },
             {
+                "addsFlags": [
+                    "koalaPlayedWith"
+                ],
                 "dest": "48268",
-                "label": "Play with the koala"
+                "label": "Play with the koala",
+                "needsFlags": [
+                    "!koalaPlayedWith"
+                ]
             },
             {
                 "addsFlags": [
@@ -817,8 +948,41 @@ export const tree: Tree = {
                 ]
             },
             {
+                "addsFlags": [],
                 "dest": "90619",
-                "label": "Wander the jungle some more"
+                "label": "Wander the jungle some more",
+                "needsFlags": []
+            },
+            {
+                "addsFlags": [
+                    "koalaHasTalkedTwice",
+                    "canThrowRocks"
+                ],
+                "dest": "2739",
+                "label": "Talk to the koala again",
+                "needsFlags": [
+                    "koalaHasTalked",
+                    "!koalaHasTalkedTwice"
+                ]
+            },
+            {
+                "addsFlags": [
+                    "koalaHasGoneOffRails"
+                ],
+                "dest": "14923",
+                "label": "Talk to the koala again",
+                "needsFlags": [
+                    "koalaHasTalkedTwice",
+                    "!koalaHasGoneOffRails"
+                ]
+            },
+            {
+                "addsFlags": [],
+                "dest": "17556",
+                "label": "Talk to the koala again",
+                "needsFlags": [
+                    "koalaHasGoneOffRails"
+                ]
             }
         ],
         "id": "20907",
@@ -859,7 +1023,7 @@ export const tree: Tree = {
             ],
             "bg": "bg/jungle.png"
         },
-        "text": "You encounter some strange-looking animals! You think they're called a koala, jaguar, and a small man."
+        "text": "What will you do with these guys?"
     },
     "22555": {
         "actions": [
@@ -940,6 +1104,270 @@ export const tree: Tree = {
         },
         "text": "You find a wonderful little hot tub. You feel sleepy."
     },
+    "23253": {
+        "actions": [
+            {
+                "addsFlags": [],
+                "dest": "37515",
+                "label": "Time to leave. You go back to where you came from.",
+                "needsFlags": []
+            }
+        ],
+        "id": "23253",
+        "label": "Cult masks on",
+        "scene": {
+            "actors": [
+                {
+                    "angle": 0.035,
+                    "animation": "still",
+                    "img": "prop/sconce.png",
+                    "scale": 0.25,
+                    "x": 0.845,
+                    "y": 0.21597782101531282
+                },
+                {
+                    "angle": 0,
+                    "img": "prop/candle_1.png",
+                    "scale": 0.12,
+                    "x": 0.785,
+                    "y": 0.22
+                },
+                {
+                    "angle": 0,
+                    "img": "prop/candle_2.png",
+                    "scale": 0.11,
+                    "x": 0.895,
+                    "y": 0.23
+                },
+                {
+                    "angle": 0,
+                    "animation": "hop_slow",
+                    "img": "character/rat/leader_neutral.png",
+                    "scale": 0.205,
+                    "x": 0.525,
+                    "y": 0.53
+                },
+                {
+                    "angle": 0,
+                    "flipped": false,
+                    "img": "character/rat/rat_side.png",
+                    "scale": 0.24,
+                    "x": 0.345,
+                    "y": 0.485
+                },
+                {
+                    "angle": 0,
+                    "flipped": false,
+                    "img": "character/rat/rat_side.png",
+                    "scale": 0.215,
+                    "x": 0.37,
+                    "y": 0.655
+                },
+                {
+                    "angle": -0.035,
+                    "flipped": false,
+                    "img": "character/rat/rat_side.png",
+                    "scale": 0.22,
+                    "x": 0.415,
+                    "y": 0.42
+                },
+                {
+                    "angle": 0,
+                    "img": "character/parrot/in-transit.png",
+                    "scale": 0.325,
+                    "x": 0.19623846852051263,
+                    "y": 0.971976817210723
+                },
+                {
+                    "angle": 0,
+                    "animation": "still",
+                    "img": "text/cult_writing.png",
+                    "scale": 0.105,
+                    "x": 0.15,
+                    "y": 0.0806238762464404
+                },
+                {
+                    "angle": 0,
+                    "animation": "still",
+                    "img": "text/cult_logo.png",
+                    "scale": 0.15,
+                    "x": 0.95,
+                    "y": 0.125
+                },
+                {
+                    "angle": 0,
+                    "flipped": true,
+                    "img": "character/rat/rat_side.png",
+                    "scale": 0.15,
+                    "x": 0.625,
+                    "y": 0.415
+                },
+                {
+                    "angle": 0,
+                    "flipped": true,
+                    "img": "character/rat/rat_side.png",
+                    "scale": 0.2,
+                    "x": 0.685,
+                    "y": 0.47
+                },
+                {
+                    "angle": 0,
+                    "flipped": true,
+                    "img": "character/rat/rat_side.png",
+                    "scale": 0.26,
+                    "x": 0.655,
+                    "y": 0.585
+                },
+                {
+                    "angle": 0,
+                    "img": "character/rat/back_1.png",
+                    "scale": 0.205,
+                    "x": 0.5,
+                    "y": 0.72
+                },
+                {
+                    "angle": 0,
+                    "img": "character/rat/standing.png",
+                    "scale": 0.225,
+                    "x": 0.525,
+                    "y": 0.33
+                },
+                {
+                    "angle": 0,
+                    "animation": "still",
+                    "img": "prop/sconce.png",
+                    "scale": 0.215,
+                    "x": 0.14007765787037174,
+                    "y": 0.22
+                },
+                {
+                    "angle": 0,
+                    "img": "prop/candle_3.png",
+                    "scale": 0.115,
+                    "x": 0.185,
+                    "y": 0.22
+                },
+                {
+                    "angle": 0,
+                    "img": "prop/candle_1.png",
+                    "scale": 0.125,
+                    "x": 0.09,
+                    "y": 0.21
+                },
+                {
+                    "angle": 0,
+                    "animation": "hop_slow",
+                    "img": "prop/mask_1.png",
+                    "scale": 0.1,
+                    "x": 0.515,
+                    "y": 0.5
+                },
+                {
+                    "angle": 0,
+                    "img": "prop/mask_side.png",
+                    "scale": 0.1,
+                    "x": 0.375,
+                    "y": 0.435
+                },
+                {
+                    "angle": 0,
+                    "img": "prop/mask_side.png",
+                    "scale": 0.1,
+                    "x": 0.4,
+                    "y": 0.615
+                },
+                {
+                    "angle": 0,
+                    "img": "prop/mask_side.png",
+                    "scale": 0.1,
+                    "x": 0.45,
+                    "y": 0.375
+                },
+                {
+                    "angle": 0,
+                    "img": "prop/mask_2.png",
+                    "scale": 0.1,
+                    "x": 0.525,
+                    "y": 0.275
+                },
+                {
+                    "angle": 0,
+                    "flipped": true,
+                    "img": "prop/mask_side.png",
+                    "scale": 0.1,
+                    "x": 0.665,
+                    "y": 0.435
+                },
+                {
+                    "angle": -0.315,
+                    "flipped": true,
+                    "img": "prop/mask_side.png",
+                    "scale": 0.1,
+                    "x": 0.63,
+                    "y": 0.53
+                },
+                {
+                    "angle": 0,
+                    "flipped": true,
+                    "img": "prop/mask_side.png",
+                    "scale": 0.1,
+                    "x": 0.6,
+                    "y": 0.4
+                }
+            ],
+            "bg": "bg/gray.png"
+        },
+        "text": "The rats continue chanting loudly, in the most crazed way possible."
+    },
+    "23888": {
+        "actions": [
+            {
+                "addsFlags": [],
+                "dest": "20907",
+                "label": "Next",
+                "needsFlags": []
+            }
+        ],
+        "id": "23888",
+        "label": "Meet animals first time",
+        "scene": {
+            "actors": [
+                {
+                    "angle": 0.035,
+                    "animation": "hop_slow",
+                    "img": "character/parrot/in-transit.png",
+                    "scale": 0.235,
+                    "x": 0.205,
+                    "y": 0.815
+                },
+                {
+                    "angle": 0,
+                    "animation": "hop_fast",
+                    "img": "character/monkey/neutral.png",
+                    "scale": 0.5,
+                    "x": 0.8504803802665324,
+                    "y": 0.27
+                },
+                {
+                    "angle": 0,
+                    "img": "character/koala/neutral.png",
+                    "scale": 0.35,
+                    "x": 0.2,
+                    "y": 0.33024762083858294
+                },
+                {
+                    "angle": 0,
+                    "flipped": true,
+                    "img": "character/jaguar/neutral.png",
+                    "scale": 0.35,
+                    "x": 0.67,
+                    "y": 0.75
+                }
+            ],
+            "bg": "bg/jungle.png"
+        },
+        "text": "You encounter some strange-looking animals! You think they're called a koala, jaguar, and a small man."
+    },
     "23991": {
         "actions": [
             {
@@ -966,6 +1394,85 @@ export const tree: Tree = {
             "bg": "bg/shop.png"
         },
         "text": "The front of the keycard says \"Welcome, Enjoy the Pool\" on it."
+    },
+    "26526": {
+        "actions": [
+            {
+                "addsFlags": [],
+                "dest": "11989",
+                "label": "Dig Through Fountain",
+                "needsFlags": []
+            },
+            {
+                "addsFlags": [],
+                "dest": "13631",
+                "label": "Wander city again",
+                "needsFlags": []
+            }
+        ],
+        "id": "26526",
+        "label": "City Fountain Visit Again",
+        "scene": {
+            "actors": [
+                {
+                    "angle": 0,
+                    "animation": "still",
+                    "img": "setting/city_fountain.png",
+                    "scale": 1.05,
+                    "x": 0.505,
+                    "y": 0.5
+                },
+                {
+                    "angle": 0,
+                    "animation": "shake_slow",
+                    "img": "character/parrot/bindle.png",
+                    "scale": 0.245,
+                    "x": 0.105,
+                    "y": 0.815
+                }
+            ],
+            "bg": "bg/city.png"
+        },
+        "text": "You're back at the city fountain!"
+    },
+    "26946": {
+        "actions": [
+            {
+                "addsFlags": [],
+                "label": "Inspect",
+                "needsFlags": []
+            },
+            {
+                "addsFlags": [],
+                "dest": "13631",
+                "label": "Shrug it off and wander city",
+                "needsFlags": []
+            }
+        ],
+        "id": "26946",
+        "label": "Meet therapy mouse",
+        "scene": {
+            "actors": [
+                {
+                    "angle": 0,
+                    "animation": "spin_fast",
+                    "img": "character/mouse/kicked.png",
+                    "scale": 0.39,
+                    "x": 0.795,
+                    "y": 0.64
+                },
+                {
+                    "angle": 0,
+                    "animation": "shake_slow",
+                    "img": "character/parrot/neutral.png",
+                    "scale": 0.5,
+                    "x": 0.435,
+                    "y": 0.575
+                }
+            ],
+            "bg": "bg/city.png"
+        },
+        "text": "You kicked something on your way out!"
     },
     "27438": {
         "actions": [],
@@ -1072,6 +1579,44 @@ export const tree: Tree = {
             "bg": "bg/bar.png"
         },
         "text": "That's a good-looking cosmo!"
+    },
+    "29900": {
+        "actions": [
+            {
+                "addsFlags": [],
+                "dest": "37515",
+                "label": "Go back to the fork in the sewer system",
+                "needsFlags": []
+            },
+            {
+                "addsFlags": [],
+                "dest": "23253",
+                "label": "Continue watching",
+                "needsFlags": []
+            }
+        ],
+        "id": "29900",
+        "label": "Rat Leader 3 (copy)",
+        "scene": {
+            "actors": [
+                {
+                    "angle": 0,
+                    "img": "character/rat/leader_happy.png",
+                    "scale": 1.055,
+                    "x": 0.555,
+                    "y": 0.575
+                },
+                {
+                    "angle": 0,
+                    "img": "prop/mask_1.png",
+                    "scale": 0.47,
+                    "x": 0.47,
+                    "y": 0.365
+                }
+            ],
+            "bg": "bg/gray.png"
+        },
+        "text": "\"Don't we feel so happy? So blessed?\" he screeched! The rats erupted in applause and cheers."
     },
     "31710": {
         "actions": [
@@ -1248,6 +1793,107 @@ export const tree: Tree = {
             "bg": "bg/city.png"
         },
         "text": "You finally arrive in the city! The options here are endless. Maybe you can make some friends!"
+    },
+    "37515": {
+        "actions": [
+            {
+                "addsFlags": [
+                    "discoverCult"
+                ],
+                "dest": "75362",
+                "label": "Go left",
+                "needsFlags": [
+                    "!discoverCult"
+                ]
+            },
+            {
+                "addsFlags": [
+                    "discoverJunglePath"
+                ],
+                "dest": "95982",
+                "label": "Go right",
+                "needsFlags": [
+                    "!discoverJunglePath"
+                ]
+            },
+            {
+                "addsFlags": [],
+                "dest": "23253",
+                "label": "Visit rat cult",
+                "needsFlags": [
+                    "discoverCult"
+                ]
+            },
+            {
+                "addsFlags": [],
+                "dest": "95982",
+                "label": "Return to jungle",
+                "needsFlags": [
+                    "discoverJunglePath"
+                ]
+            }
+        ],
+        "id": "37515",
+        "label": "Forked path",
+        "scene": {
+            "actors": [
+                {
+                    "angle": 0,
+                    "animation": "still",
+                    "img": "setting/forked_sewer_tunnel.png",
+                    "scale": 1.29,
+                    "x": 0.525,
+                    "y": 0.51
+                },
+                {
+                    "angle": 0,
+                    "img": "character/rat/rat_1.png",
+                    "scale": 0.1,
+                    "x": 0.485,
+                    "y": 0.625
+                },
+                {
+                    "angle": 0,
+                    "img": "character/rat/rat_2.png",
+                    "scale": 0.22,
+                    "x": 0.7665477362006303,
+                    "y": 0.8663289929383993
+                },
+                {
+                    "angle": -0.535,
+                    "animation": "still",
+                    "img": "text/cult_logo.png",
+                    "scale": 0.1,
+                    "x": 0.435,
+                    "y": 0.275
+                },
+                {
+                    "angle": 0,
+                    "animation": "still",
+                    "img": "text/cult_writing.png",
+                    "scale": 0.1,
+                    "x": 0.2105248203674337,
+                    "y": 0.175
+                },
+                {
+                    "angle": -0.935,
+                    "img": "character/rat/rat_3.png",
+                    "scale": 0.1,
+                    "x": 0.6403344116143335,
+                    "y": 0.46
+                },
+                {
+                    "angle": 0,
+                    "flipped": true,
+                    "img": "character/rat/rat_1.png",
+                    "scale": 0.145,
+                    "x": 0.32,
+                    "y": 0.92
+                }
+            ],
+            "bg": "bg/gray.png"
+        },
+        "text": "You follow the sewer system down a ways until you arrive to a fork in your path! You hear faint chanting from the left and jungle sounds to the right."
     },
     "38201": {
         "actions": [],
@@ -1451,7 +2097,8 @@ export const tree: Tree = {
                     "youHaveCosmo"
                 ],
                 "dest": "9403",
-                "label": "Next"
+                "label": "Next",
+                "needsFlags": []
             }
         ],
         "id": "46692",
@@ -1675,12 +2322,10 @@ export const tree: Tree = {
     "48268": {
         "actions": [
             {
-                "dest": "64647",
-                "label": "Talk to it instead"
-            },
-            {
+                "addsFlags": [],
                 "dest": "20907",
-                "label": "Back to the animals"
+                "label": "Back to the animals",
+                "needsFlags": []
             }
         ],
         "id": "48268",
@@ -2007,8 +2652,10 @@ export const tree: Tree = {
     "57590": {
         "actions": [
             {
+                "addsFlags": [],
                 "dest": "20907",
-                "label": "Back to Animals"
+                "label": "Back to Animals",
+                "needsFlags": []
             }
         ],
         "id": "57590",
@@ -2047,12 +2694,26 @@ export const tree: Tree = {
     "58259": {
         "actions": [
             {
+                "addsFlags": [],
                 "dest": "45412",
-                "label": "inspect martini"
+                "label": "inspect martini",
+                "needsFlags": []
             },
             {
-                "dest": "18822",
-                "label": "Say \"Thanks\""
+                "addsFlags": [
+                    "meetTherapyMouse"
+                ],
+                "dest": "26946",
+                "label": "Say \"thanks\" and leave bar",
+                "needsFlags": [
+                    "!meetTherapyMouse"
+                ]
+            },
+            {
+                "addsFlags": [],
+                "dest": "94709",
+                "label": "Say \"thanks\" and ask for another drink",
+                "needsFlags": []
             }
         ],
         "id": "58259",
@@ -2228,14 +2889,18 @@ export const tree: Tree = {
         "actions": [
             {
                 "addsFlags": [
-                    "canThrowRocks"
+                    "canThrowRocks",
+                    "koalaHasTalkedTwice"
                 ],
                 "dest": "2739",
-                "label": "Say \"Sure, what did you want to tell me?\""
+                "label": "Say \"Sure, what did you want to tell me?\"",
+                "needsFlags": []
             },
             {
+                "addsFlags": [],
                 "dest": "20907",
-                "label": "Say \"No Thanks\""
+                "label": "Say \"No Thanks\"",
+                "needsFlags": []
             }
         ],
         "id": "64647",
@@ -2254,15 +2919,58 @@ export const tree: Tree = {
         },
         "text": "You decide to see what the koala has to say. It opens its mouth and speaks in a high, raspy voice. \"Greetings! I haven't seen you around this part of the jungle. Would you care to hear about our savior, Azathoth?\" You feel a bit flustered and awkward."
     },
+    "64686": {
+        "actions": [],
+        "id": "64686",
+        "label": "",
+        "scene": {
+            "actors": [],
+            "bg": "bg/shop.png"
+        },
+        "text": "lorem ipsum dolor sit amet and so on and so forth..."
+    },
+    "64950": {
+        "actions": [
+            {
+                "addsFlags": [],
+                "dest": "90619",
+                "label": "Next",
+                "needsFlags": []
+            }
+        ],
+        "id": "64950",
+        "label": "Discover jungle path",
+        "scene": {
+            "actors": [
+                {
+                    "angle": 0,
+                    "img": "character/parrot/flying.png",
+                    "scale": 0.325,
+                    "x": 0.455,
+                    "y": 0.48
+                }
+            ],
+            "bg": "bg/jungle.png"
+        },
+        "text": "Wow! You've arrived back to the jungle!"
+    },
     "65138": {
         "actions": [
             {
+                "addsFlags": [],
                 "dest": "94709",
-                "label": "Agree to his Terms"
+                "label": "Agree to his terms",
+                "needsFlags": []
             },
             {
-                "dest": "18822",
-                "label": "Refuse his Terms"
+                "addsFlags": [
+                    "meetTherapyMouse"
+                ],
+                "dest": "26946",
+                "label": "Refuse his terms and leave to wander city again",
+                "needsFlags": [
+                    "!meetTherapyMouse"
+                ]
             }
         ],
         "id": "65138",
@@ -2296,9 +3004,36 @@ export const tree: Tree = {
         },
         "text": "\"You're a bird! You're not supposed to drink!\" the weird panda says to you. \"But I can give you a drink as long as you promise you're giving it to someone else who is of drinking age.\""
     },
+    "69799": {
+        "actions": [
+            {
+                "addsFlags": [],
+                "dest": "85914",
+                "label": "Next",
+                "needsFlags": []
+            }
+        ],
+        "id": "69799",
+        "label": "Rat Leader 2",
+        "scene": {
+            "actors": [
+                {
+                    "angle": 0,
+                    "animation": "hop_slow",
+                    "img": "character/rat/leader_talking.png",
+                    "scale": 1.055,
+                    "x": 0.555,
+                    "y": 0.575
+                }
+            ],
+            "bg": "bg/gray.png"
+        },
+        "text": "\"I have received a download from a great high spirit. It is of greatest importance that we spread the news: We must love others, nurture others, and forgive others.\" "
+    },
     "71284": {
         "actions": [
             {
+                "addsFlags": [],
                 "dest": "87790",
                 "label": "Take a Deep Breath",
                 "needsFlags": [
@@ -2413,6 +3148,158 @@ export const tree: Tree = {
         },
         "text": "You've reached the volcano. You can't get the koala's words out of your head and you wonder about the nature of existence."
     },
+    "75362": {
+        "actions": [
+            {
+                "addsFlags": [],
+                "dest": "7769",
+                "label": "Next",
+                "needsFlags": []
+            }
+        ],
+        "id": "75362",
+        "label": "Cult opening scene",
+        "scene": {
+            "actors": [
+                {
+                    "angle": 0.035,
+                    "animation": "still",
+                    "img": "prop/sconce.png",
+                    "scale": 0.25,
+                    "x": 0.845,
+                    "y": 0.21597782101531282
+                },
+                {
+                    "angle": 0,
+                    "img": "prop/candle_1.png",
+                    "scale": 0.12,
+                    "x": 0.785,
+                    "y": 0.22
+                },
+                {
+                    "angle": 0,
+                    "img": "prop/candle_2.png",
+                    "scale": 0.11,
+                    "x": 0.895,
+                    "y": 0.23
+                },
+                {
+                    "angle": 0,
+                    "animation": "shake_slow",
+                    "img": "character/rat/leader_neutral.png",
+                    "scale": 0.185,
+                    "x": 0.525,
+                    "y": 0.53
+                },
+                {
+                    "angle": 0,
+                    "img": "character/rat/rat_side.png",
+                    "scale": 0.2,
+                    "x": 0.345,
+                    "y": 0.485
+                },
+                {
+                    "angle": 0,
+                    "img": "character/rat/rat_side.png",
+                    "scale": 0.215,
+                    "x": 0.37,
+                    "y": 0.655
+                },
+                {
+                    "angle": -0.035,
+                    "img": "character/rat/rat_side.png",
+                    "scale": 0.175,
+                    "x": 0.415,
+                    "y": 0.42
+                },
+                {
+                    "angle": 0,
+                    "img": "character/parrot/in-transit.png",
+                    "scale": 0.325,
+                    "x": 0.19623846852051263,
+                    "y": 0.971976817210723
+                },
+                {
+                    "angle": 0,
+                    "animation": "still",
+                    "img": "text/cult_writing.png",
+                    "scale": 0.105,
+                    "x": 0.15,
+                    "y": 0.0806238762464404
+                },
+                {
+                    "angle": 0,
+                    "animation": "still",
+                    "img": "text/cult_logo.png",
+                    "scale": 0.15,
+                    "x": 0.95,
+                    "y": 0.125
+                },
+                {
+                    "angle": 0,
+                    "flipped": true,
+                    "img": "character/rat/rat_side.png",
+                    "scale": 0.15,
+                    "x": 0.625,
+                    "y": 0.415
+                },
+                {
+                    "angle": 0,
+                    "flipped": true,
+                    "img": "character/rat/rat_side.png",
+                    "scale": 0.2,
+                    "x": 0.685,
+                    "y": 0.47
+                },
+                {
+                    "angle": 0,
+                    "flipped": true,
+                    "img": "character/rat/rat_side.png",
+                    "scale": 0.25,
+                    "x": 0.655,
+                    "y": 0.585
+                },
+                {
+                    "angle": 0,
+                    "img": "character/rat/back_1.png",
+                    "scale": 0.215,
+                    "x": 0.5,
+                    "y": 0.72
+                },
+                {
+                    "angle": 0,
+                    "img": "character/rat/standing.png",
+                    "scale": 0.1,
+                    "x": 0.52,
+                    "y": 0.365
+                },
+                {
+                    "angle": 0,
+                    "animation": "still",
+                    "img": "prop/sconce.png",
+                    "scale": 0.215,
+                    "x": 0.14007765787037174,
+                    "y": 0.22
+                },
+                {
+                    "angle": 0,
+                    "img": "prop/candle_3.png",
+                    "scale": 0.115,
+                    "x": 0.185,
+                    "y": 0.22
+                },
+                {
+                    "angle": 0,
+                    "img": "prop/candle_1.png",
+                    "scale": 0.125,
+                    "x": 0.09,
+                    "y": 0.21
+                }
+            ],
+            "bg": "bg/gray.png"
+        },
+        "text": "You arrive to the strangest thing you've seen yet. A small rat, shrouded in a strange scarf, is surrounded by chanting rats. You can't quite make out what they're saying so you get closer."
+    },
     "75760": {
         "actions": [
             {
@@ -2443,6 +3330,36 @@ export const tree: Tree = {
             "bg": "bg/shop.png"
         },
         "text": "The dachshund looks sad and confused. \"I'm a dog, I don't drink.\" You feel a little awkward."
+    },
+    "77796": {
+        "actions": [
+            {
+                "addsFlags": [],
+                "label": "Talk to him",
+                "needsFlags": []
+            },
+            {
+                "addsFlags": [],
+                "dest": "13631",
+                "label": "Go back to wandering city",
+                "needsFlags": []
+            }
+        ],
+        "id": "77796",
+        "label": "Therapy Mouse Again",
+        "scene": {
+            "actors": [
+                {
+                    "angle": 0,
+                    "img": "character/mouse/neutral.png",
+                    "scale": 0.985,
+                    "x": 0.57,
+                    "y": 0.495
+                }
+            ],
+            "bg": "bg/city.png"
+        },
+        "text": "\"Nice to see you again!\" he squeaks."
     },
     "78527": {
         "actions": [
@@ -2763,6 +3680,40 @@ export const tree: Tree = {
         },
         "text": "You seem to have found some dogs at the dog park! The dachshund and beagle seem friendly enough, but you get a shiver down your spine when you see the doberman."
     },
+    "85914": {
+        "actions": [
+            {
+                "addsFlags": [],
+                "dest": "29900",
+                "label": "What is happening",
+                "needsFlags": []
+            }
+        ],
+        "id": "85914",
+        "label": "Rat Leader 3",
+        "scene": {
+            "actors": [
+                {
+                    "angle": 0,
+                    "animation": "hop_fast",
+                    "img": "character/rat/leader_talking.png",
+                    "scale": 1.055,
+                    "x": 0.555,
+                    "y": 0.575
+                },
+                {
+                    "angle": 0,
+                    "animation": "hop_fast",
+                    "img": "prop/mask_1.png",
+                    "scale": 0.27,
+                    "x": 0.705,
+                    "y": 0.435
+                }
+            ],
+            "bg": "bg/gray.png"
+        },
+        "text": "\"Now rise with me!!!! Put on your masks of the spirit!!!!\""
+    },
     "85940": {
         "actions": [
             {
@@ -2847,8 +3798,10 @@ export const tree: Tree = {
     "87223": {
         "actions": [
             {
-                "dest": "95982",
-                "label": "Next"
+                "addsFlags": [],
+                "dest": "37515",
+                "label": "Next",
+                "needsFlags": []
             }
         ],
         "id": "87223",
@@ -2880,8 +3833,10 @@ export const tree: Tree = {
                 ]
             },
             {
+                "addsFlags": [],
                 "dest": "90619",
-                "label": "Climb Down Tree"
+                "label": "Climb Down Tree",
+                "needsFlags": []
             }
         ],
         "id": "87790",
@@ -2917,8 +3872,10 @@ export const tree: Tree = {
     "87811": {
         "actions": [
             {
+                "addsFlags": [],
                 "dest": "57590",
-                "label": "Next"
+                "label": "Next",
+                "needsFlags": []
             }
         ],
         "id": "87811",
@@ -2954,30 +3911,50 @@ export const tree: Tree = {
     "90619": {
         "actions": [
             {
+                "addsFlags": [],
                 "dest": "20907",
-                "label": "Look for animals"
+                "label": "Visit animals again",
+                "needsFlags": [
+                    "haveMetAnimals"
+                ]
             },
             {
+                "addsFlags": [],
                 "dest": "55660",
                 "label": "Go to volcano",
                 "needsFlags": [
-                    "!cultThoughts"
+                    "!canThrowRocks"
                 ]
             },
             {
+                "addsFlags": [],
                 "dest": "45463",
-                "label": "Go to city"
+                "label": "Go to city",
+                "needsFlags": []
             },
             {
+                "addsFlags": [],
                 "dest": "74372",
                 "label": "Go to volcano",
                 "needsFlags": [
-                    "cultThoughts"
+                    "canThrowRocks"
                 ]
             },
             {
+                "addsFlags": [],
                 "dest": "87790",
-                "label": "return to the nest"
+                "label": "return to the nest",
+                "needsFlags": []
+            },
+            {
+                "addsFlags": [
+                    "haveMetAnimals"
+                ],
+                "dest": "23888",
+                "label": "Look for animals",
+                "needsFlags": [
+                    "!haveMetAnimals"
+                ]
             }
         ],
         "id": "90619",
@@ -3047,8 +4024,10 @@ export const tree: Tree = {
     "91471": {
         "actions": [
             {
+                "addsFlags": [],
                 "dest": "58259",
-                "label": "Next"
+                "label": "Next",
+                "needsFlags": []
             }
         ],
         "id": "91471",
@@ -3125,12 +4104,16 @@ export const tree: Tree = {
     "94709": {
         "actions": [
             {
+                "addsFlags": [],
                 "dest": "91471",
-                "label": "Martini"
+                "label": "Martini",
+                "needsFlags": []
             },
             {
+                "addsFlags": [],
                 "dest": "46692",
-                "label": "Cosmopolitan"
+                "label": "Cosmopolitan",
+                "needsFlags": []
             }
         ],
         "id": "94709",
@@ -3162,7 +4145,7 @@ export const tree: Tree = {
             ],
             "bg": "bg/bar.png"
         },
-        "text": "\"That's great!\" the strange panda says. \"Would you like a martini or a cosmopolitan?\" "
+        "text": "\"Sure thing!\" the strange panda says. \"Would you like a martini or a cosmopolitan?\" "
     },
     "95956": {
         "actions": [
@@ -3200,12 +4183,14 @@ export const tree: Tree = {
     "95982": {
         "actions": [
             {
-                "dest": "90619",
-                "label": "Follow the tunnel"
+                "addsFlags": [],
+                "dest": "64950",
+                "label": "Follow the tunnel",
+                "needsFlags": []
             }
         ],
         "id": "95982",
-        "label": "Rat Tunnel",
+        "label": "Right Tunnel",
         "scene": {
             "actors": [
                 {
@@ -3283,6 +4268,6 @@ export const tree: Tree = {
             ],
             "bg": "bg/gray.png"
         },
-        "text": "You arrive in a sewer system tunnel! You hear jungle sounds from the other end and there's only one way to go."
+        "text": "You turn right and follow the rights down the tunnel."
     }
 };

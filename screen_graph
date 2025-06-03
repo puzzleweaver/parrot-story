@@ -17,6 +17,7 @@ digraph {
 	13817 [label="\"Receive Hamster Gift\""]
 	13849 [label="\"Shock\""]
 	14923 [label="\"Koala Cult Talk 3 \""]
+	17556 [label="\"Koala Follow Up\""]
 	18632 [label="\"Nothing found in fountain 2\""]
 	18822 [label="\"Inside bar\""]
 	18968 [label="\"Volcano gets rocks\""]
@@ -24,7 +25,9 @@ digraph {
 	20907 [label="\"Jungle animals encounter\""]
 	22555 [label="\"You take lilac\""]
 	22841 [label="\"Hotel pool\""]
+	23888 [label="\"Meet animals first time\""]
 	23991 [label="\"Keycard front\""]
+	26526 [label="\"City Fountain Visit Again\""]
 	27438 [label="\"Volcano Destruction\"" color=red]
 	27595 [label="\"Hotel exterior\""]
 	28006 [label="\"Embarassed\""]
@@ -87,8 +90,10 @@ digraph {
 	95982 [label="\"Rat Tunnel\""]
 	0 -> 71284 [label="Let's go!"]
 	1826 -> 85550 [label="leave the dachshund for now"]
-	2739 -> 14923 [label="Continue talking to koala"]
-	2739 -> 20907 [label="Wander jungle to get away from this conversation"]
+	2739 -> 14923 [label="Continue talking to koala
+(if koalaHasTalkedTwice,!koalaHasGoneOffRails)
+Adds koalaHasGoneOffRails"]
+	2739 -> 20907 [label="Return to animals to get away from this conversation"]
 	2839 -> 38201 [label=Next]
 	4443 -> 49884 [label="..."]
 	5565 -> 13097 [label="Leave the store! You're so embarassed!"]
@@ -117,11 +122,16 @@ Adds youHaveDogBone"]
 	13631 -> 85550 [label="Go to dog park"]
 	13631 -> 61921 [label="Go to bar"]
 	13631 -> 13097 [label="Go to flower shop"]
-	13631 -> 10255 [label="Visit city fountain"]
+	13631 -> 10255 [label="Visit city fountain
+(if !haveSeenFountain)
+Adds haveSeenFountain"]
+	13631 -> 26526 [label="Visit city fountain again
+(if haveSeenFountain)"]
 	13817 -> 23991 [label="Inspect Keycard"]
 	13817 -> 56699 [label="Say \"Thanks!\""]
 	13849 -> 51350 [label=Next]
 	14923 -> 20907 [label="Back to the animals"]
+	17556 -> 20907 [label="Return to other animals"]
 	18632 -> 10255 [label="Exit the Water"]
 	18822 -> 65138 [label="Ask for a drink"]
 	18822 -> 47626 [label="Use their bathroom"]
@@ -129,18 +139,33 @@ Adds youHaveDogBone"]
 	18968 -> 47389 [label="Next. No other options."]
 	19418 -> 9785 [label="Follow the rats"]
 	19418 -> 18822 [label="Leave the Bathroom"]
-	20907 -> 87811 [label="Play with the jaguar"]
+	20907 -> 87811 [label="Play with the jaguar
+(if !jaguarTired)
+Adds jaguarTired"]
 	20907 -> 78752 [label="Play with the small man"]
-	20907 -> 48268 [label="Play with the koala"]
+	20907 -> 48268 [label="Play with the koala
+(if !koalaPlayedWith)
+Adds koalaPlayedWith"]
 	20907 -> 64647 [label="Talk to the koala
 (if !koalaHasTalked)
 Adds koalaHasTalked"]
 	20907 -> 90619 [label="Wander the jungle some more"]
+	20907 -> 2739 [label="Talk to the koala again
+(if koalaHasTalked,!koalaHasTalkedTwice)
+Adds koalaHasTalkedTwice,canThrowRocks"]
+	20907 -> 14923 [label="Talk to the koala again
+(if koalaHasTalkedTwice,!koalaHasGoneOffRails)
+Adds koalaHasGoneOffRails"]
+	20907 -> 17556 [label="Talk to the koala again
+(if koalaHasGoneOffRails)"]
 	22555 -> 40581 [label=Next]
 	22841 -> 59840 [label="Back to Hotel Lobby"]
 	22841 -> 79680 [label="Go into the pool"]
+	23888 -> 20907 [label=Next]
 	23991 -> 56699 [label="Say \"Thanks!\""]
 	23991 -> 53122 [label="Flip Keycard Over"]
+	26526 -> 11989 [label="Dig Through Fountain"]
+	26526 -> 13631 [label="Wander city again"]
 	27595 -> 59840 [label="Go inside"]
 	27595 -> 13631 [label="Wander city instead"]
 	28006 -> 59840 [label="Trail Off"]
@@ -173,7 +198,6 @@ Adds hasRatVision"]
 (if holeDiscovered)"]
 	47893 -> 28006 [label=Next]
 	48059 -> 87790 [label="inspection complete"]
-	48268 -> 64647 [label="Talk to it instead"]
 	48268 -> 20907 [label="Back to the animals"]
 	49719 -> 47586 [label="Oh My!!!"]
 	49884 -> 49719 [label="..."]
@@ -200,7 +224,7 @@ Adds askGFQuestion"]
 	61921 -> 13631 [label="Wander city"]
 	62947 -> 85550 [label="Back to Dog Park"]
 	64647 -> 2739 [label="Say \"Sure, what did you want to tell me?\"
-Adds canThrowRocks"]
+Adds canThrowRocks,koalaHasTalkedTwice"]
 	64647 -> 20907 [label="Say \"No Thanks\""]
 	65138 -> 94709 [label="Agree to his Terms"]
 	65138 -> 18822 [label="Refuse his Terms"]
@@ -243,13 +267,17 @@ Adds hasDaffodil,hasFlower"]
 Adds sawEgg"]
 	87790 -> 90619 [label="Climb Down Tree"]
 	87811 -> 57590 [label=Next]
-	90619 -> 20907 [label="Look for animals"]
+	90619 -> 20907 [label="Visit animals again
+(if haveMetAnimals)"]
 	90619 -> 55660 [label="Go to volcano
-(if !cultThoughts)"]
+(if !canThrowRocks)"]
 	90619 -> 45463 [label="Go to city"]
 	90619 -> 74372 [label="Go to volcano
-(if cultThoughts)"]
-	90619 -> 87790 [label="return to the nest"]
+(if canThrowRocks)"]
+	90619 -> 87790 [label="Return to the nest"]
+	90619 -> 23888 [label="Look for animals
+(if !haveMetAnimals)
+Adds haveMetAnimals"]
 	91030 -> 43130 [label="Oh no!"]
 	91471 -> 58259 [label=Next]
 	91498 -> 10255 [label=Nice]
