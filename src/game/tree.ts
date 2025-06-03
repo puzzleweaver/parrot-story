@@ -457,12 +457,16 @@ export const tree: Tree = {
     "13097": {
         "actions": [
             {
+                "addsFlags": [],
                 "dest": "13631",
-                "label": "Leave and Wander the City"
+                "label": "Leave and Wander the City",
+                "needsFlags": []
             },
             {
+                "addsFlags": [],
                 "dest": "40581",
-                "label": "Go in!"
+                "label": "Go in!",
+                "needsFlags": []
             }
         ],
         "id": "13097",
@@ -478,7 +482,7 @@ export const tree: Tree = {
                 },
                 {
                     "angle": 0,
-                    "animation": "still",
+                    "animation": "hop_fast",
                     "img": "setting/flowerShop.png",
                     "scale": 1.05,
                     "x": 0.5,
