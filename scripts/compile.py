@@ -3,7 +3,6 @@ import json
 from file import File
 
 dirs = File.getDirectories("public/images")
-print(dirs)
 
 def getWords(path):
     return path.split("/")[2:]
@@ -38,7 +37,10 @@ for directory in dirs:
 treeJson = json.dumps(assetTree)
 listJson = json.dumps(assetList)
 
-print("-"*100)
-print(f"export const Assets = {treeJson};")
-print(f"export const AssetList: Asset[] = {listJson};")
-print("-"*100)
+fileContents = f"""
+export const Assets = {treeJson};
+export const AssetList: Asset[] = {listJson};
+"""
+
+File.writeText("src/game/generated_asset.ts", fileContents)
+print("Updated src/game/generated_asset.ts.")

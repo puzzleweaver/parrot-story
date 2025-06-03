@@ -1,6 +1,6 @@
 
 import { type Actor } from "./actor";
-import { Assets } from "./asset";
+import { Assets } from "./generated_asset";
 
 export type Scene = {
     bg: string;
