@@ -2,8 +2,11 @@
 import { ref, watch, type Ref } from 'vue';
 import { animationStyles, type Actor, type AnimationStyle } from '../game/actor';
 import { AssetList } from "../game/generated_asset";
+import FlagListInput from './FlagListInput.vue';
+import type { Tree } from '../game/tree-type';
 
 const props = defineProps<{
+    tree: Tree,
     index: number,
     actor: Actor,
     setActor: (newActor: Actor) => void,
@@ -65,51 +68,72 @@ watch(flipped, () => props.setActor({
     flipped: flipped.value,
 }));
 
+const neededFlags: Ref<string[]> = ref(props.actor.needsFlags ?? []);
+watch(neededFlags, () => props.setActor({
+    ...props.actor,
+    needsFlags: neededFlags.value,
+}));
+
 watch(props, setFromProps);
 setFromProps();
 </script>
 
 <template>
-    <div style="background-color: #eee; display: inline-block">
-        Actor {{ index + 1 }}
-        <img :src="`/images/${img}`"
-            style="background-color: white; height: 2rem; width: auto; vertical-align: text-bottom" />
-        <br>
+    <div style="background-color: #eee; display: flex; flex-direction: row; gap: 5px">
 
-        <div style="text-align: center">
-            <button @click="() => switchActors(index, -1)">&lt;</button>
-            &nbsp;
-            <button @click="() => removeActor(index)">X</button>
-            &nbsp;
-            <button @click="() => switchActors(index, 1)">&gt;</button>
-        </div>
+        <!-- arrows-->
+        <span class="column" style="justify-content: center">
+            <button @click="() => switchActors(index, -1)">&#x2191;</button>
+            <button @click="() => switchActors(index, 1)">&#x2193;</button>
+        </span>
 
-        <input v-model="img" list="asset-list" />
-        <input type="checkbox" v-model="flipped" /> flipped
-        <datalist id="asset-list">
-            <option v-for="asset in AssetList" :value="asset" />
-        </datalist>
-        <br>
+        <!-- filename input, flipping, preview-->
+        <span class="column flag-box">
+            <span class="row">
+                Actor {{ index + 1 }}&nbsp;
+                <img :src="`/images/${img}`" style="background-color: white; height: 2rem; width: auto" />
+                <span>
+                    <input type="checkbox" v-model="flipped" /> flip
+                </span>
+                &nbsp;
+                <button @click="() => removeActor(index)" style="width: 2em">X</button>
+            </span>
 
-        <div style="display: inline-flex; flex-direction: column">
+            <input v-model="img" list="asset-list" />
             <span>
-                x: <input v-model="x" type="range" min="0" max="1" step="0.005" />
             </span>
-            <span>
-                y: <input v-model="y" type="range" min="0" max="1" step="0.005" />
-            </span>
-            <span>
-                scale: <input v-model="scale" type="range" min="0.1" max="2.0" step="0.005" />
-            </span>
-            <span>
-                angle: <input v-model="angle" type="range" min="-3.14" max="3.14" step="0.005" />
-            </span>
-            <span>
-                animate:
+
+            <span class="row">
+                anim.
                 <select v-model="actor.animation">
                     <option v-for="style in animationStyles" :value="style">{{ style ?? "wobble_slow" }}</option>
                 </select>
             </span>
-        </div>
+
+            <datalist id="asset-list">
+                <option v-for="asset in AssetList" :value="asset" />
+            </datalist>
+        </span>
+
+
+        <span class="column flag-box">
+            <span class="row">
+                x: <input v-model="x" type="range" min="0" max="1" step="0.005" />
+            </span>
+            <span class="row">
+                y: <input v-model="y" type="range" min="0" max="1" step="0.005" />
+            </span>
+            <span class="row">
+                scale: <input v-model="scale" type="range" min="0.1" max="2.0" step="0.005" />
+            </span>
+            <span class="row">
+                angle: <input v-model="angle" type="range" min="-3.14" max="3.14" step="0.005" />
+            </span>
+        </span>
+        <span class="column flag-box">
+            Needs Flags
+            <FlagListInput :tree="tree" :flags="neededFlags" :set-flags="(newFlags) => neededFlags = newFlags" />
+        </span>
+
     </div>
 </template>

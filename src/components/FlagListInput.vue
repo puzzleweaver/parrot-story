@@ -40,5 +40,6 @@ const allFlags = computed(() => TreeUtil.getAllFlags(props.tree));
     </div>
     <datalist id="all-flags-list">
         <option v-for="flag in allFlags" :value="flag" />
+        <option v-for="flag in allFlags" :value="`!${flag}`" />
     </datalist>
 </template>

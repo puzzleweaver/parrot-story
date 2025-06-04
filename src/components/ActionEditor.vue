@@ -118,53 +118,53 @@ const screenNamesById = computed(() => {
 </script>
 
 <template>
-    <div style="border: 1px solid black; width: 20vw">
+    <div class="row" style="gap: 5px; border: 1px solid black">
+        <!-- arrows-->
+        <span class="column" style="justify-content: center">
+            <button @click="() => switchActions(index, -1)">&#x2191;</button>
+            <button @click="() => switchActions(index, 1)">&#x2193;</button>
+        </span>
 
-        <div style="text-align: center">
-            {{ index + 1 }}
-            <button @click="() => props.switchActions(index, -1)">&lt;</button>
-            &nbsp;
-            <button @click="() => props.removeAction(index)">X</button>
-            &nbsp;
-            <button @click="() => props.switchActions(index, 1)">&gt;</button>
-        </div>
+        <span class="column">
+            <span class="flag-box">
+                Label <input v-model="label" style="display: inline" />
+            </span>
+            <div class="flag-box">
+                Needs Flags
+                <FlagListInput :tree="tree" :flags="neededFlags" :set-flags="(newFlags) => neededFlags = newFlags" />
+            </div>
+        </span>
+        <span class="column">
+            <div class="flag-box" style="display: flex; flex-direction: row; gap: 10px">
 
-        <input v-model="label" style="display: inline" />
-        Outcome
-        <div style="display: flex; flex-direction: row; gap: 10px   ">
+                <span>Outcome
+                    <input v-model="destName" list="screen-names" placeholder="enter existing screen label..." />
+                    <datalist id="screen-names">
+                        <option v-for="name in Object.values(screenNamesById)" :value="name">
+                            {{ name }}
+                        </option>
+                        <option :value="undefined">
+                            unchosen (!)
+                        </option>
+                    </datalist>
 
-            <input v-model="destName" list="screen-names" placeholder="enter existing screen label..." />
-            <datalist id="screen-names">
-                <option v-for="name in Object.values(screenNamesById)" :value="name">
-                    {{ name }}
-                </option>
-                <option :value="undefined">
-                    unchosen (!)
-                </option>
-            </datalist>
-        </div>
-        <div v-if="dest === undefined">
-            <button @click="linkNewScreen" style="width: 100%">
-                Link to New Empty Screen
-            </button>
-        </div>
-        <div v-else>
-            <button @click="toDest()" style="width: 100%">
-                Screen "{{ tree[dest].label }}"
-                <SceneDisplay :scene="tree[dest].scene" :animate="false" :low-res="true" />
-            </button>
-            <button style="width: 100%" @click="linkDuplicate">Duplicate this Screen</button>
-        </div>
-
-        <div style="background-color: #ddd; margin: 5px">
-            Sets Flags
-            <FlagListInput :tree="tree" :flags="addedFlags" :set-flags="(newFlags) => addedFlags = newFlags" />
-        </div>
-
-        <div style="background-color: #ddd; margin: 5px">
-            Needs Flags
-            <FlagListInput :tree="tree" :flags="neededFlags" :set-flags="(newFlags) => neededFlags = newFlags" />
-        </div>
+                    <div v-if="dest === undefined" style="padding: 5px">
+                        <button @click="linkNewScreen" style="width: 100%">
+                            Link to New Empty Screen
+                        </button>
+                    </div>
+                    <div v-else style="padding: 5px">
+                        <button @click="toDest()"
+                            style="display: inline-flex; flex-direction: row; width: 100%; text-align: center">
+                            <SceneDisplay style="width: 4em" :scene="tree[dest].scene" :animate="false"
+                                :low-res="true" />
+                            Screen "{{ tree[dest].label }}"
+                        </button>
+                        <button style="width: 100%; " @click="linkDuplicate">Duplicate this Screen</button>
+                    </div>
+                </span>
+            </div>
+        </span>
 
     </div>
 </template>

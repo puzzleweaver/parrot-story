@@ -1,4 +1,4 @@
-import type { Action } from "./action";
+import { ActionUtil, type Action } from "./action";
 import { SceneUtil, type Scene } from "./scene";
 import type { ScreenId, Tree } from "./tree-type";
 
@@ -12,6 +12,7 @@ export type Screen = {
     scene: Scene;
     text: string;
     actions: Action[];
+    addsFlags?: string[];
 };
 
 export class ScreenUtil {
@@ -38,5 +39,12 @@ export class ScreenUtil {
             }
         }
         return ids;
+    }
+
+    static getAllFlags(screen: Screen): string[] {
+        var ret: string[] = SceneUtil.getAllFlags(screen.scene);
+        for (const action of screen.actions)
+            ret = [...ret, ...ActionUtil.getFlagsUsed(action)];
+        return ret;
     }
 }

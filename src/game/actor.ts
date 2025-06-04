@@ -8,6 +8,7 @@ export type Actor = {
     angle: number;
     animation?: AnimationStyle;
     flipped?: boolean;
+    needsFlags?: string[];
 };
 
 const urlParams = new URLSearchParams(window.location.search);

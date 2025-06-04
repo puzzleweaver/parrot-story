@@ -1,5 +1,4 @@
-import { ActionUtil } from "./action";
-import type { Screen } from "./screen";
+import { ScreenUtil, type Screen } from "./screen";
 import { tree } from "./tree";
 
 export type ScreenId = number | string;
@@ -34,12 +33,7 @@ export const tree: Tree = ${json};
     static getAllFlags(tree: Tree) {
         var ret: string[] = [];
         for (const screen of Object.values(tree)) {
-            for (const action of screen.actions) {
-                ret = [
-                    ...ret,
-                    ...ActionUtil.getFlagsUsed(action),
-                ];
-            }
+            ret = [...ret, ...ScreenUtil.getAllFlags(screen)];
         }
         return [...new Set(ret)];
     }

@@ -2,11 +2,12 @@
 import { ref, watch } from 'vue';
 import { type Scene } from '../game/scene';
 import { Assets } from '../game/generated_asset';
-import SceneDisplay from './SceneDisplay.vue';
 import ActorEditor from './ActorEditor.vue';
 import { type Actor, ActorUtil as ActorUtil } from '../game/actor';
+import type { Tree } from '../game/tree-type';
 
 const props = defineProps<{
+    tree: Tree,
     scene: Scene,
     setScene: (newScene: Scene) => void,
 }>();
@@ -48,26 +49,23 @@ const switchActors = (index: number, offset: number) => {
 </script>
 
 <template>
-    <div class="display">
-        <div style="position: fixed; right: 20px; top: 20px; width: 30vw; height: 20vh">
-            <SceneDisplay :scene="scene" :animate="true" :low-res="false" />
-        </div>
-        <p style="background-color: #eee; width: 60vw">
-            Background:
-            <select v-model="background">
-                <option v-for="src in Assets.bg" :value="src">{{ src }}</option>
-            </select>
-        </p>
+    <div>
+        Background:
+        <select v-model="background">
+            <option v-for="src in Assets.bg" :value="src">{{ src }}</option>
+        </select>
+    </div>
+    <p>
 
         Edit Actors<br>
-        <div style="display: grid; grid-template-columns: repeat(4, 1fr); width: 90%">
+        <span>
             <ActorEditor v-for="index in Object.keys(actors).map(index => parseInt(index))" :index="index"
                 :set-actor="(newActor: Actor) => setActor(index, newActor)" :actor="actors[index]"
-                :remove-actor="removeActor" :switch-actors="switchActors"
+                :remove-actor="removeActor" :switch-actors="switchActors" :tree="tree"
                 style="padding: 5px; margin: 10px; border: 1px solid black" />
-            <button @click="addActor">
+            <button @click="addActor" style="width: 100%">
                 + New Actor
             </button>
-        </div>
-    </div>
+        </span>
+    </p>
 </template>

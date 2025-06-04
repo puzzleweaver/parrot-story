@@ -1,0 +1,14 @@
+.row {
+    display: inline-flex;
+    flex-direction: row;
+}
+
+.column {
+    display: inline-flex;
+    flex-direction: column;
+}
+
+.flag-box {
+    background-color: #ddd;
+    margin: 5px
+}

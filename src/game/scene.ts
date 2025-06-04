@@ -14,4 +14,11 @@ export class SceneUtil {
             actors: [],
         };
     }
+
+    static getAllFlags(scene: Scene): string[] {
+        var ret: string[] = [];
+        for (const actor of scene.actors)
+            ret = [...ret, ...(actor.needsFlags ?? [])];
+        return ret;
+    }
 }

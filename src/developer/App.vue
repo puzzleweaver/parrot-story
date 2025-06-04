@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import GlobalEditor from '../components/GlobalEditor.vue';
 import './simple.css';
+import './style.css';
 </script>
 
 <template>
