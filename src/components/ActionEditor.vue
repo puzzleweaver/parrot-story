@@ -163,7 +163,11 @@ const screenNamesById = computed(() => {
                         <button style="width: 100%; " @click="linkDuplicate">Duplicate this Screen</button>
                     </div>
                 </span>
+
             </div>
+        </span>
+        <span>
+            <button class="angry" @click="() => removeAction(index)">X</button>
         </span>
 
     </div>

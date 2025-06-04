@@ -1,3 +1,4 @@
+import { FlagUtil } from "./flag";
 import type { ScreenId } from "./tree-type";
 
 /**
@@ -39,16 +40,6 @@ export class ActionUtil {
             console.log(`Hiding "${action.label}" because of undefined destination`);
             return false;
         }
-        const neededFlags: string[] = action.needsFlags ?? [];
-        for (const neededFlag of neededFlags) {
-            if (neededFlag.length === 0) continue;
-            if (neededFlag.charAt(0) === "!") {
-                const excludedFlag = neededFlag.substring(1);
-                if (flags.includes(excludedFlag)) return false;
-            } else {
-                if (!flags.includes(neededFlag)) return false;
-            }
-        }
-        return true;
+        return FlagUtil.matches(action.needsFlags ?? [], flags);
     }
 };

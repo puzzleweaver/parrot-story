@@ -1,15 +1,15 @@
 <script setup lang="ts">
 import { ref, watch, type Ref } from 'vue';
-import { type Screen } from '../game/screen';
+import { type FlaggedText, type Screen } from '../game/screen';
 import SceneEditor from './SceneEditor.vue';
 import type { Scene } from '../game/scene';
 import { ActionUtil, type Action } from '../game/action';
 import ActionEditor from './ActionEditor.vue';
 import { type ScreenId, type Tree } from '../game/tree-type';
 import SaveButton from './SaveButton.vue';
-import IncomingOptions from './IncomingOptions.vue';
 import FlagListInput from './FlagListInput.vue';
 import ScreenEditorPreview from './ScreenEditorPreview.vue';
+import VariantsListInput from './VariantsListInput.vue';
 
 const props = defineProps<{
     screen: Screen
@@ -49,6 +49,14 @@ watch(addedFlags, () => {
     props.saveScreen({
         ...props.screen,
         addsFlags: addedFlags.value,
+    });
+})
+
+const textVariants: Ref<FlaggedText[]> = ref(props.screen.textVariants ?? []);
+watch(textVariants, () => {
+    props.saveScreen({
+        ...props.screen,
+        textVariants: textVariants.value,
     });
 })
 
@@ -103,34 +111,34 @@ const addAction = () => {
 </script>
 
 <template>
-    <div style="position: fixed; right: 20px; top: 20px; width: 30vw; height: 100%">
-        <ScreenEditorPreview :tree="tree" :screen="screen" />
+    <div style="position: fixed; right: 20px; top: 20px; width: 36vw; height: 100%; overflow: scroll">
+        <ScreenEditorPreview :go-to-screen="goToScreen" :tree="tree" :screen="screen" />
     </div>
     <div style="width: 60vw">
         <p>
             <button @click="() => props.goBack()">Back to Global Editor</button>
             &nbsp;
             <SaveButton :tree="tree" />
-            <sub style="float: right">screen id: {{ screen.id }}...</sub>
         </p>
 
         <p>
-            <IncomingOptions :screen="props.screen" :tree="tree" :go-to-screen="props.goToScreen" />
-        </p>
-
-        <p>
-            Label&nbsp;<input v-model="label" />
+            Screen Label&nbsp;<input v-model="label" /> (never shown to user)
             <br>
         </p>
-        <p class="flag-box">
+        <p>
+        <div class="flag-box">
             Sets Flags
             <FlagListInput :tree="tree" :flags="addedFlags" :set-flags="(newFlags) => addedFlags = newFlags" />
+        </div>
         </p>
         <p>
-            <span style="width: 60vw; padding: 10px; background-color: #eee">
-                Narration:
-                <textarea v-model="text" rows="10" />
+            <span style="width: 60vw">
+                Narration
+                <textarea v-model="text" rows="3" />
             </span>
+            Narration Variants
+            <VariantsListInput :tree="tree" :variants="textVariants"
+                :set-variants="(newVariants) => textVariants = newVariants" />
         </p>
 
         <p>

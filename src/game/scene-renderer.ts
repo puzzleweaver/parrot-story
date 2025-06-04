@@ -1,4 +1,5 @@
 import { ActorUtil, type Actor } from "./actor";
+import { FlagUtil } from "./flag";
 import { AssetList } from "./generated_asset";
 import type { Scene } from "./scene";
 
@@ -34,11 +35,12 @@ export class SceneRenderer {
         this.ctx = canvas.getContext("2d") as CanvasRenderingContext2D;
     }
 
-    async render(scene: Scene): Promise<void> {
+    async render(scene: Scene, flags: string[] = []): Promise<void> {
         this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
         await this.drawBackground(scene.bg);
         for (const actor of scene.actors) {
-            await this.drawActor(actor);
+            if (FlagUtil.matches(actor.needsFlags, flags))
+                await this.drawActor(actor);
         }
     }
 

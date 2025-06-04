@@ -95,8 +95,6 @@ setFromProps();
                 <span>
                     <input type="checkbox" v-model="flipped" /> flip
                 </span>
-                &nbsp;
-                <button @click="() => removeActor(index)" style="width: 2em">X</button>
             </span>
 
             <input v-model="img" list="asset-list" />
@@ -135,5 +133,8 @@ setFromProps();
             <FlagListInput :tree="tree" :flags="neededFlags" :set-flags="(newFlags) => neededFlags = newFlags" />
         </span>
 
+        <span>
+            <button class="angry" @click="() => removeActor(index)">X</button>
+        </span>
     </div>
 </template>

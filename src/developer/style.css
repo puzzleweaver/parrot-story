@@ -12,3 +12,13 @@
     background-color: #ddd;
     margin: 5px
 }
+
+.angry {
+    background-color: #c00;
+    border-color: #c00;
+}
+
+.angry:enabled:hover {
+    background-color: red;
+    border-color: red;
+}

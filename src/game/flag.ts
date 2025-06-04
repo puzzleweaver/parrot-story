@@ -10,6 +10,19 @@ export class FlagUtil {
         return flag;
     }
 
+    static isNegative(flag: string): boolean {
+        return flag !== "" && flag.charAt(0) === "!";
+    }
+
+    static matches(requirements: string[] = [], flags: string[]): boolean {
+        for (const requirement of requirements) {
+            const isNegative = FlagUtil.isNegative(requirement);
+            const flag = FlagUtil.unnegate(requirement);
+            if (isNegative === flags.includes(flag)) return false;
+        }
+        return true;
+    }
+
     static collapse(flags: string[]): string[] {
         return [...new Set(flags.map(FlagUtil.unnegate))];
     }

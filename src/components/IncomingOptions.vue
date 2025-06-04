@@ -31,17 +31,13 @@ const incomingOptions = computed(() => {
 </script>
 
 <template>
-    Options that point here:
-    <br>
     <span v-if="incomingOptions.length === 0" style="color: red">(none)</span>
     <span>
-        <button style="margin: 5px; display: inline-flex; flex-direction: row" v-for="option in incomingOptions"
-            @click="props.goToScreen(option.screenId)">
-            <SceneDisplay style="width: 4em" :scene="tree[option.screenId].scene" :animate="false" :low-res="true" />
-            <div>
-                Selected "{{ tree[option.screenId].actions[option.actionIndex].label }}"
-                <br>
-                From Screen "{{ tree[option.screenId].label }}"
+        <button style="margin: 5px" v-for="option in incomingOptions" @click="props.goToScreen(option.screenId)">
+            <SceneDisplay style="width: 5em" :scene="tree[option.screenId].scene" :animate="false" :low-res="true" />
+            <div style="font-size: 0.6em">
+                {{ tree[option.screenId].label }}:<br>
+                {{ tree[option.screenId].actions[option.actionIndex].label }}
             </div>
         </button>
     </span>

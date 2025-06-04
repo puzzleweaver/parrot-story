@@ -1,4 +1,5 @@
 import { ActionUtil, type Action } from "./action";
+import { FlagUtil } from "./flag";
 import { SceneUtil, type Scene } from "./scene";
 import type { ScreenId, Tree } from "./tree-type";
 
@@ -11,8 +12,15 @@ export type Screen = {
     label: string;
     scene: Scene;
     text: string;
+    textVariants?: FlaggedText[];
     actions: Action[];
     addsFlags?: string[];
+};
+
+// type for text variants that depend on flags.
+export type FlaggedText = {
+    text: string;
+    flags: string[];
 };
 
 export class ScreenUtil {
@@ -45,6 +53,16 @@ export class ScreenUtil {
         var ret: string[] = SceneUtil.getAllFlags(screen.scene);
         for (const action of screen.actions)
             ret = [...ret, ...ActionUtil.getFlagsUsed(action)];
+        for (const variant of screen.textVariants ?? [])
+            ret = [...ret, ...variant.flags];
         return ret;
+    }
+
+    static getText(screen: Screen, flags: string[]): string {
+        for (const variant of screen.textVariants ?? []) {
+            if (FlagUtil.matches(variant.flags, flags))
+                return variant.text;
+        }
+        return screen.text;
     }
 }

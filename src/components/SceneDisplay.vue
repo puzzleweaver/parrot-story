@@ -5,6 +5,7 @@ import { SceneRenderer } from '../game/scene-renderer';
 
 const props = defineProps<{
     scene: Scene,
+    flags?: string[],
     animate: boolean,
     lowRes: boolean,
 }>();
@@ -22,7 +23,7 @@ const getCanvas = (): HTMLCanvasElement => {
 var interval: number | undefined = undefined;
 
 const render = () => {
-    renderer?.render(props.scene).then(() => {
+    renderer?.render(props.scene, props.flags).then(() => {
         canvasSrc.value = renderer?.canvas.toDataURL("png") ?? "";
     });
 }
