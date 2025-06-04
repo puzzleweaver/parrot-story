@@ -14,7 +14,7 @@ export class FlagUtil {
         return flag !== "" && flag.charAt(0) === "!";
     }
 
-    static matches(requirements: string[] = [], flags: string[]): boolean {
+    static matches(requirements: string[] = [], flags: string[] = []): boolean {
         for (const requirement of requirements) {
             const isNegative = FlagUtil.isNegative(requirement);
             const flag = FlagUtil.unnegate(requirement);

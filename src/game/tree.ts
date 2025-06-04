@@ -4,7 +4,6 @@ export const tree: Tree = {
     "0": {
         "actions": [
             {
-                "addsFlags": [],
                 "dest": "71284",
                 "label": "Let's go!",
                 "needsFlags": []
@@ -47,6 +46,7 @@ export const tree: Tree = {
                 "label": "leave the dachshund for now"
             }
         ],
+        "addsFlags": [],
         "id": "1826",
         "label": "Dachshund rejects martini",
         "scene": {
@@ -74,22 +74,22 @@ export const tree: Tree = {
     "2739": {
         "actions": [
             {
-                "addsFlags": [
-                    "koalaHasGoneOffRails"
-                ],
                 "dest": "14923",
                 "label": "Continue talking to koala",
                 "needsFlags": [
-                    "koalaHasTalkedTwice",
-                    "!koalaHasGoneOffRails"
+                    "talkedToKoala2",
+                    "!talkedToKoala3"
                 ]
             },
             {
-                "addsFlags": [],
                 "dest": "20907",
                 "label": "Return to animals to get away from this conversation",
                 "needsFlags": []
             }
+        ],
+        "addsFlags": [
+            "talkedToKoala2",
+            "canThrowRocks"
         ],
         "id": "2739",
         "label": "Koala Cult Talk 2",
@@ -115,6 +115,7 @@ export const tree: Tree = {
                 "label": "Next"
             }
         ],
+        "addsFlags": [],
         "id": "2839",
         "label": "Egg Hatching 3",
         "scene": {
@@ -135,12 +136,12 @@ export const tree: Tree = {
     "4443": {
         "actions": [
             {
-                "addsFlags": [],
                 "dest": "49884",
                 "label": "...",
                 "needsFlags": []
             }
         ],
+        "addsFlags": [],
         "id": "4443",
         "label": "Hotel Egg Hatching 1",
         "scene": {
@@ -164,6 +165,9 @@ export const tree: Tree = {
                 "dest": "13097",
                 "label": "Leave the store! You're so embarassed!"
             }
+        ],
+        "addsFlags": [
+            "askForPossumName"
         ],
         "id": "5565",
         "label": "Possum Offended",
@@ -193,12 +197,12 @@ export const tree: Tree = {
     "7769": {
         "actions": [
             {
-                "addsFlags": [],
                 "dest": "69799",
                 "label": "Next",
                 "needsFlags": []
             }
         ],
+        "addsFlags": [],
         "id": "7769",
         "label": "Rat Leader 1",
         "scene": {
@@ -218,35 +222,32 @@ export const tree: Tree = {
     "9403": {
         "actions": [
             {
-                "addsFlags": [],
                 "dest": "28035",
                 "label": "inspect drink",
                 "needsFlags": []
             },
             {
-                "addsFlags": [
-                    "meetTherapyMouse"
-                ],
                 "dest": "26946",
                 "label": "Say \"thanks!\" and leave bar",
                 "needsFlags": [
-                    "!meetTherapyMouse"
+                    "!metTherapyMouse"
                 ]
             },
             {
-                "addsFlags": [],
                 "dest": "94709",
                 "label": "Say \"thanks!\" and ask for another drink",
                 "needsFlags": []
             },
             {
-                "addsFlags": [],
                 "dest": "77796",
                 "label": "Say \"thanks!\" and leave the bar",
                 "needsFlags": [
-                    "meetTherapyMouse"
+                    "metTherapyMouse"
                 ]
             }
+        ],
+        "addsFlags": [
+            "haveCosmo"
         ],
         "id": "9403",
         "label": "bear pours cosmo",
@@ -289,20 +290,17 @@ export const tree: Tree = {
     "9785": {
         "actions": [
             {
-                "addsFlags": [
-                    "holeDiscovered"
-                ],
                 "dest": "87223",
                 "label": "Follow the rats through the hole",
                 "needsFlags": []
             },
             {
-                "addsFlags": [],
                 "dest": "18822",
                 "label": "Leave the Bathroom",
                 "needsFlags": []
             }
         ],
+        "addsFlags": [],
         "id": "9785",
         "label": "Discover hole",
         "scene": {
@@ -337,27 +335,27 @@ export const tree: Tree = {
     "10255": {
         "actions": [
             {
-                "addsFlags": [],
                 "dest": "11989",
                 "label": "Dig through the fountain and look for treasure",
                 "needsFlags": [
-                    "hasGlasses"
+                    "haveGlasses"
                 ]
             },
             {
-                "addsFlags": [],
                 "dest": "13631",
                 "label": "Wander the city again",
                 "needsFlags": []
             },
             {
-                "addsFlags": [],
                 "dest": "11989",
                 "label": "Dig through the fountain and look for treasure",
                 "needsFlags": [
-                    "!hasGlasses"
+                    "!haveGlasses"
                 ]
             }
+        ],
+        "addsFlags": [
+            "sawFountain"
         ],
         "id": "10255",
         "label": "City Fountain Arrival",
@@ -391,6 +389,7 @@ export const tree: Tree = {
                 "label": "Next"
             }
         ],
+        "addsFlags": [],
         "id": "11635",
         "label": "Doberman attack",
         "scene": {
@@ -411,24 +410,21 @@ export const tree: Tree = {
     "11989": {
         "actions": [
             {
-                "addsFlags": [],
                 "dest": "18632",
                 "label": "Next",
                 "needsFlags": [
-                    "hasGlasses"
+                    "haveGlasses"
                 ]
             },
             {
-                "addsFlags": [
-                    "hasGlasses"
-                ],
                 "dest": "91498",
                 "label": "Next",
                 "needsFlags": [
-                    "!hasGlasses"
+                    "!haveGlasses"
                 ]
             }
         ],
+        "addsFlags": [],
         "id": "11989",
         "label": "Digging through fountain",
         "scene": {
@@ -491,9 +487,6 @@ export const tree: Tree = {
     "12073": {
         "actions": [
             {
-                "addsFlags": [
-                    "youHaveDogBone"
-                ],
                 "dest": "78527",
                 "label": "Accept request"
             },
@@ -501,6 +494,9 @@ export const tree: Tree = {
                 "dest": "62947",
                 "label": "\"No thanks\""
             }
+        ],
+        "addsFlags": [
+            "talkedToBeagle"
         ],
         "id": "12073",
         "label": "Beagle asks for favor",
@@ -529,6 +525,7 @@ export const tree: Tree = {
                 "label": "Go in!"
             }
         ],
+        "addsFlags": [],
         "id": "13097",
         "label": "Flower shop exterior",
         "scene": {
@@ -563,48 +560,41 @@ export const tree: Tree = {
     "13631": {
         "actions": [
             {
-                "addsFlags": [],
                 "dest": "27595",
                 "label": "Go to hotel",
                 "needsFlags": []
             },
             {
-                "addsFlags": [],
                 "dest": "85550",
                 "label": "Go to dog park",
                 "needsFlags": []
             },
             {
-                "addsFlags": [],
                 "dest": "61921",
                 "label": "Go to bar",
                 "needsFlags": []
             },
             {
-                "addsFlags": [],
                 "dest": "13097",
                 "label": "Go to flower shop",
                 "needsFlags": []
             },
             {
-                "addsFlags": [
-                    "haveSeenFountain"
-                ],
                 "dest": "10255",
                 "label": "Visit city fountain",
                 "needsFlags": [
-                    "!haveSeenFountain"
+                    "!sawFountain"
                 ]
             },
             {
-                "addsFlags": [],
                 "dest": "26526",
                 "label": "Visit city fountain again",
                 "needsFlags": [
-                    "haveSeenFountain"
+                    "sawFountain"
                 ]
             }
         ],
+        "addsFlags": [],
         "id": "13631",
         "label": "City Hub",
         "scene": {
@@ -623,6 +613,9 @@ export const tree: Tree = {
                 "dest": "56699",
                 "label": "Say \"Thanks!\""
             }
+        ],
+        "addsFlags": [
+            "haveKeycard"
         ],
         "id": "13817",
         "label": "Receive Hamster Gift",
@@ -657,6 +650,7 @@ export const tree: Tree = {
                 "label": "Next"
             }
         ],
+        "addsFlags": [],
         "id": "13849",
         "label": "Shock",
         "scene": {
@@ -677,11 +671,14 @@ export const tree: Tree = {
     "14923": {
         "actions": [
             {
-                "addsFlags": [],
                 "dest": "20907",
                 "label": "Back to the animals",
                 "needsFlags": []
             }
+        ],
+        "addsFlags": [
+            "talkedToKoala3",
+            "talkedToKoala3"
         ],
         "id": "14923",
         "label": "Koala Cult Talk 3 ",
@@ -703,12 +700,12 @@ export const tree: Tree = {
     "17556": {
         "actions": [
             {
-                "addsFlags": [],
                 "dest": "20907",
                 "label": "Return to other animals",
                 "needsFlags": []
             }
         ],
+        "addsFlags": [],
         "id": "17556",
         "label": "Koala Follow Up",
         "scene": {
@@ -739,6 +736,7 @@ export const tree: Tree = {
                 "label": "Exit the Water"
             }
         ],
+        "addsFlags": [],
         "id": "18632",
         "label": "Nothing found in fountain 2",
         "scene": {
@@ -766,26 +764,24 @@ export const tree: Tree = {
     "18822": {
         "actions": [
             {
-                "addsFlags": [],
                 "dest": "65138",
                 "label": "Ask for a drink",
                 "needsFlags": []
             },
             {
-                "addsFlags": [],
                 "dest": "47626",
                 "label": "Use their bathroom",
                 "needsFlags": []
             },
             {
-                "addsFlags": [],
                 "dest": "61921",
                 "label": "Leave Bar",
                 "needsFlags": []
             }
         ],
+        "addsFlags": [],
         "id": "18822",
-        "label": "",
+        "label": "Inside Bar",
         "scene": {
             "actors": [
                 {
@@ -822,6 +818,7 @@ export const tree: Tree = {
                 "label": "Next. No other options."
             }
         ],
+        "addsFlags": [],
         "id": "18968",
         "label": "Volcano gets rocks",
         "scene": {
@@ -856,17 +853,18 @@ export const tree: Tree = {
     "19418": {
         "actions": [
             {
-                "addsFlags": [],
                 "dest": "9785",
                 "label": "Follow the rats",
                 "needsFlags": []
             },
             {
-                "addsFlags": [],
                 "dest": "18822",
                 "label": "Leave the Bathroom",
                 "needsFlags": []
             }
+        ],
+        "addsFlags": [
+            "haveRatVision"
         ],
         "id": "19418",
         "label": "rat vision discovered",
@@ -919,79 +917,61 @@ export const tree: Tree = {
     "20907": {
         "actions": [
             {
-                "addsFlags": [
-                    "jaguarTired"
-                ],
                 "dest": "87811",
                 "label": "Play with the jaguar",
                 "needsFlags": [
-                    "!jaguarTired"
+                    "!playedWithJaguar"
                 ]
             },
             {
-                "addsFlags": [],
                 "dest": "78752",
                 "label": "Play with the small man",
                 "needsFlags": []
             },
             {
-                "addsFlags": [
-                    "koalaPlayedWith"
-                ],
                 "dest": "48268",
                 "label": "Play with the koala",
                 "needsFlags": [
-                    "!koalaPlayedWith"
+                    "!playedWithKoala"
                 ]
             },
             {
-                "addsFlags": [
-                    "koalaHasTalked"
-                ],
                 "dest": "64647",
                 "label": "Talk to the koala",
                 "needsFlags": [
-                    "!koalaHasTalked"
+                    "!talkedToKoala"
                 ]
             },
             {
-                "addsFlags": [],
                 "dest": "90619",
                 "label": "Wander the jungle some more",
                 "needsFlags": []
             },
             {
-                "addsFlags": [
-                    "koalaHasTalkedTwice",
-                    "canThrowRocks"
-                ],
                 "dest": "2739",
                 "label": "Talk to the koala again",
                 "needsFlags": [
-                    "koalaHasTalked",
-                    "!koalaHasTalkedTwice"
+                    "talkedToKoala",
+                    "!talkedToKoala2"
                 ]
             },
             {
-                "addsFlags": [
-                    "koalaHasGoneOffRails"
-                ],
                 "dest": "14923",
                 "label": "Talk to the koala again",
                 "needsFlags": [
-                    "koalaHasTalkedTwice",
-                    "!koalaHasGoneOffRails"
+                    "talkedToKoala2",
+                    "!talkedToKoala3"
                 ]
             },
             {
-                "addsFlags": [],
                 "dest": "17556",
                 "label": "Talk to the koala again",
                 "needsFlags": [
-                    "koalaHasGoneOffRails"
+                    "talkedToKoala3"
                 ]
             }
         ],
+        "addsFlags": [],
         "id": "20907",
         "label": "Jungle animals encounter",
         "scene": {
@@ -1039,6 +1019,10 @@ export const tree: Tree = {
                 "label": "Next"
             }
         ],
+        "addsFlags": [
+            "haveLilac",
+            "haveFlower"
+        ],
         "id": "22555",
         "label": "You take lilac",
         "scene": {
@@ -1080,6 +1064,7 @@ export const tree: Tree = {
                 "label": "Go into the pool"
             }
         ],
+        "addsFlags": [],
         "id": "22841",
         "label": "Hotel pool",
         "scene": {
@@ -1114,12 +1099,12 @@ export const tree: Tree = {
     "23253": {
         "actions": [
             {
-                "addsFlags": [],
                 "dest": "37515",
                 "label": "Time to leave. You go back to where you came from.",
                 "needsFlags": []
             }
         ],
+        "addsFlags": [],
         "id": "23253",
         "label": "Cult masks on",
         "scene": {
@@ -1329,11 +1314,13 @@ export const tree: Tree = {
     "23888": {
         "actions": [
             {
-                "addsFlags": [],
                 "dest": "20907",
                 "label": "Next",
                 "needsFlags": []
             }
+        ],
+        "addsFlags": [
+            "metAnimals"
         ],
         "id": "23888",
         "label": "Meet animals first time",
@@ -1386,6 +1373,7 @@ export const tree: Tree = {
                 "label": "Flip Keycard Over"
             }
         ],
+        "addsFlags": [],
         "id": "23991",
         "label": "Keycard front",
         "scene": {
@@ -1405,18 +1393,17 @@ export const tree: Tree = {
     "26526": {
         "actions": [
             {
-                "addsFlags": [],
                 "dest": "11989",
                 "label": "Dig Through Fountain",
                 "needsFlags": []
             },
             {
-                "addsFlags": [],
                 "dest": "13631",
                 "label": "Wander city again",
                 "needsFlags": []
             }
         ],
+        "addsFlags": [],
         "id": "26526",
         "label": "City Fountain Visit Again",
         "scene": {
@@ -1445,16 +1432,17 @@ export const tree: Tree = {
     "26946": {
         "actions": [
             {
-                "addsFlags": [],
                 "label": "Inspect",
                 "needsFlags": []
             },
             {
-                "addsFlags": [],
                 "dest": "13631",
                 "label": "Shrug it off and wander city",
                 "needsFlags": []
             }
+        ],
+        "addsFlags": [
+            "metTherapyMouse"
         ],
         "id": "26946",
         "label": "Meet therapy mouse",
@@ -1483,6 +1471,7 @@ export const tree: Tree = {
     },
     "27438": {
         "actions": [],
+        "addsFlags": [],
         "endgame": "lose",
         "id": "27438",
         "label": "Volcano Destruction",
@@ -1504,18 +1493,17 @@ export const tree: Tree = {
     "27595": {
         "actions": [
             {
-                "addsFlags": [],
                 "dest": "59840",
                 "label": "Go inside",
                 "needsFlags": []
             },
             {
-                "addsFlags": [],
                 "dest": "13631",
                 "label": "Wander city instead",
                 "needsFlags": []
             }
         ],
+        "addsFlags": [],
         "id": "27595",
         "label": "Hotel exterior",
         "scene": {
@@ -1547,6 +1535,7 @@ export const tree: Tree = {
                 "label": "Trail Off"
             }
         ],
+        "addsFlags": [],
         "id": "28006",
         "label": "Embarassed",
         "scene": {
@@ -1571,6 +1560,7 @@ export const tree: Tree = {
                 "label": "Inspection Complete"
             }
         ],
+        "addsFlags": [],
         "id": "28035",
         "label": "Inspecting Cosmo",
         "scene": {
@@ -1590,18 +1580,17 @@ export const tree: Tree = {
     "29900": {
         "actions": [
             {
-                "addsFlags": [],
                 "dest": "37515",
                 "label": "Go back to the fork in the sewer system",
                 "needsFlags": []
             },
             {
-                "addsFlags": [],
                 "dest": "23253",
                 "label": "Continue watching",
                 "needsFlags": []
             }
         ],
+        "addsFlags": [],
         "id": "29900",
         "label": "Rat Leader 3 (copy)",
         "scene": {
@@ -1628,28 +1617,26 @@ export const tree: Tree = {
     "31710": {
         "actions": [
             {
-                "addsFlags": [],
                 "dest": "1826",
                 "label": "give dachshund martini",
                 "needsFlags": [
-                    "youHaveMartini"
+                    "haveMartini"
                 ]
             },
             {
-                "addsFlags": [],
                 "dest": "75760",
                 "label": "give dachshund cosmopolitan",
                 "needsFlags": [
-                    "youHaveCosmo"
+                    "haveCosmo"
                 ]
             },
             {
-                "addsFlags": [],
                 "dest": "85550",
                 "label": "Back to Dog Park",
                 "needsFlags": []
             }
         ],
+        "addsFlags": [],
         "id": "31710",
         "label": "Play with dachshund",
         "scene": {
@@ -1695,6 +1682,7 @@ export const tree: Tree = {
                 "label": "Oh my gosh!"
             }
         ],
+        "addsFlags": [],
         "id": "31726",
         "label": "Egg Hatching 1",
         "scene": {
@@ -1723,6 +1711,7 @@ export const tree: Tree = {
                 "label": "Take a bath"
             }
         ],
+        "addsFlags": [],
         "id": "34620",
         "label": "Hot Spring Bath",
         "scene": {
@@ -1746,6 +1735,7 @@ export const tree: Tree = {
                 "label": "What is your egg doing!"
             }
         ],
+        "addsFlags": [],
         "id": "35030",
         "label": "Taking a bath",
         "scene": {
@@ -1783,6 +1773,7 @@ export const tree: Tree = {
                 "label": "Disembark into the City"
             }
         ],
+        "addsFlags": [],
         "id": "35747",
         "label": "City Arrival",
         "scene": {
@@ -1804,9 +1795,6 @@ export const tree: Tree = {
     "37515": {
         "actions": [
             {
-                "addsFlags": [
-                    "discoverCult"
-                ],
                 "dest": "75362",
                 "label": "Go left",
                 "needsFlags": [
@@ -1814,9 +1802,6 @@ export const tree: Tree = {
                 ]
             },
             {
-                "addsFlags": [
-                    "discoverJunglePath"
-                ],
                 "dest": "95982",
                 "label": "Go right",
                 "needsFlags": [
@@ -1824,7 +1809,6 @@ export const tree: Tree = {
                 ]
             },
             {
-                "addsFlags": [],
                 "dest": "23253",
                 "label": "Visit rat cult",
                 "needsFlags": [
@@ -1832,7 +1816,6 @@ export const tree: Tree = {
                 ]
             },
             {
-                "addsFlags": [],
                 "dest": "95982",
                 "label": "Return to jungle",
                 "needsFlags": [
@@ -1840,6 +1823,7 @@ export const tree: Tree = {
                 ]
             }
         ],
+        "addsFlags": [],
         "id": "37515",
         "label": "Forked path",
         "scene": {
@@ -1904,6 +1888,7 @@ export const tree: Tree = {
     },
     "38201": {
         "actions": [],
+        "addsFlags": [],
         "endgame": "win",
         "id": "38201",
         "label": "Egg Hatching 4",
@@ -1939,9 +1924,6 @@ export const tree: Tree = {
     "40581": {
         "actions": [
             {
-                "addsFlags": [
-                    "askForPossumName"
-                ],
                 "dest": "5565",
                 "label": "Ask the possum \"Are you Jen?\"",
                 "needsFlags": [
@@ -1957,6 +1939,7 @@ export const tree: Tree = {
                 "label": "Leave the shop"
             }
         ],
+        "addsFlags": [],
         "id": "40581",
         "label": "Flower shop interior",
         "scene": {
@@ -2011,6 +1994,7 @@ export const tree: Tree = {
     },
     "43130": {
         "actions": [],
+        "addsFlags": [],
         "endgame": "lose",
         "id": "43130",
         "label": "Egg breaks in flower shop",
@@ -2057,6 +2041,7 @@ export const tree: Tree = {
                 "label": "Inspection Complete"
             }
         ],
+        "addsFlags": [],
         "id": "45412",
         "label": "Inspecting martini",
         "scene": {
@@ -2080,6 +2065,7 @@ export const tree: Tree = {
                 "label": "Next"
             }
         ],
+        "addsFlags": [],
         "id": "45463",
         "label": "Bus ride",
         "scene": {
@@ -2100,14 +2086,12 @@ export const tree: Tree = {
     "46692": {
         "actions": [
             {
-                "addsFlags": [
-                    "youHaveCosmo"
-                ],
                 "dest": "9403",
                 "label": "Next",
                 "needsFlags": []
             }
         ],
+        "addsFlags": [],
         "id": "46692",
         "label": "bear shakes cosmopolitan",
         "scene": {
@@ -2132,6 +2116,7 @@ export const tree: Tree = {
                 "label": "Oh no"
             }
         ],
+        "addsFlags": [],
         "id": "47389",
         "label": "Volcano Erruption",
         "scene": {
@@ -2151,6 +2136,7 @@ export const tree: Tree = {
     },
     "47586": {
         "actions": [],
+        "addsFlags": [],
         "endgame": "win",
         "id": "47586",
         "label": "Hotel Egg Hatching 4",
@@ -2186,31 +2172,26 @@ export const tree: Tree = {
     "47626": {
         "actions": [
             {
-                "addsFlags": [
-                    "hasRatVision"
-                ],
                 "dest": "19418",
                 "label": "Bored, Put on Sunglasses",
                 "needsFlags": [
-                    "hasGlasses",
-                    "!hasRatVision"
+                    "haveGlasses",
+                    "!haveRatVision"
                 ]
             },
             {
                 "dest": "18822",
                 "label": "Finish up and Leave Bathroom",
-                "needsFlags": [
-                    ""
-                ]
             },
             {
                 "dest": "87223",
                 "label": "Take the Rat Tunnel",
                 "needsFlags": [
-                    "holeDiscovered"
+                    "discoveredHole"
                 ]
             }
         ],
+        "addsFlags": [],
         "id": "47626",
         "label": "Inside bathroom",
         "scene": {
@@ -2251,6 +2232,9 @@ export const tree: Tree = {
                 "label": "Next"
             }
         ],
+        "addsFlags": [
+            "triedToBook"
+        ],
         "id": "47893",
         "label": "Trying to book",
         "scene": {
@@ -2288,6 +2272,9 @@ export const tree: Tree = {
                 "dest": "87790",
                 "label": "inspection complete"
             }
+        ],
+        "addsFlags": [
+            "sawEgg"
         ],
         "id": "48059",
         "label": "Egg inspection",
@@ -2329,11 +2316,13 @@ export const tree: Tree = {
     "48268": {
         "actions": [
             {
-                "addsFlags": [],
                 "dest": "20907",
                 "label": "Back to the animals",
                 "needsFlags": []
             }
+        ],
+        "addsFlags": [
+            "playedWithKoala"
         ],
         "id": "48268",
         "label": "Play with koala",
@@ -2360,6 +2349,7 @@ export const tree: Tree = {
     },
     "49002": {
         "actions": [],
+        "addsFlags": [],
         "endgame": "lose",
         "id": "49002",
         "label": "Monkey attack 2",
@@ -2429,6 +2419,7 @@ export const tree: Tree = {
                 "label": "Oh My!!!"
             }
         ],
+        "addsFlags": [],
         "id": "49719",
         "label": "Hotel Egg Hatching 3",
         "scene": {
@@ -2453,6 +2444,7 @@ export const tree: Tree = {
                 "label": "..."
             }
         ],
+        "addsFlags": [],
         "id": "49884",
         "label": "Hotel Egg Hatching 2",
         "scene": {
@@ -2472,6 +2464,7 @@ export const tree: Tree = {
     },
     "51350": {
         "actions": [],
+        "addsFlags": [],
         "endgame": "lose",
         "id": "51350",
         "label": "Mourning",
@@ -2521,6 +2514,7 @@ export const tree: Tree = {
                 "label": "Flip Keycard Back Over"
             }
         ],
+        "addsFlags": [],
         "id": "53122",
         "label": "Back of keycard",
         "scene": {
@@ -2540,12 +2534,12 @@ export const tree: Tree = {
     "53381": {
         "actions": [
             {
-                "addsFlags": [],
                 "dest": "85550",
                 "label": "Back to Dog Park",
                 "needsFlags": []
             }
         ],
+        "addsFlags": [],
         "id": "53381",
         "label": "Beagle accepts cosmo",
         "scene": {
@@ -2580,6 +2574,7 @@ export const tree: Tree = {
                 "label": "wander jungle some more"
             }
         ],
+        "addsFlags": [],
         "id": "55660",
         "label": "Volcano visit no rocks",
         "scene": {
@@ -2610,6 +2605,10 @@ export const tree: Tree = {
                 "dest": "40581",
                 "label": "Next"
             }
+        ],
+        "addsFlags": [
+            "haveDaffodil",
+            "haveFlower"
         ],
         "id": "56065",
         "label": "You take daffodil",
@@ -2648,6 +2647,7 @@ export const tree: Tree = {
                 "label": "Next"
             }
         ],
+        "addsFlags": [],
         "id": "56699",
         "label": "Thanking Hamster",
         "scene": {
@@ -2659,12 +2659,12 @@ export const tree: Tree = {
     "57590": {
         "actions": [
             {
-                "addsFlags": [],
                 "dest": "20907",
                 "label": "Back to Animals",
                 "needsFlags": []
             }
         ],
+        "addsFlags": [],
         "id": "57590",
         "label": "Done with Jaguar",
         "scene": {
@@ -2701,28 +2701,24 @@ export const tree: Tree = {
     "58259": {
         "actions": [
             {
-                "addsFlags": [],
                 "dest": "45412",
                 "label": "inspect martini",
                 "needsFlags": []
             },
             {
-                "addsFlags": [
-                    "meetTherapyMouse"
-                ],
                 "dest": "26946",
                 "label": "Say \"thanks\" and leave bar",
                 "needsFlags": [
-                    "!meetTherapyMouse"
+                    "!metTherapyMouse"
                 ]
             },
             {
-                "addsFlags": [],
                 "dest": "94709",
                 "label": "Say \"thanks\" and ask for another drink",
                 "needsFlags": []
             }
         ],
+        "addsFlags": [],
         "id": "58259",
         "label": "Bear pours martini",
         "scene": {
@@ -2763,9 +2759,6 @@ export const tree: Tree = {
     "59840": {
         "actions": [
             {
-                "addsFlags": [
-                    "triedToBook"
-                ],
                 "dest": "47893",
                 "label": "Ask to book your stay",
                 "needsFlags": [
@@ -2773,31 +2766,27 @@ export const tree: Tree = {
                 ]
             },
             {
-                "addsFlags": [
-                    "askGFQuestion"
-                ],
                 "dest": "82129",
                 "label": "Ask her, \"Are you the beagle's girlfriend?\"",
                 "needsFlags": [
-                    "youHaveTalkedToBeagle",
-                    "!askGFQuestion"
+                    "talkedToBeagle",
+                    "!askedGFQuestion"
                 ]
             },
             {
-                "addsFlags": [],
                 "dest": "27595",
                 "label": "Exit Hotel",
                 "needsFlags": []
             },
             {
-                "addsFlags": [],
                 "dest": "22841",
                 "label": "Go to Hotel Pool",
                 "needsFlags": [
-                    "youHaveKeyCard"
+                    "haveKeycard"
                 ]
             }
         ],
+        "addsFlags": [],
         "id": "59840",
         "label": "Inside hotel",
         "scene": {
@@ -2832,18 +2821,17 @@ export const tree: Tree = {
     "61921": {
         "actions": [
             {
-                "addsFlags": [],
                 "dest": "18822",
                 "label": "Go inside",
                 "needsFlags": []
             },
             {
-                "addsFlags": [],
                 "dest": "13631",
                 "label": "Wander city",
                 "needsFlags": []
             }
         ],
+        "addsFlags": [],
         "id": "61921",
         "label": "Bar Exterior",
         "scene": {
@@ -2875,6 +2863,7 @@ export const tree: Tree = {
                 "label": "Back to Dog Park"
             }
         ],
+        "addsFlags": [],
         "id": "62947",
         "label": "Rejected Beagle",
         "scene": {
@@ -2895,20 +2884,18 @@ export const tree: Tree = {
     "64647": {
         "actions": [
             {
-                "addsFlags": [
-                    "canThrowRocks",
-                    "koalaHasTalkedTwice"
-                ],
                 "dest": "2739",
                 "label": "Say \"Sure, what did you want to tell me?\"",
                 "needsFlags": []
             },
             {
-                "addsFlags": [],
                 "dest": "20907",
                 "label": "Say \"No Thanks\"",
                 "needsFlags": []
             }
+        ],
+        "addsFlags": [
+            "talkedToKoala"
         ],
         "id": "64647",
         "label": "Koala Cult Talk",
@@ -2929,7 +2916,7 @@ export const tree: Tree = {
     "64686": {
         "actions": [],
         "id": "64686",
-        "label": "",
+        "label": "empty?",
         "scene": {
             "actors": [],
             "bg": "bg/shop.png"
@@ -2939,12 +2926,12 @@ export const tree: Tree = {
     "64950": {
         "actions": [
             {
-                "addsFlags": [],
                 "dest": "90619",
                 "label": "Next",
                 "needsFlags": []
             }
         ],
+        "addsFlags": [],
         "id": "64950",
         "label": "Discover jungle path",
         "scene": {
@@ -2964,22 +2951,19 @@ export const tree: Tree = {
     "65138": {
         "actions": [
             {
-                "addsFlags": [],
                 "dest": "94709",
                 "label": "Agree to his terms",
                 "needsFlags": []
             },
             {
-                "addsFlags": [
-                    "meetTherapyMouse"
-                ],
                 "dest": "26946",
                 "label": "Refuse his terms and leave to wander city again",
                 "needsFlags": [
-                    "!meetTherapyMouse"
+                    "!metTherapyMouse"
                 ]
             }
         ],
+        "addsFlags": [],
         "id": "65138",
         "label": "Bird refused a drink",
         "scene": {
@@ -3014,12 +2998,12 @@ export const tree: Tree = {
     "69799": {
         "actions": [
             {
-                "addsFlags": [],
                 "dest": "85914",
                 "label": "Next",
                 "needsFlags": []
             }
         ],
+        "addsFlags": [],
         "id": "69799",
         "label": "Rat Leader 2",
         "scene": {
@@ -3040,14 +3024,11 @@ export const tree: Tree = {
     "71284": {
         "actions": [
             {
-                "addsFlags": [],
                 "dest": "87790",
                 "label": "Take a Deep Breath",
-                "needsFlags": [
-                    ""
-                ]
             }
         ],
+        "addsFlags": [],
         "id": "71284",
         "label": "Nest Opening Scene",
         "scene": {
@@ -3082,12 +3063,12 @@ export const tree: Tree = {
     "73855": {
         "actions": [
             {
-                "addsFlags": [],
                 "dest": "85550",
                 "label": "Back to Dog Park",
                 "needsFlags": []
             }
         ],
+        "addsFlags": [],
         "id": "73855",
         "label": "Beagle accepts martini",
         "scene": {
@@ -3114,24 +3095,22 @@ export const tree: Tree = {
     "74372": {
         "actions": [
             {
-                "addsFlags": [],
                 "dest": "84301",
                 "label": "Look for rocks to make a sacrifice",
                 "needsFlags": []
             },
             {
-                "addsFlags": [],
                 "dest": "34620",
                 "label": "Cool off in a hot spring",
                 "needsFlags": []
             },
             {
-                "addsFlags": [],
                 "dest": "90619",
                 "label": "Back to the Jungle",
                 "needsFlags": []
             }
         ],
+        "addsFlags": [],
         "id": "74372",
         "label": "Volcano visit after cult talk",
         "scene": {
@@ -3158,11 +3137,13 @@ export const tree: Tree = {
     "75362": {
         "actions": [
             {
-                "addsFlags": [],
                 "dest": "7769",
                 "label": "Next",
                 "needsFlags": []
             }
+        ],
+        "addsFlags": [
+            "discoverCult"
         ],
         "id": "75362",
         "label": "Cult opening scene",
@@ -3314,6 +3295,7 @@ export const tree: Tree = {
                 "label": "Back to Dog Park"
             }
         ],
+        "addsFlags": [],
         "id": "75760",
         "label": "Dachshund rejects cosmo",
         "scene": {
@@ -3341,17 +3323,16 @@ export const tree: Tree = {
     "77796": {
         "actions": [
             {
-                "addsFlags": [],
                 "label": "Talk to him",
                 "needsFlags": []
             },
             {
-                "addsFlags": [],
                 "dest": "13631",
                 "label": "Go back to wandering city",
                 "needsFlags": []
             }
         ],
+        "addsFlags": [],
         "id": "77796",
         "label": "Therapy Mouse Again",
         "scene": {
@@ -3374,6 +3355,9 @@ export const tree: Tree = {
                 "dest": "85550",
                 "label": "Back to Dog Park"
             }
+        ],
+        "addsFlags": [
+            "haveDogBone"
         ],
         "id": "78527",
         "label": "Dog Bone Acquired",
@@ -3398,6 +3382,7 @@ export const tree: Tree = {
                 "label": "Next"
             }
         ],
+        "addsFlags": [],
         "id": "78752",
         "label": "Monkey attack 1",
         "scene": {
@@ -3437,6 +3422,7 @@ export const tree: Tree = {
                 "label": "What is your egg doing!"
             }
         ],
+        "addsFlags": [],
         "id": "79680",
         "label": "Hotel bath",
         "scene": {
@@ -3470,19 +3456,20 @@ export const tree: Tree = {
     "82129": {
         "actions": [
             {
-                "addsFlags": [],
                 "dest": "59840",
                 "label": "...",
                 "needsFlags": []
             },
             {
-                "addsFlags": [],
                 "dest": "95956",
                 "label": "Give her the beagle's gift",
                 "needsFlags": [
-                    "youHaveDogBone"
+                    "haveDogBone"
                 ]
             }
+        ],
+        "addsFlags": [
+            "askedGFQuestion"
         ],
         "id": "82129",
         "label": "Ask hamster for info",
@@ -3526,6 +3513,7 @@ export const tree: Tree = {
                 "label": "Put the rocks down and step Away From The Edge"
             }
         ],
+        "addsFlags": [],
         "id": "84301",
         "label": "Rock Pile",
         "scene": {
@@ -3545,38 +3533,33 @@ export const tree: Tree = {
     "85368": {
         "actions": [
             {
-                "addsFlags": [
-                    "youHaveTalkedToBeagle"
-                ],
                 "dest": "12073",
                 "label": "Talk to beagle",
                 "needsFlags": [
-                    "!youHaveTalkedToBeagle"
+                    "!talkedToBeagle"
                 ]
             },
             {
-                "addsFlags": [],
                 "dest": "73855",
                 "label": "Give beagle a martini",
                 "needsFlags": [
-                    "youHaveMartini"
+                    "haveMartini"
                 ]
             },
             {
-                "addsFlags": [],
                 "dest": "53381",
                 "label": "Give beagle a cosmopolitan",
                 "needsFlags": [
-                    "youHaveCosmo"
+                    "haveCosmo"
                 ]
             },
             {
-                "addsFlags": [],
                 "dest": "85550",
                 "label": "Return to Dog Park",
                 "needsFlags": []
             }
         ],
+        "addsFlags": [],
         "id": "85368",
         "label": "Playing with beagle",
         "scene": {
@@ -3618,30 +3601,27 @@ export const tree: Tree = {
     "85550": {
         "actions": [
             {
-                "addsFlags": [],
                 "dest": "85368",
                 "label": "Play with beagle",
                 "needsFlags": []
             },
             {
-                "addsFlags": [],
                 "dest": "31710",
                 "label": "Play with dachshund",
                 "needsFlags": []
             },
             {
-                "addsFlags": [],
                 "dest": "11635",
                 "label": "Play with doberman",
                 "needsFlags": []
             },
             {
-                "addsFlags": [],
                 "dest": "13631",
                 "label": "Return to wandering city",
                 "needsFlags": []
             }
         ],
+        "addsFlags": [],
         "id": "85550",
         "label": "Dog Park",
         "scene": {
@@ -3690,12 +3670,12 @@ export const tree: Tree = {
     "85914": {
         "actions": [
             {
-                "addsFlags": [],
                 "dest": "29900",
                 "label": "What is happening",
                 "needsFlags": []
             }
         ],
+        "addsFlags": [],
         "id": "85914",
         "label": "Rat Leader 3",
         "scene": {
@@ -3728,6 +3708,7 @@ export const tree: Tree = {
                 "label": "Next"
             }
         ],
+        "addsFlags": [],
         "id": "85940",
         "label": "Egg Hatching 2",
         "scene": {
@@ -3748,30 +3729,19 @@ export const tree: Tree = {
     "86146": {
         "actions": [
             {
-                "addsFlags": [
-                    "hasSunflowers",
-                    "hasFlower"
-                ],
                 "dest": "91030",
                 "label": "Sunflowers"
             },
             {
-                "addsFlags": [
-                    "hasLilac",
-                    "hasFlower"
-                ],
                 "dest": "22555",
                 "label": "Lilac"
             },
             {
-                "addsFlags": [
-                    "hasDaffodil",
-                    "hasFlower"
-                ],
                 "dest": "56065",
                 "label": "Daffodil"
             }
         ],
+        "addsFlags": [],
         "id": "86146",
         "label": "Flower Purchase",
         "scene": {
@@ -3805,11 +3775,13 @@ export const tree: Tree = {
     "87223": {
         "actions": [
             {
-                "addsFlags": [],
                 "dest": "37515",
                 "label": "Next",
                 "needsFlags": []
             }
+        ],
+        "addsFlags": [
+            "discoveredHole"
         ],
         "id": "87223",
         "label": "Hole travel",
@@ -3830,9 +3802,6 @@ export const tree: Tree = {
     "87790": {
         "actions": [
             {
-                "addsFlags": [
-                    "sawEgg"
-                ],
                 "dest": "48059",
                 "label": "Inspect Egg",
                 "needsFlags": [
@@ -3840,12 +3809,12 @@ export const tree: Tree = {
                 ]
             },
             {
-                "addsFlags": [],
                 "dest": "90619",
                 "label": "Climb Down Tree",
                 "needsFlags": []
             }
         ],
+        "addsFlags": [],
         "id": "87790",
         "label": "resting in nest",
         "scene": {
@@ -3879,11 +3848,13 @@ export const tree: Tree = {
     "87811": {
         "actions": [
             {
-                "addsFlags": [],
                 "dest": "57590",
                 "label": "Next",
                 "needsFlags": []
             }
+        ],
+        "addsFlags": [
+            "playedWithJaguar"
         ],
         "id": "87811",
         "label": "Playing with jaguar",
@@ -3918,15 +3889,13 @@ export const tree: Tree = {
     "90619": {
         "actions": [
             {
-                "addsFlags": [],
                 "dest": "20907",
                 "label": "Visit animals again",
                 "needsFlags": [
-                    "haveMetAnimals"
+                    "metAnimals"
                 ]
             },
             {
-                "addsFlags": [],
                 "dest": "55660",
                 "label": "Go to volcano",
                 "needsFlags": [
@@ -3934,13 +3903,11 @@ export const tree: Tree = {
                 ]
             },
             {
-                "addsFlags": [],
                 "dest": "45463",
                 "label": "Go to city",
                 "needsFlags": []
             },
             {
-                "addsFlags": [],
                 "dest": "74372",
                 "label": "Go to volcano",
                 "needsFlags": [
@@ -3948,22 +3915,19 @@ export const tree: Tree = {
                 ]
             },
             {
-                "addsFlags": [],
                 "dest": "87790",
                 "label": "return to the nest",
                 "needsFlags": []
             },
             {
-                "addsFlags": [
-                    "haveMetAnimals"
-                ],
                 "dest": "23888",
                 "label": "Look for animals",
                 "needsFlags": [
-                    "!haveMetAnimals"
+                    "!metAnimals"
                 ]
             }
         ],
+        "addsFlags": [],
         "id": "90619",
         "label": "Jungle Hub",
         "scene": {
@@ -3986,6 +3950,10 @@ export const tree: Tree = {
                 "dest": "43130",
                 "label": "Oh no!"
             }
+        ],
+        "addsFlags": [
+            "haveSunflowers",
+            "haveFlower"
         ],
         "id": "91030",
         "label": "Sunflower sneeze",
@@ -4031,12 +3999,12 @@ export const tree: Tree = {
     "91471": {
         "actions": [
             {
-                "addsFlags": [],
                 "dest": "58259",
                 "label": "Next",
                 "needsFlags": []
             }
         ],
+        "addsFlags": [],
         "id": "91471",
         "label": "Bear shakes martini",
         "scene": {
@@ -4077,6 +4045,9 @@ export const tree: Tree = {
                 "label": "Nice"
             }
         ],
+        "addsFlags": [
+            "haveGlasses"
+        ],
         "id": "91498",
         "label": "Find sunglasses",
         "scene": {
@@ -4111,18 +4082,17 @@ export const tree: Tree = {
     "94709": {
         "actions": [
             {
-                "addsFlags": [],
                 "dest": "91471",
                 "label": "Martini",
                 "needsFlags": []
             },
             {
-                "addsFlags": [],
                 "dest": "46692",
                 "label": "Cosmopolitan",
                 "needsFlags": []
             }
         ],
+        "addsFlags": [],
         "id": "94709",
         "label": "Bear offers drinks",
         "scene": {
@@ -4157,13 +4127,11 @@ export const tree: Tree = {
     "95956": {
         "actions": [
             {
-                "addsFlags": [
-                    "youHaveKeycard"
-                ],
                 "dest": "13817",
                 "label": "Accept Gift"
             }
         ],
+        "addsFlags": [],
         "id": "95956",
         "label": "Gift Hamster",
         "scene": {
@@ -4190,11 +4158,13 @@ export const tree: Tree = {
     "95982": {
         "actions": [
             {
-                "addsFlags": [],
                 "dest": "64950",
                 "label": "Follow the tunnel",
                 "needsFlags": []
             }
+        ],
+        "addsFlags": [
+            "discoverJunglePath"
         ],
         "id": "95982",
         "label": "Right Tunnel",

@@ -30,11 +30,12 @@ export class GameState {
     }
 
     step(action: Action): GameState {
-        const newFlags: string[] = action.addsFlags ?? [];
         if (action.dest === undefined) {
             alert("Undefined destination D:");
             return this;
         }
+        const destScreen = tree[action.dest];
+        const newFlags: string[] = destScreen.addsFlags ?? [];
         return new GameState({
             node: tree[action.dest!],
             flags: [...this.flags, ...newFlags],

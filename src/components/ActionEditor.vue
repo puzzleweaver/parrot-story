@@ -20,7 +20,6 @@ const props = defineProps<{
 
 const setFromProps = () => {
     label.value = props.action.label;
-    addedFlags.value = props.action.addsFlags ?? [];
     neededFlags.value = props.action.needsFlags ?? [];
     dest.value = props.action.dest;
     destName.value = getDestName();
@@ -32,14 +31,6 @@ watch(label, () => {
     props.setAction({
         ...props.action,
         label: label.value,
-    });
-});
-
-const addedFlags: Ref<string[]> = ref(props.action.addsFlags ?? []);
-watch(addedFlags, () => {
-    props.setAction({
-        ...props.action,
-        addsFlags: addedFlags.value,
     });
 });
 

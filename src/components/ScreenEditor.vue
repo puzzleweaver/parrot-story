@@ -154,7 +154,7 @@ const addAction = () => {
         </p>
 
         <p v-if="endgame === undefined">
-            Edit Options
+            Edit Actions
             <span>
                 <ActionEditor v-for="(action, i) in screen.actions" :action="action"
                     :set-action="(newAction) => setAction(i, newAction)" :remove-action="removeAction"

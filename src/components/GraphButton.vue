@@ -14,12 +14,9 @@ const generateGraphText = () => {
 
     const getEdgeCaption = (action: Action): string => {
         const lines = [action.label];
-        const addedFlags = (action.addsFlags ?? []).filter(flag => flag !== ""),
-            neededFlags = (action.needsFlags ?? []).filter(flag => flag !== "");
+        const neededFlags = (action.needsFlags ?? []).filter(flag => flag !== "");
         if (neededFlags.length > 0)
-            lines.push(`(if ${neededFlags.join()})`);
-        if (addedFlags.length > 0)
-            lines.push(`Adds ${addedFlags.join()}`);
+            lines.push(`if ${neededFlags.join()}`);
         return lines.join("\n");
     };
 
@@ -30,7 +27,17 @@ const generateGraphText = () => {
         const color = node.endgame === undefined ? '' : (
             node.endgame === "win" ? ", color='green'" : ", color='red'"
         );
-        nodes += `graph.node(${escape(node.id)}, ${escape(name)}${color})\n`;
+        const addedFlags = node.addsFlags !== undefined && node.addsFlags.length !== 0 ?
+            "\nadds " + (node.addsFlags ?? []).join(", ") :
+            "";
+        nodes += [
+            "graph.node(",
+            escape(node.id),
+            ", ",
+            escape(`${name}${addedFlags}`),
+            color,
+            ")\n"
+        ].join("");
 
         for (const action of node.actions) {
             const nextNode = props.tree[action.dest ?? "BAD"];
@@ -54,11 +61,11 @@ const generateGraphText = () => {
 from graphviz import Digraph
 import graphviz
 
-graph = Digraph(comment='Game Tree')
+graph = Digraph(comment = 'Game Tree')
 ${nodes}
 ${edges}
 
-graph.render('screen_graph', view=True)
+graph.render('screen_graph', view = True)
 `;
 };
 

@@ -7,7 +7,6 @@ import type { ScreenId } from "./tree-type";
 export type Action = {
     dest?: ScreenId;
     label: string;
-    addsFlags?: string[];
     needsFlags?: string[];
 };
 
@@ -20,19 +19,7 @@ export class ActionUtil {
     }
 
     static getFlagsUsed(action: Action): string[] {
-        const allFlagsUnprocessed = [
-            ...(action.addsFlags ?? []),
-            ...(action.needsFlags ?? []),
-        ];
-        return [...new Set(
-            allFlagsUnprocessed
-                .filter(flag => flag !== "")
-                .map(flag => {
-                    if (flag.charAt(0) === "!")
-                        return flag.substring(1);
-                    return flag;
-                }),
-        )];
+        return action.needsFlags ?? [];
     }
 
     static visible(flags: string[], action: Action): boolean {
