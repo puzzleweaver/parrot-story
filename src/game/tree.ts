@@ -1003,6 +1003,9 @@ export const tree: Tree = {
                     "angle": 0,
                     "flipped": true,
                     "img": "character/jaguar/neutral.png",
+                    "needsFlags": [
+                        "!playedWithJaguar"
+                    ],
                     "scale": 0.35,
                     "x": 0.67,
                     "y": 0.75
