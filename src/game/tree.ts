@@ -766,7 +766,10 @@ export const tree: Tree = {
             {
                 "dest": "65138",
                 "label": "Ask for a drink",
-                "needsFlags": []
+                "needsFlags": [
+                    "!haveCosmo",
+                    "!haveMartini"
+                ]
             },
             {
                 "dest": "47626",
@@ -777,9 +780,35 @@ export const tree: Tree = {
                 "dest": "61921",
                 "label": "Leave Bar",
                 "needsFlags": []
+            },
+            {
+                "dest": "65138",
+                "label": "Ask for another drink",
+                "needsFlags": [
+                    "haveCosmo",
+                    "!haveMartini"
+                ]
+            },
+            {
+                "dest": "65138",
+                "label": "Ask for another drink",
+                "needsFlags": [
+                    "haveMartini",
+                    "!haveCosmo"
+                ]
+            },
+            {
+                "dest": "65138",
+                "label": "Ask for another drink",
+                "needsFlags": [
+                    "haveCosmo",
+                    "haveMartini"
+                ]
             }
         ],
-        "addsFlags": [],
+        "addsFlags": [
+            "meetBear"
+        ],
         "id": "18822",
         "label": "Inside Bar",
         "scene": {
@@ -809,7 +838,15 @@ export const tree: Tree = {
             ],
             "bg": "bg/bar.png"
         },
-        "text": "You go inside and encounter some sort of weird panda. "
+        "text": "You go inside and encounter some sort of weird panda. ",
+        "textVariants": [
+            {
+                "flags": [
+                    "meetBear"
+                ],
+                "text": "The panda looks at you and wonders if you'd like anything else."
+            }
+        ]
     },
     "18968": {
         "actions": [
@@ -1558,7 +1595,8 @@ export const tree: Tree = {
         "actions": [
             {
                 "dest": "18822",
-                "label": "Inspection Complete"
+                "label": "Inspection complete",
+                "needsFlags": []
             }
         ],
         "addsFlags": [],
@@ -1792,6 +1830,16 @@ export const tree: Tree = {
             "bg": "bg/city.png"
         },
         "text": "You finally arrive in the city! The options here are endless. Maybe you can make some friends!"
+    },
+    "36613": {
+        "actions": [],
+        "id": "36613",
+        "label": "Bar hub",
+        "scene": {
+            "actors": [],
+            "bg": "bg/shop.png"
+        },
+        "text": "What do you do next?"
     },
     "37515": {
         "actions": [
@@ -2985,14 +3033,29 @@ export const tree: Tree = {
             {
                 "dest": "94709",
                 "label": "Agree to his terms",
-                "needsFlags": []
+                "needsFlags": [
+                    "!termsAgreedTo"
+                ]
             },
             {
                 "dest": "26946",
                 "label": "Refuse his terms and leave to wander city again",
                 "needsFlags": [
-                    "!metTherapyMouse"
+                    "!metTherapyMouse",
+                    "!termsAgreedTo"
                 ]
+            },
+            {
+                "dest": "91471",
+                "label": "Martini",
+                "needsFlags": [
+                    "termsAgreedTo"
+                ]
+            },
+            {
+                "dest": "46692",
+                "label": "Cosmopolitan",
+                "needsFlags": []
             }
         ],
         "addsFlags": [],
@@ -3025,7 +3088,15 @@ export const tree: Tree = {
             ],
             "bg": "bg/bar.png"
         },
-        "text": "\"You're a bird! You're not supposed to drink!\" the weird panda says to you. \"But I can give you a drink as long as you promise you're giving it to someone else who is of drinking age.\""
+        "text": "\"You're a bird! You're not supposed to drink!\" the weird panda says to you. \"But I can give you a drink as long as you promise you're giving it to someone else who is of drinking age.\"",
+        "textVariants": [
+            {
+                "flags": [
+                    "termsAgreedTo"
+                ],
+                "text": "Sure thing! What can I get you?"
+            }
+        ]
     },
     "69799": {
         "actions": [
@@ -4124,7 +4195,9 @@ export const tree: Tree = {
                 "needsFlags": []
             }
         ],
-        "addsFlags": [],
+        "addsFlags": [
+            "termsAgreedTo"
+        ],
         "id": "94709",
         "label": "Bear offers drinks",
         "scene": {
