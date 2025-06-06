@@ -777,7 +777,7 @@ export const tree: Tree = {
                 "needsFlags": []
             },
             {
-                "dest": "61921",
+                "dest": "26946",
                 "label": "Leave Bar",
                 "needsFlags": []
             },
@@ -3060,7 +3060,7 @@ export const tree: Tree = {
         ],
         "addsFlags": [],
         "id": "65138",
-        "label": "Bird refused a drink",
+        "label": "Bear responds to drink request",
         "scene": {
             "actors": [
                 {
