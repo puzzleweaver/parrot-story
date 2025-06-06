@@ -43,12 +43,18 @@ onMounted(() => {
 
 if (!props.animate) watch(props, render);
 
+const width = computed(() => {
+    return props.lowRes ? 90 : 600;
+})
+const height = computed(() => {
+    return props.lowRes ? 60 : 400;
+})
+
 </script>
 
 <template>
     <div class="canvas-container">
-        <canvas style="width:0px; height: 0px" :width="lowRes ? 180 : 300" :height="lowRes ? 120 : 200"
-            :id="canvasId"></canvas>
+        <canvas style="width:0px; height: 0px" :width="width" :height="height" :id="canvasId"></canvas>
         <img style="width: 100%; height: 100%" :src="canvasSrc" />
     </div>
 </template>

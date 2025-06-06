@@ -1,13 +1,13 @@
-import { Assets } from "./generated_asset";
+import { ParrotAssets } from "./generated_asset";
 
 export const defaultAsset = "prop/error.png";
 
 export const musicByBg = {
-    [Assets.bg.bar]: "bar.wav",
-    [Assets.bg.city]: "bar.wav",
-    [Assets.bg["flower-shop"]]: "bar.wav",
-    [Assets.bg.shop]: "dog.mp3",
-    [Assets.bg.tree]: "jungle.wav",
-    [Assets.bg.canopy]: "jungle.wav",
-    [Assets.bg.jungle]: "jungle.wav",
+    [ParrotAssets.bg.bar]: "bar.wav",
+    [ParrotAssets.bg.city]: "bar.wav",
+    [ParrotAssets.bg["flower-shop"]]: "bar.wav",
+    [ParrotAssets.bg.shop]: "dog.mp3",
+    [ParrotAssets.bg.tree]: "jungle.wav",
+    [ParrotAssets.bg.canopy]: "jungle.wav",
+    [ParrotAssets.bg.jungle]: "jungle.wav",
 };

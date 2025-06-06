@@ -1,7 +1,7 @@
 <script setup lang='ts'>
 import { ref, watch } from 'vue';
 import { type Scene } from '../game/scene';
-import { Assets } from '../game/generated_asset';
+import { ParrotAssets } from '../game/generated_asset';
 import ActorEditor from './ActorEditor.vue';
 import { type Actor, ActorUtil as ActorUtil } from '../game/actor';
 import type { Tree } from '../game/tree-type';
@@ -52,7 +52,7 @@ const switchActors = (index: number, offset: number) => {
     <div>
         Background:
         <select v-model="background">
-            <option v-for="src in Assets.bg" :value="src">{{ src }}</option>
+            <option v-for="src in ParrotAssets.bg" :value="src">{{ src }}</option>
         </select>
     </div>
     <p>

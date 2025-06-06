@@ -38,8 +38,8 @@ treeJson = json.dumps(assetTree)
 listJson = json.dumps(assetList)
 
 fileContents = f"""
-export const Assets = {treeJson};
-export const AssetList: string[] = {listJson};
+export const ParrotAssets = {treeJson};
+export const ParrotAssetList: string[] = {listJson};
 """
 
 File.writeText("src/game/generated_asset.ts", fileContents)

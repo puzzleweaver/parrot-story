@@ -1,6 +1,6 @@
 
 import { type Actor } from "./actor";
-import { Assets } from "./generated_asset";
+import { ParrotAssets } from "./generated_asset";
 
 export type Scene = {
     bg: string;
@@ -10,7 +10,7 @@ export type Scene = {
 export class SceneUtil {
     static empty(): Scene {
         return {
-            bg: Assets.bg.shop,
+            bg: ParrotAssets.bg.shop,
             actors: [],
         };
     }

@@ -1,4 +1,4 @@
-import { Assets } from "./generated_asset";
+import { ParrotAssets } from "./generated_asset";
 
 export type Actor = {
     x: number;
@@ -49,7 +49,7 @@ export class ActorUtil {
             y: Math.random(),
             scale: 0.5,
             angle: 0.0,
-            img: Assets.character.parrot["in-transit"],
+            img: ParrotAssets.character.parrot["in-transit"],
         };
     }
 

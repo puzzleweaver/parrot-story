@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref, watch, type Ref } from 'vue';
 import { animationStyles, type Actor, type AnimationStyle } from '../game/actor';
-import { AssetList } from "../game/generated_asset";
+import { ParrotAssetList } from "../game/generated_asset";
 import FlagListInput from './FlagListInput.vue';
 import type { Tree } from '../game/tree-type';
 
@@ -109,7 +109,7 @@ setFromProps();
             </span>
 
             <datalist id="asset-list">
-                <option v-for="asset in AssetList" :value="asset" />
+                <option v-for="asset in ParrotAssetList" :value="asset" />
             </datalist>
         </span>
 

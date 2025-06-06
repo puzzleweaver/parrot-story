@@ -1,12 +1,12 @@
 import { ActorUtil, type Actor } from "./actor";
 import { FlagUtil } from "./flag";
-import { AssetList } from "./generated_asset";
+import { ParrotAssetList } from "./generated_asset";
 import type { Scene } from "./scene";
 
 const cachedImages: { [key: string]: HTMLImageElement } = {};
 
 const withImage = (src: string, callback: (img: HTMLImageElement) => any): Promise<void> => {
-    if (src !== "prop/error.png" && !AssetList.includes(src)) {
+    if (src !== "prop/error.png" && !ParrotAssetList.includes(src)) {
         return withImage("prop/error.png", callback);
     }
     return new Promise((resolve, _) => {
