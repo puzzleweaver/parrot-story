@@ -1441,9 +1441,7 @@ export const tree: Tree = {
                 "needsFlags": []
             }
         ],
-        "addsFlags": [
-            "metTherapyMouse"
-        ],
+        "addsFlags": [],
         "id": "26946",
         "label": "Meet therapy mouse",
         "scene": {
@@ -2182,12 +2180,22 @@ export const tree: Tree = {
             {
                 "dest": "18822",
                 "label": "Finish up and Leave Bathroom",
+                "needsFlags": []
             },
             {
                 "dest": "87223",
-                "label": "Take the Rat Tunnel",
+                "label": "Finish up and take the Rat Tunnel",
                 "needsFlags": [
                     "discoveredHole"
+                ]
+            },
+            {
+                "dest": "87223",
+                "label": "Finish up and follow the rats",
+                "needsFlags": [
+                    "haveGlasses",
+                    "haveRatVision",
+                    "!discoveredHole"
                 ]
             }
         ],
@@ -2219,6 +2227,26 @@ export const tree: Tree = {
                     "scale": 0.795,
                     "x": 0.72,
                     "y": 0.375
+                },
+                {
+                    "angle": 0,
+                    "img": "character/rat/rat_1.png",
+                    "needsFlags": [
+                        "haveRatVision"
+                    ],
+                    "scale": 0.18,
+                    "x": 0.865,
+                    "y": 0.66
+                },
+                {
+                    "angle": -0.665,
+                    "img": "character/rat/rat_3.png",
+                    "needsFlags": [
+                        "haveRatVision"
+                    ],
+                    "scale": 0.16,
+                    "x": 0.56,
+                    "y": 0.92
                 }
             ],
             "bg": "bg/gray.png"
@@ -2913,16 +2941,6 @@ export const tree: Tree = {
         },
         "text": "You decide to see what the koala has to say. It opens its mouth and speaks in a high, raspy voice. \"Greetings! I haven't seen you around this part of the jungle. Would you care to hear about our savior, Azathoth?\" You feel a bit flustered and awkward."
     },
-    "64686": {
-        "actions": [],
-        "id": "64686",
-        "label": "empty?",
-        "scene": {
-            "actors": [],
-            "bg": "bg/shop.png"
-        },
-        "text": "lorem ipsum dolor sit amet and so on and so forth..."
-    },
     "64950": {
         "actions": [
             {
@@ -3025,7 +3043,7 @@ export const tree: Tree = {
         "actions": [
             {
                 "dest": "87790",
-                "label": "Take a Deep Breath",
+                "label": "Take a Deep Breath"
             }
         ],
         "addsFlags": [],
