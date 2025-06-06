@@ -2063,10 +2063,13 @@ export const tree: Tree = {
         "actions": [
             {
                 "dest": "35747",
-                "label": "Next"
+                "label": "Next",
+                "needsFlags": []
             }
         ],
-        "addsFlags": [],
+        "addsFlags": [
+            "haveHadFirstBusRide"
+        ],
         "id": "45463",
         "label": "Bus ride",
         "scene": {
@@ -2082,7 +2085,15 @@ export const tree: Tree = {
             ],
             "bg": "bg/jungle.png"
         },
-        "text": "You ride the bus through the jungle and think you hear strange animal screams. You aren't sure who was hollerin'."
+        "text": "You ride the bus through the jungle and think you hear strange animal screams. You aren't sure who was hollerin'.",
+        "textVariants": [
+            {
+                "flags": [
+                    "haveHadFirstBusRide"
+                ],
+                "text": "You take the bus back to the city!"
+            }
+        ]
     },
     "46692": {
         "actions": [
