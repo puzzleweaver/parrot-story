@@ -39,7 +39,7 @@ export class PixiScene extends Container {
     takeAction(action: Action): void {
         const newScreen = tree[action.dest!];
         const newFlags = { ...this.flags };
-        for (const flag of newScreen.addsFlags ?? []) {
+        for (const flag of this.screen.addsFlags ?? []) {
             newFlags[flag] = 1;
         }
         this.setScene(
@@ -71,6 +71,8 @@ export class PixiScene extends Container {
             h: H,
         });
         for (const actor of this.screen.scene.actors) {
+            if (!FlagUtil.matches(actor.needsFlags, Object.keys(this.flags)))
+                continue;
             const sprite = await ActorSprite.create(this.app, actor);
             this.actorSprites.push(sprite);
             this.addChild(sprite);
@@ -107,6 +109,31 @@ export class PixiScene extends Container {
             });
             this.addChild(text);
             i++;
+        }
+
+        if (this.screen.endgame === "win") {
+            const text = new ParrotText({
+                label: "Congrats, your egg hatched!\n(No restarting. Because you only get one)",
+                x: this.app.screen.width / 2,
+                y: this.app.screen.height * 8.5 / 10,
+                width: totalWidth / len * 0.6,
+                height: this.app.screen.height * 0.15,
+                wrapLength: 1000,
+                onclick: undefined,
+            });
+            this.addChild(text);
+        }
+        if (this.screen.endgame === "lose") {
+            const text = new ParrotText({
+                label: "Game Over :(\n(No restarting. Because you only get one)",
+                x: this.app.screen.width / 2,
+                y: this.app.screen.height * 8.5 / 10,
+                width: totalWidth / len * 0.6,
+                height: this.app.screen.height * 0.15,
+                wrapLength: 1000,
+                onclick: undefined,
+            });
+            this.addChild(text);
         }
 
         const narration = new ParrotText({

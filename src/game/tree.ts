@@ -1549,7 +1549,7 @@ export const tree: Tree = {
                 {
                     "angle": 0,
                     "animation": "still",
-                    "img": "setting/hotel.png",
+                    "img": "setting/hotel/hotel.png",
                     "scale": 0.82,
                     "x": 0.5,
                     "y": 0.51
