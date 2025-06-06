@@ -766,7 +766,10 @@ export const tree: Tree = {
             {
                 "dest": "65138",
                 "label": "Ask for a drink",
-                "needsFlags": []
+                "needsFlags": [
+                    "!haveCosmo",
+                    "!haveMartini"
+                ]
             },
             {
                 "dest": "47626",
@@ -774,12 +777,38 @@ export const tree: Tree = {
                 "needsFlags": []
             },
             {
-                "dest": "61921",
+                "dest": "26946",
                 "label": "Leave Bar",
                 "needsFlags": []
+            },
+            {
+                "dest": "65138",
+                "label": "Ask for another drink",
+                "needsFlags": [
+                    "haveCosmo",
+                    "!haveMartini"
+                ]
+            },
+            {
+                "dest": "65138",
+                "label": "Ask for another drink",
+                "needsFlags": [
+                    "haveMartini",
+                    "!haveCosmo"
+                ]
+            },
+            {
+                "dest": "65138",
+                "label": "Ask for another drink",
+                "needsFlags": [
+                    "haveCosmo",
+                    "haveMartini"
+                ]
             }
         ],
-        "addsFlags": [],
+        "addsFlags": [
+            "meetBear"
+        ],
         "id": "18822",
         "label": "Inside Bar",
         "scene": {
@@ -809,7 +838,15 @@ export const tree: Tree = {
             ],
             "bg": "bg/bar.png"
         },
-        "text": "You go inside and encounter some sort of weird panda. "
+        "text": "You go inside and encounter some sort of weird panda. ",
+        "textVariants": [
+            {
+                "flags": [
+                    "meetBear"
+                ],
+                "text": "The panda looks at you and wonders if you'd like anything else."
+            }
+        ]
     },
     "18968": {
         "actions": [
@@ -1003,6 +1040,9 @@ export const tree: Tree = {
                     "angle": 0,
                     "flipped": true,
                     "img": "character/jaguar/neutral.png",
+                    "needsFlags": [
+                        "!playedWithJaguar"
+                    ],
                     "scale": 0.35,
                     "x": 0.67,
                     "y": 0.75
@@ -1441,9 +1481,7 @@ export const tree: Tree = {
                 "needsFlags": []
             }
         ],
-        "addsFlags": [
-            "metTherapyMouse"
-        ],
+        "addsFlags": [],
         "id": "26946",
         "label": "Meet therapy mouse",
         "scene": {
@@ -1557,7 +1595,8 @@ export const tree: Tree = {
         "actions": [
             {
                 "dest": "18822",
-                "label": "Inspection Complete"
+                "label": "Inspection complete",
+                "needsFlags": []
             }
         ],
         "addsFlags": [],
@@ -1791,6 +1830,16 @@ export const tree: Tree = {
             "bg": "bg/city.png"
         },
         "text": "You finally arrive in the city! The options here are endless. Maybe you can make some friends!"
+    },
+    "36613": {
+        "actions": [],
+        "id": "36613",
+        "label": "Bar hub",
+        "scene": {
+            "actors": [],
+            "bg": "bg/shop.png"
+        },
+        "text": "What do you do next?"
     },
     "37515": {
         "actions": [
@@ -2062,10 +2111,13 @@ export const tree: Tree = {
         "actions": [
             {
                 "dest": "35747",
-                "label": "Next"
+                "label": "Next",
+                "needsFlags": []
             }
         ],
-        "addsFlags": [],
+        "addsFlags": [
+            "haveHadFirstBusRide"
+        ],
         "id": "45463",
         "label": "Bus ride",
         "scene": {
@@ -2081,7 +2133,15 @@ export const tree: Tree = {
             ],
             "bg": "bg/jungle.png"
         },
-        "text": "You ride the bus through the jungle and think you hear strange animal screams. You aren't sure who was hollerin'."
+        "text": "You ride the bus through the jungle and think you hear strange animal screams. You aren't sure who was hollerin'.",
+        "textVariants": [
+            {
+                "flags": [
+                    "haveHadFirstBusRide"
+                ],
+                "text": "You take the bus back to the city!"
+            }
+        ]
     },
     "46692": {
         "actions": [
@@ -2182,12 +2242,22 @@ export const tree: Tree = {
             {
                 "dest": "18822",
                 "label": "Finish up and Leave Bathroom",
+                "needsFlags": []
             },
             {
                 "dest": "87223",
-                "label": "Take the Rat Tunnel",
+                "label": "Finish up and take the Rat Tunnel",
                 "needsFlags": [
                     "discoveredHole"
+                ]
+            },
+            {
+                "dest": "87223",
+                "label": "Finish up and follow the rats",
+                "needsFlags": [
+                    "haveGlasses",
+                    "haveRatVision",
+                    "!discoveredHole"
                 ]
             }
         ],
@@ -2219,6 +2289,26 @@ export const tree: Tree = {
                     "scale": 0.795,
                     "x": 0.72,
                     "y": 0.375
+                },
+                {
+                    "angle": 0,
+                    "img": "character/rat/rat_1.png",
+                    "needsFlags": [
+                        "haveRatVision"
+                    ],
+                    "scale": 0.18,
+                    "x": 0.865,
+                    "y": 0.66
+                },
+                {
+                    "angle": -0.665,
+                    "img": "character/rat/rat_3.png",
+                    "needsFlags": [
+                        "haveRatVision"
+                    ],
+                    "scale": 0.16,
+                    "x": 0.56,
+                    "y": 0.92
                 }
             ],
             "bg": "bg/gray.png"
@@ -2913,16 +3003,6 @@ export const tree: Tree = {
         },
         "text": "You decide to see what the koala has to say. It opens its mouth and speaks in a high, raspy voice. \"Greetings! I haven't seen you around this part of the jungle. Would you care to hear about our savior, Azathoth?\" You feel a bit flustered and awkward."
     },
-    "64686": {
-        "actions": [],
-        "id": "64686",
-        "label": "empty?",
-        "scene": {
-            "actors": [],
-            "bg": "bg/shop.png"
-        },
-        "text": "lorem ipsum dolor sit amet and so on and so forth..."
-    },
     "64950": {
         "actions": [
             {
@@ -2953,19 +3033,34 @@ export const tree: Tree = {
             {
                 "dest": "94709",
                 "label": "Agree to his terms",
-                "needsFlags": []
+                "needsFlags": [
+                    "!termsAgreedTo"
+                ]
             },
             {
                 "dest": "26946",
                 "label": "Refuse his terms and leave to wander city again",
                 "needsFlags": [
-                    "!metTherapyMouse"
+                    "!metTherapyMouse",
+                    "!termsAgreedTo"
                 ]
+            },
+            {
+                "dest": "91471",
+                "label": "Martini",
+                "needsFlags": [
+                    "termsAgreedTo"
+                ]
+            },
+            {
+                "dest": "46692",
+                "label": "Cosmopolitan",
+                "needsFlags": []
             }
         ],
         "addsFlags": [],
         "id": "65138",
-        "label": "Bird refused a drink",
+        "label": "Bear responds to drink request",
         "scene": {
             "actors": [
                 {
@@ -2993,7 +3088,15 @@ export const tree: Tree = {
             ],
             "bg": "bg/bar.png"
         },
-        "text": "\"You're a bird! You're not supposed to drink!\" the weird panda says to you. \"But I can give you a drink as long as you promise you're giving it to someone else who is of drinking age.\""
+        "text": "\"You're a bird! You're not supposed to drink!\" the weird panda says to you. \"But I can give you a drink as long as you promise you're giving it to someone else who is of drinking age.\"",
+        "textVariants": [
+            {
+                "flags": [
+                    "termsAgreedTo"
+                ],
+                "text": "Sure thing! What can I get you?"
+            }
+        ]
     },
     "69799": {
         "actions": [
@@ -3025,7 +3128,7 @@ export const tree: Tree = {
         "actions": [
             {
                 "dest": "87790",
-                "label": "Take a Deep Breath",
+                "label": "Take a Deep Breath"
             }
         ],
         "addsFlags": [],
@@ -4092,7 +4195,9 @@ export const tree: Tree = {
                 "needsFlags": []
             }
         ],
-        "addsFlags": [],
+        "addsFlags": [
+            "termsAgreedTo"
+        ],
         "id": "94709",
         "label": "Bear offers drinks",
         "scene": {
