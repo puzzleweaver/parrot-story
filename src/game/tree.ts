@@ -159,13 +159,8 @@ export const tree: Tree = {
     "5565": {
         "actions": [
             {
-                "dest": "13631",
-                "label": "Leave the store! You're so embarassed!",
-                "needsFlags": []
-            },
-            {
-                "dest": "86146",
-                "label": "Ask to purchase flowers despite your embarrasment",
+                "dest": "40581",
+                "label": "Next",
                 "needsFlags": []
             }
         ],
@@ -226,12 +221,12 @@ export const tree: Tree = {
         "actions": [
             {
                 "dest": "28035",
-                "label": "inspect drink",
+                "label": "Inspect drink",
                 "needsFlags": []
             },
             {
-                "dest": "94709",
-                "label": "Say \"thanks!\" and ask for another drink",
+                "dest": "16163",
+                "label": "Thank him",
                 "needsFlags": []
             }
         ],
@@ -324,30 +319,35 @@ export const tree: Tree = {
     "10255": {
         "actions": [
             {
-                "dest": "11989",
-                "label": "Dig through the fountain and look for treasure",
-                "needsFlags": [
-                    "haveGlasses"
-                ]
-            },
-            {
-                "dest": "11989",
-                "label": "Dig through the fountain and look for treasure",
-                "needsFlags": [
-                    "!haveGlasses"
-                ]
-            },
-            {
                 "dest": "13631",
                 "label": "Wander the city again",
                 "needsFlags": []
+            },
+            {
+                "dest": "11989",
+                "label": "Dig through the fountain",
+                "needsFlags": []
+            },
+            {
+                "dest": "94275",
+                "label": "Climb on the fountain",
+                "needsFlags": [
+                    "!hasClimbedFountain"
+                ]
+            },
+            {
+                "dest": "94275",
+                "label": "Push your luck and climb the fountain again",
+                "needsFlags": [
+                    "hasClimbedFountain"
+                ]
             }
         ],
         "addsFlags": [
             "sawFountain"
         ],
         "id": "10255",
-        "label": "City Fountain Arrival",
+        "label": "Fountain Hub",
         "scene": {
             "actors": [
                 {
@@ -375,7 +375,7 @@ export const tree: Tree = {
                 "flags": [
                     "sawFountain"
                 ],
-                "text": "You're back at the city fountain!"
+                "text": "The city fountain stares back at you. What do you do next?"
             }
         ]
     },
@@ -409,16 +409,7 @@ export const tree: Tree = {
             {
                 "dest": "18632",
                 "label": "Next",
-                "needsFlags": [
-                    "haveGlasses"
-                ]
-            },
-            {
-                "dest": "91498",
-                "label": "Next",
-                "needsFlags": [
-                    "!haveGlasses"
-                ]
+                "needsFlags": []
             }
         ],
         "addsFlags": [],
@@ -550,17 +541,19 @@ export const tree: Tree = {
     "13097": {
         "actions": [
             {
-                "dest": "40581",
-                "label": "Go in!",
+                "dest": "13631",
+                "label": "Wander the city",
                 "needsFlags": []
             },
             {
-                "dest": "13631",
-                "label": "Leave and Wander the City",
+                "dest": "40581",
+                "label": "Go in!",
                 "needsFlags": []
             }
         ],
-        "addsFlags": [],
+        "addsFlags": [
+            "haveSeenFlowerShop"
+        ],
         "id": "13097",
         "label": "Flower shop exterior",
         "scene": {
@@ -590,7 +583,15 @@ export const tree: Tree = {
             ],
             "bg": "bg/city.png"
         },
-        "text": "You're outside the flower shop! It seems welcoming."
+        "text": "You arrive to the flower shop! It seems welcoming.",
+        "textVariants": [
+            {
+                "flags": [
+                    "haveSeenFlowerShop"
+                ],
+                "text": "You're back at the flower shop!"
+            }
+        ]
     },
     "13631": {
         "actions": [
@@ -620,14 +621,24 @@ export const tree: Tree = {
                 "needsFlags": []
             }
         ],
-        "addsFlags": [],
+        "addsFlags": [
+            "haveSeenCity"
+        ],
         "id": "13631",
         "label": "City Hub",
         "scene": {
             "actors": [],
             "bg": "bg/city.png"
         },
-        "text": "You wander the city again and think about what you should do next. There are really only a few options..."
+        "text": "You wander the city and wonder what you should do. There are really only a few options...",
+        "textVariants": [
+            {
+                "flags": [
+                    "haveSeenCity"
+                ],
+                "text": "You wander the city again and think about what you should do next. "
+            }
+        ]
     },
     "13817": {
         "actions": [
@@ -725,6 +736,34 @@ export const tree: Tree = {
         },
         "text": "He continues, with increased pitch and fervor: \n\"Out in the mindless void the daemon bore me\nPast the bright clusters of dimensioned space,\nTill neither time nor matter stretched before me,\nBut only Chaos, without form or place.\"\nYou decide it's time to leave."
     },
+    "16163": {
+        "actions": [
+            {
+                "dest": "18822",
+                "label": "Next",
+                "needsFlags": []
+            }
+        ],
+        "addsFlags": [
+            "meetBear"
+        ],
+        "id": "16163",
+        "label": "Parrot says thanks to bear",
+        "scene": {
+            "actors": [
+                {
+                    "angle": 0,
+                    "img": "character/parrot/backWingsSpread.png",
+                    "scale": 0.86,
+                    "x": 0.515,
+                    "y": 0.52
+                }
+            ],
+            "bg": "bg/bar.png"
+        },
+        "text": "\"Thanks so much!\" you squawk at him. \"You're welcome!\" the panda says.",
+        "textVariants": []
+    },
     "17556": {
         "actions": [
             {
@@ -760,14 +799,16 @@ export const tree: Tree = {
     "18632": {
         "actions": [
             {
-                "dest": "13631",
-                "label": "Exit the water and return to wandering the city",
+                "dest": "10255",
+                "label": "Next",
                 "needsFlags": []
             }
         ],
-        "addsFlags": [],
+        "addsFlags": [
+            "haveGlasses"
+        ],
         "id": "18632",
-        "label": "Nothing found in fountain 2",
+        "label": "Fountain Dig Result",
         "scene": {
             "actors": [
                 {
@@ -781,60 +822,78 @@ export const tree: Tree = {
                 {
                     "angle": 0,
                     "img": "character/parrot/shocked.png",
+                    "needsFlags": [
+                        "haveGlasses"
+                    ],
                     "scale": 0.14,
                     "x": 0.285,
                     "y": 0.435
+                },
+                {
+                    "angle": 0,
+                    "img": "character/parrot/cool.png",
+                    "needsFlags": [
+                        "!haveGlasses"
+                    ],
+                    "scale": 0.27,
+                    "x": 0.25,
+                    "y": 0.66
+                },
+                {
+                    "angle": 0,
+                    "img": "text/soCool.png",
+                    "needsFlags": [
+                        "!haveGlasses"
+                    ],
+                    "scale": 0.16,
+                    "x": 0.375,
+                    "y": 0.695
                 }
             ],
             "bg": "bg/city.png"
         },
-        "text": "You get soaked and don't end up finding anything."
+        "text": "You found a cool pair of sunglasses! You put them on briefly and then put them away in your plumage.",
+        "textVariants": [
+            {
+                "flags": [
+                    "haveGlasses"
+                ],
+                "text": "You get soaked and don't end up finding anything."
+            }
+        ]
     },
     "18822": {
         "actions": [
             {
+                "dest": "13631",
+                "label": "Wander the city again",
+                "needsFlags": []
+            },
+            {
                 "dest": "65138",
                 "label": "Ask for a drink",
                 "needsFlags": [
-                    "!haveCosmo",
-                    "!haveMartini"
+                    "!hasDrink"
+                ]
+            },
+            {
+                "dest": "65138",
+                "label": "Ask for another drink",
+                "needsFlags": [
+                    "hasDrink"
                 ]
             },
             {
                 "dest": "47626",
                 "label": "Use their bathroom",
                 "needsFlags": []
-            },
-            {
-                "dest": "65138",
-                "label": "Ask for another drink",
-                "needsFlags": [
-                    "haveCosmo",
-                    "!haveMartini"
-                ]
-            },
-            {
-                "dest": "65138",
-                "label": "Ask for another drink",
-                "needsFlags": [
-                    "haveMartini",
-                    "!haveCosmo"
-                ]
-            },
-            {
-                "dest": "65138",
-                "label": "Ask for another drink",
-                "needsFlags": [
-                    "haveCosmo",
-                    "haveMartini"
-                ]
             }
         ],
         "addsFlags": [
             "meetBear"
         ],
         "id": "18822",
-        "label": "Inside Bar",
+        "label": "Bar Hub",
         "scene": {
             "actors": [
                 {
@@ -1098,52 +1157,11 @@ export const tree: Tree = {
         },
         "text": "What will you do with these guys?"
     },
-    "22129": {
-        "actions": [
-            {
-                "dest": "13631",
-                "label": "Go back to the city",
-                "needsFlags": []
-            },
-            {
-                "dest": "49303",
-                "label": "Continue conversation",
-                "needsFlags": []
-            }
-        ],
-        "id": "22129",
-        "label": "Apologize to mouse",
-        "scene": {
-            "actors": [
-                {
-                    "angle": 0,
-                    "img": "character/parrot/back.png",
-                    "scale": 0.5,
-                    "x": 0.23,
-                    "y": 0.7453463787285789
-                },
-                {
-                    "angle": 0,
-                    "img": "character/mouse/neutral.png",
-                    "scale": 0.61,
-                    "x": 0.6203748276970769,
-                    "y": 0.535
-                }
-            ],
-            "bg": "bg/city.png"
-        },
-        "text": "\"I'm very sorry, therapy mouse, I didn't see you there!\" The mouse seems to settle down a little bit. "
-    },
     "22555": {
         "actions": [
             {
-                "dest": "86146",
-                "label": "Ask for more flowers",
-                "needsFlags": []
-            },
-            {
-                "dest": "13631",
-                "label": "Return to city",
+                "dest": "40581",
+                "label": "Next",
                 "needsFlags": []
             }
         ],
@@ -1522,45 +1540,6 @@ export const tree: Tree = {
         },
         "text": "The front of the keycard says \"Welcome, Enjoy the Pool\" on it."
     },
-    "26946": {
-        "actions": [
-            {
-                "dest": "36933",
-                "label": "Inspect",
-                "needsFlags": []
-            },
-            {
-                "dest": "13631",
-                "label": "Shrug it off and wander city",
-                "needsFlags": []
-            }
-        ],
-        "addsFlags": [],
-        "id": "26946",
-        "label": "Meet therapy mouse 1",
-        "scene": {
-            "actors": [
-                {
-                    "angle": 0,
-                    "animation": "spin_fast",
-                    "img": "character/mouse/kicked.png",
-                    "scale": 0.39,
-                    "x": 0.795,
-                    "y": 0.64
-                },
-                {
-                    "angle": 0,
-                    "animation": "shake_slow",
-                    "img": "character/parrot/neutral.png",
-                    "scale": 0.5,
-                    "x": 0.435,
-                    "y": 0.575
-                }
-            ],
-            "bg": "bg/city.png"
-        },
-        "text": "You kicked something on your way out!"
-    },
     "27438": {
         "actions": [],
         "addsFlags": [],
@@ -1585,13 +1564,13 @@ export const tree: Tree = {
     "27595": {
         "actions": [
             {
-                "dest": "59840",
-                "label": "Go inside",
+                "dest": "13631",
+                "label": "Wander city instead",
                 "needsFlags": []
             },
             {
-                "dest": "13631",
-                "label": "Wander city instead",
+                "dest": "59840",
+                "label": "Go inside",
                 "needsFlags": []
             }
         ],
@@ -1889,73 +1868,6 @@ export const tree: Tree = {
         },
         "text": "You finally arrive in the city! The options here are endless. Maybe you can make some friends!"
     },
-    "36933": {
-        "actions": [
-            {
-                "dest": "22129",
-                "label": "Apologize!",
-                "needsFlags": [
-                    "!originOfTherapyMouse"
-                ]
-            },
-            {
-                "dest": "9056",
-                "label": "Tell him his can was in the way",
-                "needsFlags": [
-                    "!originOfTherapyMouse"
-                ]
-            },
-            {
-                "dest": "7191",
-                "label": "Give him reassurance",
-                "needsFlags": [
-                    "originOfTherapyMouse"
-                ]
-            },
-            {
-                "dest": "13631",
-                "label": "Leave the mouse alone and go back to the city",
-                "needsFlags": [
-                    "originOfTherapyMouse"
-                ]
-            }
-        ],
-        "addsFlags": [
-            "haveMetTherapyMouse"
-        ],
-        "id": "36933",
-        "label": "Therapy mouse mad",
-        "scene": {
-            "actors": [
-                {
-                    "angle": 0,
-                    "flipped": false,
-                    "img": "character/mouse/hiss.png",
-                    "scale": 0.535,
-                    "x": 0.2,
-                    "y": 0.79
-                },
-                {
-                    "angle": 0,
-                    "flipped": true,
-                    "img": "character/parrot/shocked.png",
-                    "scale": 0.315,
-                    "x": 0.615,
-                    "y": 0.885
-                }
-            ],
-            "bg": "bg/city.png"
-        },
-        "text": "You look down and find a small mouse. \"IIIIIII'm therapy mouse!\" he hisses. \"How dare you kick my can! How disrespectful!\" ",
-        "textVariants": [
-            {
-                "flags": [
-                    "originOfTherapyMouse"
-                ],
-                "text": "The mouses hisses at you again. This conversation isn't going very well!"
-            }
-        ]
-    },
     "37515": {
         "actions": [
             {
@@ -2097,16 +2009,25 @@ export const tree: Tree = {
             {
                 "dest": "86146",
                 "label": "Ask if you can buy flowers",
-                "needsFlags": []
+                "needsFlags": [
+                    "!haveFlower"
+                ]
             },
             {
-                "dest": "13097",
+                "dest": "86146",
+                "label": "Ask to purchase more flowers",
+                "needsFlags": [
+                    "haveFlower"
+                ]
+            },
+            {
+                "dest": "13631",
                 "label": "Leave the shop",
                 "needsFlags": []
             }
         ],
         "addsFlags": [
-            "haveSeenFlowerShop"
+            "haveBeenInsideFlowerShop"
         ],
         "id": "40581",
         "label": "Flower shop interior",
@@ -2183,15 +2104,15 @@ export const tree: Tree = {
             {
                 "flags": [
                     "askForPossumName",
-                    "haveSeenFlowerShop"
+                    "haveBeenInsideFlowerShop"
                 ],
-                "text": "You go into the flower shop again, and you see Pat, not Jen, on the counter."
+                "text": "You see Pat, not Jen, on the counter. What will you do next?"
             },
             {
                 "flags": [
-                    "haveSeenFlowerShop"
+                    "haveBeenInsideFlowerShop"
                 ],
-                "text": "You go into the flower shop again, and it's just as beautiful as the first time you were there."
+                "text": "The flower shop is just as beautiful as the first time you were there. What do you do next?"
             }
         ]
     },
@@ -2305,7 +2226,9 @@ export const tree: Tree = {
                 "needsFlags": []
             }
         ],
-        "addsFlags": [],
+        "addsFlags": [
+            "hasDrink"
+        ],
         "id": "46692",
         "label": "bear shakes cosmopolitan",
         "scene": {
@@ -2755,11 +2678,13 @@ export const tree: Tree = {
         "actions": [
             {
                 "dest": "56699",
-                "label": "Say \"Thanks!\""
+                "label": "Say \"Thanks!\"",
+                "needsFlags": []
             },
             {
                 "dest": "23991",
-                "label": "Flip Keycard Back Over"
+                "label": "Flip Keycard Back Over",
+                "needsFlags": []
             }
         ],
         "addsFlags": [],
@@ -2814,13 +2739,8 @@ export const tree: Tree = {
     "56065": {
         "actions": [
             {
-                "dest": "13631",
-                "label": "Head out the door",
-                "needsFlags": []
-            },
-            {
-                "dest": "86146",
-                "label": "Ask to purchase more flowers",
+                "dest": "40581",
+                "label": "Next",
                 "needsFlags": []
             }
         ],
@@ -2861,13 +2781,8 @@ export const tree: Tree = {
     "56699": {
         "actions": [
             {
-                "dest": "22841",
-                "label": "Visit the pool",
-                "needsFlags": []
-            },
-            {
-                "dest": "13631",
-                "label": "Return to the city",
+                "dest": "59840",
+                "label": "Next",
                 "needsFlags": []
             }
         ],
@@ -2934,16 +2849,18 @@ export const tree: Tree = {
         "actions": [
             {
                 "dest": "45412",
-                "label": "inspect martini",
+                "label": "Inspect martini",
                 "needsFlags": []
             },
             {
-                "dest": "94709",
-                "label": "Say \"thanks\" and ask for another drink",
+                "dest": "16163",
+                "label": "Thank him",
                 "needsFlags": []
             }
         ],
-        "addsFlags": [],
+        "addsFlags": [
+            "haveMartini"
+        ],
         "id": "58259",
         "label": "Bear pours martini",
         "scene": {
@@ -2999,19 +2916,31 @@ export const tree: Tree = {
                 ]
             },
             {
-                "dest": "27595",
-                "label": "Exit Hotel",
-                "needsFlags": []
-            },
-            {
                 "dest": "22841",
                 "label": "Go to Hotel Pool",
                 "needsFlags": [
                     "haveKeycard"
                 ]
+            },
+            {
+                "dest": "95956",
+                "label": "Give her the dog bone from the beagle",
+                "needsFlags": [
+                    "askedGFQuestion",
+                    "!haveGivenBone",
+                    "talkedToBeagle",
+                    "haveDogBone"
+                ]
+            },
+            {
+                "dest": "13631",
+                "label": "Exit Hotel",
+                "needsFlags": []
             }
         ],
-        "addsFlags": [],
+        "addsFlags": [
+            "haveSeenHotel"
+        ],
         "id": "59840",
         "label": "Inside hotel",
         "scene": {
@@ -3041,32 +2970,33 @@ export const tree: Tree = {
             ],
             "bg": "bg/shop.png"
         },
-        "text": "You found a hamster behind the desk.",
+        "text": "You enter the hotel and find a hamster behind the desk.",
         "textVariants": [
             {
                 "flags": [
-                    "askedGFQuestion"
+                    "askedGFQuestion",
+                    "haveSeenHotel"
                 ],
-                "text": "You see the beagle's girlfriend behind the desk."
+                "text": "You see the beagle's girlfriend behind the desk. What will you do next?"
             },
             {
                 "flags": [
-                    "triedToBook"
+                    "haveSeenHotel"
                 ],
-                "text": "You can't book a stay here. What else will you do?"
+                "text": "You see a hamster behind the desk. What will you do next?"
             }
         ]
     },
     "61921": {
         "actions": [
             {
-                "dest": "18822",
-                "label": "Go inside",
+                "dest": "13631",
+                "label": "Wander city",
                 "needsFlags": []
             },
             {
-                "dest": "13631",
-                "label": "Wander city",
+                "dest": "18822",
+                "label": "Go inside",
                 "needsFlags": []
             }
         ],
@@ -3217,6 +3147,13 @@ export const tree: Tree = {
             {
                 "dest": "94709",
                 "label": "Agree to his terms",
+                "needsFlags": [
+                    "!termsAgreedTo"
+                ]
+            },
+            {
+                "dest": "18822",
+                "label": "Refuse his terms",
                 "needsFlags": [
                     "!termsAgreedTo"
                 ]
@@ -3721,11 +3658,9 @@ export const tree: Tree = {
     "82129": {
         "actions": [
             {
-                "dest": "95956",
-                "label": "Give her the beagle's gift",
-                "needsFlags": [
-                    "haveDogBone"
-                ]
+                "dest": "59840",
+                "label": "Next",
+                "needsFlags": []
             }
         ],
         "addsFlags": [
@@ -4021,6 +3956,11 @@ export const tree: Tree = {
                 "dest": "56065",
                 "label": "Daffodil",
                 "needsFlags": []
+            },
+            {
+                "dest": "40581",
+                "label": "Change your mind",
+                "needsFlags": []
             }
         ],
         "addsFlags": [],
@@ -4058,11 +3998,44 @@ export const tree: Tree = {
                     "scale": 0.165,
                     "x": 0.925,
                     "y": 0.8315672297093334
+                },
+                {
+                    "angle": 0.465,
+                    "animation": "wobble_fast",
+                    "flipped": true,
+                    "img": "character/possum/talking.png",
+                    "needsFlags": [
+                        "haveFlower"
+                    ],
+                    "scale": 0.53,
+                    "x": 1,
+                    "y": 1
                 }
             ],
             "bg": "bg/flower-shop.png"
         },
-        "text": "\"Sure,\" the possum says, \"I have sunflowers, lilacs, and daffodils in stock. Which will it be?\" You look them over hard."
+        "text": "\"Sure,\" the possum says, \"I have sunflowers, lilacs, and daffodils in stock. Which will it be?\" You look them over hard.",
+        "textVariants": [
+            {
+                "flags": [
+                    "haveFlower"
+                ],
+                "text": "\"Gettin greedy,\" the possum teases with a laugh, \"which additional flower would you like?\""
+            },
+            {
+                "flags": [
+                    "haveFlower",
+                    "askForPossumName"
+                ],
+                "text": "\"Gettin greedy,\" Pat teases with a laugh, \"which additional flower would you like?\""
+            },
+            {
+                "flags": [
+                    "askForPossumName"
+                ],
+                "text": "\"Sure,\" Pat says, \"I have sunflowers, lilacs, and daffodils in stock. Which will it be?\" You look them over hard."
+            }
+        ]
     },
     "87223": {
         "actions": [
@@ -4231,7 +4204,8 @@ export const tree: Tree = {
         "actions": [
             {
                 "dest": "43130",
-                "label": "Oh no!"
+                "label": "Oh no!",
+                "needsFlags": []
             }
         ],
         "addsFlags": [
@@ -4287,7 +4261,9 @@ export const tree: Tree = {
                 "needsFlags": []
             }
         ],
-        "addsFlags": [],
+        "addsFlags": [
+            "hasDrink"
+        ],
         "id": "91471",
         "label": "Bear shakes martini",
         "scene": {
@@ -4319,21 +4295,21 @@ export const tree: Tree = {
             ],
             "bg": "bg/bar.png"
         },
-        "text": "\"Coming right up!\" the strange panda says as he works furiously to make it. "
+        "text": "\"Coming right up!\" the strange panda says as he works furiously to make it."
     },
-    "91498": {
+    "94275": {
         "actions": [
             {
-                "dest": "13631",
-                "label": "Nice! Back to wandering the city!",
+                "dest": "10255",
+                "label": "Shame on you!",
                 "needsFlags": []
             }
         ],
         "addsFlags": [
-            "haveGlasses"
+            "hasClimbedFountain"
         ],
-        "id": "91498",
-        "label": "Find sunglasses",
+        "id": "94275",
+        "label": "Climbing Fountain",
         "scene": {
             "actors": [
                 {
@@ -4345,23 +4321,49 @@ export const tree: Tree = {
                     "y": 0.5
                 },
                 {
-                    "angle": 0,
-                    "img": "character/parrot/cool.png",
-                    "scale": 0.315,
-                    "x": 0.255,
-                    "y": 0.615
+                    "angle": -0.295,
+                    "animation": "wobble_fast",
+                    "img": "character/parrot/flying.png",
+                    "needsFlags": [
+                        "!hasClimbedFountain"
+                    ],
+                    "scale": 0.16,
+                    "x": 0.495,
+                    "y": 0.23
                 },
                 {
                     "angle": 0,
-                    "img": "text/soCool.png",
-                    "scale": 0.18,
-                    "x": 0.405,
-                    "y": 0.75
+                    "animation": "zoom_fast",
+                    "img": "character/parrot/backWingsSpread.png",
+                    "needsFlags": [
+                        "hasClimbedFountain"
+                    ],
+                    "scale": 0.155,
+                    "x": 0.63,
+                    "y": 0.085
+                },
+                {
+                    "angle": 2.75,
+                    "img": "character/egg/neutral.png",
+                    "needsFlags": [
+                        "hasClimbedFountain"
+                    ],
+                    "scale": 0.1,
+                    "x": 0.095,
+                    "y": 0.905
                 }
             ],
             "bg": "bg/city.png"
         },
-        "text": "You found a pair of sunglasses in the bottom of the fountain! You wear them briefly and then put them inside of your feathers to save for later."
+        "text": "You climb the fountain and almost slip! It's extremely slick, you should be MUCH more careful when you're carrying your egg!",
+        "textVariants": [
+            {
+                "flags": [
+                    "hasClimbedFountain"
+                ],
+                "text": "This time, you carefully put your egg on the ground ahead of time. However, the fountain is still slippery and you're really putting yourself at risk!"
+            }
+        ]
     },
     "94709": {
         "actions": [
@@ -4418,7 +4420,9 @@ export const tree: Tree = {
                 "needsFlags": []
             }
         ],
-        "addsFlags": [],
+        "addsFlags": [
+            "haveGivenBone"
+        ],
         "id": "95956",
         "label": "Gift Hamster",
         "scene": {
