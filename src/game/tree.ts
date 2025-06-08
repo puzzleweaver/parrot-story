@@ -197,31 +197,6 @@ export const tree: Tree = {
         },
         "text": "The possum comes over to you and spreads its mouth in offense. \"No, I'm Pat! Why does everyone keep calling me Jen?\" Your face feels hot. You aren't sure what you were thinking."
     },
-    "7191": {
-        "actions": [],
-        "id": "7191",
-        "label": "Comfort therapy mouse",
-        "scene": {
-            "actors": [
-                {
-                    "angle": 0,
-                    "img": "character/parrot/back.png",
-                    "scale": 0.5,
-                    "x": 0.27,
-                    "y": 0.77
-                },
-                {
-                    "angle": 0,
-                    "img": "character/mouse/neutral.png",
-                    "scale": 0.5,
-                    "x": 0.62,
-                    "y": 0.52
-                }
-            ],
-            "bg": "bg/city.png"
-        },
-        "text": "\"I'm sorry, therapy mouse,\" you say, \"I'm sure you're a fantastic therapist. Tell me some of your juiciest stories!\" He calms down and straightens up, then looks off wistfully. "
-    },
     "7769": {
         "actions": [
             {
@@ -247,16 +222,6 @@ export const tree: Tree = {
         },
         "text": "\"My dear brothers and sisters,\" the leader rat begins, \"we are coming up on an unprecedented time in the universe. The fifth dimension is here. It's upon us. Our minds are open to the secrets of the universe, filling us with warmth and happiness. Happiness is all there is.\" "
     },
-    "9056": {
-        "actions": [],
-        "id": "9056",
-        "label": "",
-        "scene": {
-            "actors": [],
-            "bg": "bg/shop.png"
-        },
-        "text": "lorem ipsum dolor sit amet and so on and so forth..."
-    },
     "9403": {
         "actions": [
             {
@@ -265,23 +230,9 @@ export const tree: Tree = {
                 "needsFlags": []
             },
             {
-                "dest": "26946",
-                "label": "Say \"thanks!\" and leave bar",
-                "needsFlags": [
-                    "!metTherapyMouse"
-                ]
-            },
-            {
                 "dest": "94709",
                 "label": "Say \"thanks!\" and ask for another drink",
                 "needsFlags": []
-            },
-            {
-                "dest": "77796",
-                "label": "Say \"thanks!\" and leave the bar",
-                "needsFlags": [
-                    "metTherapyMouse"
-                ]
             }
         ],
         "addsFlags": [
@@ -774,16 +725,6 @@ export const tree: Tree = {
         },
         "text": "He continues, with increased pitch and fervor: \n\"Out in the mindless void the daemon bore me\nPast the bright clusters of dimensioned space,\nTill neither time nor matter stretched before me,\nBut only Chaos, without form or place.\"\nYou decide it's time to leave."
     },
-    "15917": {
-        "actions": [],
-        "id": "15917",
-        "label": "Therapy mouse chat",
-        "scene": {
-            "actors": [],
-            "bg": "bg/shop.png"
-        },
-        "text": "lorem ipsum dolor sit amet and so on and so forth..."
-    },
     "17556": {
         "actions": [
             {
@@ -862,11 +803,6 @@ export const tree: Tree = {
             {
                 "dest": "47626",
                 "label": "Use their bathroom",
-                "needsFlags": []
-            },
-            {
-                "dest": "26946",
-                "label": "Leave Bar",
                 "needsFlags": []
             },
             {
@@ -1585,66 +1521,6 @@ export const tree: Tree = {
             "bg": "bg/shop.png"
         },
         "text": "The front of the keycard says \"Welcome, Enjoy the Pool\" on it."
-    },
-    "24085": {
-        "actions": [
-            {
-                "dest": "13631",
-                "label": "Return to city",
-                "needsFlags": []
-            }
-        ],
-        "id": "24085",
-        "label": "Mouse changes topic",
-        "scene": {
-            "actors": [
-                {
-                    "angle": 0,
-                    "img": "character/mouse/neutral.png",
-                    "scale": 0.5,
-                    "x": 0.615,
-                    "y": 0.775
-                },
-                {
-                    "angle": 0,
-                    "img": "character/parrot/in-transit.png",
-                    "scale": 0.34,
-                    "x": 0.19,
-                    "y": 0.83
-                }
-            ],
-            "bg": "bg/city.png"
-        },
-        "text": "The mouse kinda just blinks at you. \"Well anyway, morale of the story- be very careful with what company you keep around.\" You aren't sure what to do with this story. You're just a bird!"
-    },
-    "25117": {
-        "actions": [
-            {
-                "dest": "36933",
-                "label": "\"That's awful! That takes advantage of others!\" ",
-                "needsFlags": []
-            },
-            {
-                "dest": "52812",
-                "label": "\"That's pretty clever!\"",
-                "needsFlags": []
-            }
-        ],
-        "id": "25117",
-        "label": "Therapy Mouse Origin Story",
-        "scene": {
-            "actors": [
-                {
-                    "angle": 0,
-                    "img": "character/mouse/explaining.png",
-                    "scale": 1.035,
-                    "x": 0.46,
-                    "y": 0.5
-                }
-            ],
-            "bg": "bg/city.png"
-        },
-        "text": "\"Well you see,\" he began, \"from a young age, I've had a fascination with gossip. I noticed that if I advertise myself as a therapist and sit outside this here bar, I get the juiciest gossip in the city!\""
     },
     "26946": {
         "actions": [
@@ -2782,33 +2658,6 @@ export const tree: Tree = {
         },
         "text": "The small man throws your egg onto the jungle floor as hard as it can, and it shatters, along with your hopes and dreams."
     },
-    "49303": {
-        "actions": [
-            {
-                "dest": "25117",
-                "label": "Why is he called that!",
-                "needsFlags": []
-            }
-        ],
-        "addsFlags": [
-            "originOfTherapyMouse"
-        ],
-        "id": "49303",
-        "label": "Thearpy mouse chat",
-        "scene": {
-            "actors": [
-                {
-                    "angle": 0,
-                    "img": "character/mouse/neutral.png",
-                    "scale": 1.51,
-                    "x": 0.535,
-                    "y": 0.22164114199207074
-                }
-            ],
-            "bg": "bg/city.png"
-        },
-        "text": "You look at the small mouse and read his writing on his can. \"Why are you called therapy mouse anyway?\""
-    },
     "49719": {
         "actions": [
             {
@@ -2901,16 +2750,6 @@ export const tree: Tree = {
             "bg": "bg/shop.png"
         },
         "text": "Your egg is broken forever, and you fear you can't move on."
-    },
-    "52812": {
-        "actions": [],
-        "id": "52812",
-        "label": "",
-        "scene": {
-            "actors": [],
-            "bg": "bg/shop.png"
-        },
-        "text": "lorem ipsum dolor sit amet and so on and so forth..."
     },
     "53122": {
         "actions": [
@@ -3097,13 +2936,6 @@ export const tree: Tree = {
                 "dest": "45412",
                 "label": "inspect martini",
                 "needsFlags": []
-            },
-            {
-                "dest": "26946",
-                "label": "Say \"thanks\" and leave bar",
-                "needsFlags": [
-                    "!metTherapyMouse"
-                ]
             },
             {
                 "dest": "94709",
@@ -3390,14 +3222,6 @@ export const tree: Tree = {
                 ]
             },
             {
-                "dest": "26946",
-                "label": "Refuse his terms and leave to wander city again",
-                "needsFlags": [
-                    "!metTherapyMouse",
-                    "!termsAgreedTo"
-                ]
-            },
-            {
                 "dest": "91471",
                 "label": "Martini",
                 "needsFlags": [
@@ -3407,7 +3231,9 @@ export const tree: Tree = {
             {
                 "dest": "46692",
                 "label": "Cosmopolitan",
-                "needsFlags": []
+                "needsFlags": [
+                    "termsAgreedTo"
+                ]
             }
         ],
         "addsFlags": [],
@@ -3785,35 +3611,6 @@ export const tree: Tree = {
             "bg": "bg/shop.png"
         },
         "text": "The dachshund looks sad and confused. \"I'm a dog, I don't drink.\" You feel a little awkward."
-    },
-    "77796": {
-        "actions": [
-            {
-                "label": "Talk to him",
-                "needsFlags": []
-            },
-            {
-                "dest": "13631",
-                "label": "Go back to wandering city",
-                "needsFlags": []
-            }
-        ],
-        "addsFlags": [],
-        "id": "77796",
-        "label": "Therapy Mouse Again",
-        "scene": {
-            "actors": [
-                {
-                    "angle": 0,
-                    "img": "character/mouse/neutral.png",
-                    "scale": 0.985,
-                    "x": 0.57,
-                    "y": 0.495
-                }
-            ],
-            "bg": "bg/city.png"
-        },
-        "text": "\"Nice to see you again!\" he squeaks."
     },
     "78527": {
         "actions": [
