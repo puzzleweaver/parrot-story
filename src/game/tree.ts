@@ -1540,6 +1540,31 @@ export const tree: Tree = {
         },
         "text": "The front of the keycard says \"Welcome, Enjoy the Pool\" on it."
     },
+    "24072": {
+        "actions": [
+            {
+                "dest": "91404",
+                "label": "Next",
+                "needsFlags": []
+            }
+        ],
+        "id": "24072",
+        "label": "Poison Settles",
+        "scene": {
+            "actors": [
+                {
+                    "angle": 0,
+                    "img": "character/parrot/drunk.png",
+                    "needsFlags": [],
+                    "scale": 0.985,
+                    "x": 0.46,
+                    "y": 0.5
+                }
+            ],
+            "bg": "bg/gray.png"
+        },
+        "text": "The substance does NOT settle well in your stomach. You regret your life choices."
+    },
     "27438": {
         "actions": [],
         "addsFlags": [],
@@ -2246,6 +2271,64 @@ export const tree: Tree = {
         },
         "text": "\"Coming right up!\" The weird panda prepares the cosmopolitan faster than you can process what's happening."
     },
+    "47187": {
+        "actions": [
+            {
+                "dest": "24072",
+                "label": "Uh oh",
+                "needsFlags": []
+            }
+        ],
+        "addsFlags": [
+            "drunk"
+        ],
+        "id": "47187",
+        "label": "Drink Poison",
+        "scene": {
+            "actors": [
+                {
+                    "angle": 0,
+                    "img": "character/parrot/drinking.png",
+                    "scale": 0.95,
+                    "x": 0.495,
+                    "y": 0.53
+                },
+                {
+                    "angle": 0,
+                    "img": "character/rat/rat_1.png",
+                    "needsFlags": [
+                        "haveRatVision"
+                    ],
+                    "scale": 0.16,
+                    "x": 0.875,
+                    "y": 0.92
+                },
+                {
+                    "angle": 0,
+                    "flipped": true,
+                    "img": "character/rat/rat_1.png",
+                    "needsFlags": [
+                        "haveRatVision"
+                    ],
+                    "scale": 0.175,
+                    "x": 0.09211623800840896,
+                    "y": 0.925
+                },
+                {
+                    "angle": 0,
+                    "img": "character/rat/rat_2.png",
+                    "needsFlags": [
+                        "haveRatVision"
+                    ],
+                    "scale": 0.185,
+                    "x": 0.69,
+                    "y": 0.9
+                }
+            ],
+            "bg": "bg/gray.png"
+        },
+        "text": "You don't know what possessed you to do this, but you toss your head back and drink the substance. It tastes bitter and malty."
+    },
     "47389": {
         "actions": [
             {
@@ -2581,6 +2664,16 @@ export const tree: Tree = {
         },
         "text": "The small man throws your egg onto the jungle floor as hard as it can, and it shatters, along with your hopes and dreams."
     },
+    "49644": {
+        "actions": [],
+        "id": "49644",
+        "label": "Poison settles",
+        "scene": {
+            "actors": [],
+            "bg": "bg/gray.png"
+        },
+        "text": "lorem ipsum dolor sit amet and so on and so forth..."
+    },
     "49719": {
         "actions": [
             {
@@ -2673,6 +2766,58 @@ export const tree: Tree = {
             "bg": "bg/shop.png"
         },
         "text": "Your egg is broken forever, and you fear you can't move on."
+    },
+    "52729": {
+        "actions": [],
+        "addsFlags": [
+            "drunk"
+        ],
+        "id": "52729",
+        "label": "Drink Poison (copy) (copy)",
+        "scene": {
+            "actors": [
+                {
+                    "angle": 0,
+                    "img": "character/parrot/drinking.png",
+                    "scale": 0.95,
+                    "x": 0.495,
+                    "y": 0.53
+                },
+                {
+                    "angle": 0,
+                    "img": "character/rat/rat_1.png",
+                    "needsFlags": [
+                        "haveRatVision"
+                    ],
+                    "scale": 0.16,
+                    "x": 0.875,
+                    "y": 0.92
+                },
+                {
+                    "angle": 0,
+                    "flipped": true,
+                    "img": "character/rat/rat_1.png",
+                    "needsFlags": [
+                        "haveRatVision"
+                    ],
+                    "scale": 0.175,
+                    "x": 0.09211623800840896,
+                    "y": 0.925
+                },
+                {
+                    "angle": 0,
+                    "img": "character/rat/rat_2.png",
+                    "needsFlags": [
+                        "haveRatVision"
+                    ],
+                    "scale": 0.185,
+                    "x": 0.69,
+                    "y": 0.9
+                }
+            ],
+            "bg": "bg/gray.png"
+        },
+        "text": ""
     },
     "53122": {
         "actions": [
@@ -2998,6 +3143,11 @@ export const tree: Tree = {
                 "dest": "18822",
                 "label": "Go inside",
                 "needsFlags": []
+            },
+            {
+                "dest": "91404",
+                "label": "Explore back alley",
+                "needsFlags": []
             }
         ],
         "addsFlags": [],
@@ -3024,6 +3174,16 @@ export const tree: Tree = {
             "bg": "bg/city.png"
         },
         "text": "You arrived to the bar! This place seems a little shady."
+    },
+    "62874": {
+        "actions": [],
+        "id": "62874",
+        "label": "",
+        "scene": {
+            "actors": [],
+            "bg": "bg/shop.png"
+        },
+        "text": "lorem ipsum dolor sit amet and so on and so forth..."
     },
     "62947": {
         "actions": [
@@ -3141,6 +3301,36 @@ export const tree: Tree = {
             "bg": "bg/jungle.png"
         },
         "text": "Wow! You've arrived back to the jungle!"
+    },
+    "64965": {
+        "actions": [
+            {
+                "dest": "47187",
+                "label": "Drink it",
+                "needsFlags": []
+            },
+            {
+                "dest": "91404",
+                "label": "But it back down",
+                "needsFlags": []
+            }
+        ],
+        "addsFlags": [],
+        "id": "64965",
+        "label": "Bottle of poison",
+        "scene": {
+            "actors": [
+                {
+                    "angle": 0,
+                    "img": "prop/poisonBottle.png",
+                    "scale": 1.07,
+                    "x": 0.5,
+                    "y": 0.51
+                }
+            ],
+            "bg": "bg/gray.png"
+        },
+        "text": "You pick up one of the bottles and look at it closely. It appears to maybe be an alcoholic beverage? You're a bird so you can't read."
     },
     "65138": {
         "actions": [
@@ -4252,6 +4442,67 @@ export const tree: Tree = {
             "bg": "bg/flower-shop.png"
         },
         "text": "You take the sunflowers. The possum doesn't seem to care about you paying so you start to head out the door. All of a sudden, your nose tickles and you sneeze! Your egg goes flying!"
+    },
+    "91404": {
+        "actions": [
+            {
+                "dest": "64965",
+                "label": "Pick up one of the bottles",
+                "needsFlags": []
+            },
+            {
+                "dest": "61921",
+                "label": "Leave the back alley",
+                "needsFlags": []
+            }
+        ],
+        "addsFlags": [
+            "haveSeenBackAlley"
+        ],
+        "id": "91404",
+        "label": "Bar back alley",
+        "scene": {
+            "actors": [
+                {
+                    "angle": 0,
+                    "img": "character/parrot/backWingsSpread.png",
+                    "scale": 0.5,
+                    "x": 0.25,
+                    "y": 0.735
+                },
+                {
+                    "angle": -1.535,
+                    "img": "prop/poisonBottle.png",
+                    "scale": 0.1,
+                    "x": 0.945,
+                    "y": 0.9
+                },
+                {
+                    "angle": 1.715,
+                    "img": "prop/poisonBottle.png",
+                    "scale": 0.1,
+                    "x": 0.05,
+                    "y": 0.935
+                }
+            ],
+            "bg": "bg/gray.png"
+        },
+        "text": "You find a spooky alley behind the bar. It gives you the creeps. You hear faint chanting and drumming but don't see anything other than mysterious bottles strewn about.",
+        "textVariants": [
+            {
+                "flags": [
+                    "haveRatVision",
+                    "!haveSeenBackAlley"
+                ],
+                "text": "You find a spooky alley behind the bar and you behold a bizarre scene. Rats seem to have formed a drum circle and are chanting in a crazed way."
+            },
+            {
+                "flags": [
+                    "haveSeenBackAlley"
+                ],
+                "text": "The back alley looks spookier by the minute. What do you do?"
+            }
+        ]
     },
     "91471": {
         "actions": [
