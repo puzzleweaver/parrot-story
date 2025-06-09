@@ -192,6 +192,58 @@ export const tree: Tree = {
         },
         "text": "The possum comes over to you and spreads its mouth in offense. \"No, I'm Pat! Why does everyone keep calling me Jen?\" Your face feels hot. You aren't sure what you were thinking."
     },
+    "5936": {
+        "actions": [],
+        "endgame": "lose",
+        "id": "5936",
+        "label": "Egg breaks on fountain",
+        "scene": {
+            "actors": [
+                {
+                    "angle": 0,
+                    "animation": "still",
+                    "img": "setting/city_fountain.png",
+                    "scale": 2,
+                    "x": 0.08,
+                    "y": 0.5606425359088512
+                },
+                {
+                    "angle": 0,
+                    "animation": "still",
+                    "img": "character/parrot/sad.png",
+                    "scale": 0.24,
+                    "x": 0.54,
+                    "y": 0.5420089620335692
+                },
+                {
+                    "angle": 0,
+                    "animation": "still",
+                    "img": "character/egg/soup.png",
+                    "scale": 0.1,
+                    "x": 0.74,
+                    "y": 0.7
+                },
+                {
+                    "angle": 0,
+                    "animation": "still",
+                    "img": "character/egg/brokenShellRight.png",
+                    "scale": 0.105,
+                    "x": 0.885,
+                    "y": 0.6
+                },
+                {
+                    "angle": 0,
+                    "animation": "still",
+                    "img": "character/egg/brokenShellLeft.png",
+                    "scale": 0.1,
+                    "x": 0.565,
+                    "y": 0.7784893917831026
+                }
+            ],
+            "bg": "bg/city.png"
+        },
+        "text": "Your egg splatters across the fountain. You're devastated."
+    },
     "7769": {
         "actions": [
             {
@@ -332,7 +384,8 @@ export const tree: Tree = {
                 "dest": "94275",
                 "label": "Climb on the fountain",
                 "needsFlags": [
-                    "!hasClimbedFountain"
+                    "!hasClimbedFountain",
+                    "!drunk"
                 ]
             },
             {
@@ -340,6 +393,13 @@ export const tree: Tree = {
                 "label": "Push your luck and climb the fountain again",
                 "needsFlags": [
                     "hasClimbedFountain"
+                ]
+            },
+            {
+                "dest": "94275",
+                "label": "Climb fountain while tipsy",
+                "needsFlags": [
+                    "drunk"
                 ]
             }
         ],
@@ -365,6 +425,16 @@ export const tree: Tree = {
                     "scale": 0.245,
                     "x": 0.105,
                     "y": 0.815
+                },
+                {
+                    "angle": 0,
+                    "img": "prop/drunk_bubbles.png",
+                    "needsFlags": [
+                        "drunk"
+                    ],
+                    "scale": 0.1,
+                    "x": 0.16,
+                    "y": 0.65
                 }
             ],
             "bg": "bg/city.png"
@@ -376,6 +446,13 @@ export const tree: Tree = {
                     "sawFountain"
                 ],
                 "text": "The city fountain stares back at you. What do you do next?"
+            },
+            {
+                "flags": [
+                    "!sawFountain",
+                    "drunk"
+                ],
+                "text": "You arrive to the fountain. The water smells nice but you're still woozy."
             }
         ]
     },
@@ -466,6 +543,16 @@ export const tree: Tree = {
                     "scale": 0.1,
                     "x": 0.245,
                     "y": 0.325
+                },
+                {
+                    "angle": 0,
+                    "img": "prop/drunk_bubbles.png",
+                    "needsFlags": [
+                        "drunk"
+                    ],
+                    "scale": 0.125,
+                    "x": 0.35,
+                    "y": 0.385
                 }
             ],
             "bg": "bg/city.png"
@@ -873,11 +960,22 @@ export const tree: Tree = {
                     "angle": 0,
                     "img": "text/soCool.png",
                     "needsFlags": [
-                        "!haveGlasses"
+                        "!haveGlasses",
+                        "!drunk"
                     ],
                     "scale": 0.16,
                     "x": 0.375,
                     "y": 0.695
+                },
+                {
+                    "angle": 0,
+                    "img": "prop/drunk_bubbles.png",
+                    "needsFlags": [
+                        "drunk"
+                    ],
+                    "scale": 0.17,
+                    "x": 0.31,
+                    "y": 0.38
                 }
             ],
             "bg": "bg/city.png"
@@ -3893,6 +3991,16 @@ export const tree: Tree = {
         },
         "text": "You and your egg sink into the warm water and rest. It feels amazing!"
     },
+    "82006": {
+        "actions": [],
+        "id": "82006",
+        "label": "",
+        "scene": {
+            "actors": [],
+            "bg": "bg/shop.png"
+        },
+        "text": "lorem ipsum dolor sit amet and so on and so forth..."
+    },
     "82129": {
         "actions": [
             {
@@ -4631,7 +4739,16 @@ export const tree: Tree = {
             {
                 "dest": "10255",
                 "label": "Shame on you!",
-                "needsFlags": []
+                "needsFlags": [
+                    "!drunk"
+                ]
+            },
+            {
+                "dest": "5936",
+                "label": "Ruh roh",
+                "needsFlags": [
+                    "drunk"
+                ]
             }
         ],
         "addsFlags": [
@@ -4654,7 +4771,8 @@ export const tree: Tree = {
                     "animation": "wobble_fast",
                     "img": "character/parrot/flying.png",
                     "needsFlags": [
-                        "!hasClimbedFountain"
+                        "!hasClimbedFountain",
+                        "!drunk"
                     ],
                     "scale": 0.16,
                     "x": 0.495,
@@ -4665,7 +4783,8 @@ export const tree: Tree = {
                     "animation": "zoom_fast",
                     "img": "character/parrot/backWingsSpread.png",
                     "needsFlags": [
-                        "hasClimbedFountain"
+                        "hasClimbedFountain",
+                        "!drunk"
                     ],
                     "scale": 0.155,
                     "x": 0.63,
@@ -4675,11 +4794,23 @@ export const tree: Tree = {
                     "angle": 2.75,
                     "img": "character/egg/neutral.png",
                     "needsFlags": [
-                        "hasClimbedFountain"
+                        "hasClimbedFountain",
+                        "!drunk"
                     ],
                     "scale": 0.1,
                     "x": 0.095,
                     "y": 0.905
+                },
+                {
+                    "angle": -2.4,
+                    "animation": "spin_fast",
+                    "img": "character/parrot/flying.png",
+                    "needsFlags": [
+                        "drunk"
+                    ],
+                    "scale": 0.11,
+                    "x": 0.715,
+                    "y": 0.195
                 }
             ],
             "bg": "bg/city.png"
@@ -4691,6 +4822,12 @@ export const tree: Tree = {
                     "hasClimbedFountain"
                 ],
                 "text": "This time, you carefully put your egg on the ground ahead of time. However, the fountain is still slippery and you're really putting yourself at risk!"
+            },
+            {
+                "flags": [
+                    "drunk"
+                ],
+                "text": "You climb the fountain and slip!"
             }
         ]
     },
