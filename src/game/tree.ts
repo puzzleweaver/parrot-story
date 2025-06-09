@@ -3296,6 +3296,9 @@ export const tree: Tree = {
                     "angle": 0,
                     "animation": "hop_slow",
                     "img": "prop/drunk_bubbles.png",
+                    "needsFlags": [
+                        "drunk"
+                    ],
                     "scale": 0.1,
                     "x": 0.045,
                     "y": 0.66
