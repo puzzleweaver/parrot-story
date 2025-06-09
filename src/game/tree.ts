@@ -754,15 +754,45 @@ export const tree: Tree = {
                 {
                     "angle": 0,
                     "img": "character/parrot/backWingsSpread.png",
+                    "needsFlags": [
+                        "!drunk"
+                    ],
                     "scale": 0.86,
                     "x": 0.515,
                     "y": 0.52
+                },
+                {
+                    "angle": 0,
+                    "img": "character/parrot/back.png",
+                    "needsFlags": [
+                        "drunk"
+                    ],
+                    "scale": 0.785,
+                    "x": 0.4724080673554427,
+                    "y": 0.5935892429645868
+                },
+                {
+                    "angle": 0,
+                    "img": "prop/drunk_bubbles.png",
+                    "needsFlags": [
+                        "drunk"
+                    ],
+                    "scale": 0.225,
+                    "x": 0.4475303429860865,
+                    "y": 0.16100141979995175
                 }
             ],
             "bg": "bg/bar.png"
         },
         "text": "\"Thanks so much!\" you squawk at him. \"You're welcome!\" the panda says.",
-        "textVariants": []
+        "textVariants": [
+            {
+                "flags": [
+                    "drunk"
+                ],
+                "text": "\"Thanks so much,\" you manage to squawk at him."
+            }
+        ]
     },
     "17556": {
         "actions": [
@@ -917,6 +947,17 @@ export const tree: Tree = {
                     "scale": 0.6,
                     "x": 0.6,
                     "y": 0.65
+                },
+                {
+                    "angle": 0,
+                    "animation": "hop_slow",
+                    "img": "prop/drunk_bubbles.png",
+                    "needsFlags": [
+                        "drunk"
+                    ],
+                    "scale": 0.1,
+                    "x": 0.14,
+                    "y": 0.575
                 }
             ],
             "bg": "bg/bar.png"
@@ -1559,6 +1600,16 @@ export const tree: Tree = {
                     "scale": 0.985,
                     "x": 0.46,
                     "y": 0.5
+                },
+                {
+                    "angle": -0.715,
+                    "img": "character/rat/rat_3.png",
+                    "needsFlags": [
+                        "haveRatVision"
+                    ],
+                    "scale": 0.185,
+                    "x": 0.835,
+                    "y": 0.93
                 }
             ],
             "bg": "bg/gray.png"
@@ -1883,10 +1934,22 @@ export const tree: Tree = {
                     "angle": 0,
                     "animation": "shake_slow",
                     "flipped": true,
+                    "img": "character/rat/rat_1.png",
+                    "needsFlags": [
+                        "haveRatVision"
+                    ],
+                    "scale": 0.1,
+                    "x": 0.735,
+                    "y": 0.69
+                },
+                {
+                    "angle": 0,
+                    "animation": "shake_slow",
+                    "flipped": true,
                     "img": "setting/bus.png",
-                    "scale": 0.3,
-                    "x": 0.335,
-                    "y": 0.85
+                    "scale": 0.49,
+                    "x": 0.47,
+                    "y": 0.77
                 }
             ],
             "bg": "bg/city.png"
@@ -2223,12 +2286,23 @@ export const tree: Tree = {
         "scene": {
             "actors": [
                 {
+                    "angle": 0,
+                    "animation": "hop_fast",
+                    "img": "character/rat/rat_1.png",
+                    "needsFlags": [
+                        "haveRatVision"
+                    ],
+                    "scale": 0.1,
+                    "x": 0.26,
+                    "y": 0.59
+                },
+                {
                     "angle": 0.06,
                     "animation": "hop_fast",
                     "img": "setting/bus.png",
-                    "scale": 0.3,
-                    "x": 0.45,
-                    "y": 0.8
+                    "scale": 0.48,
+                    "x": 0.52,
+                    "y": 0.69
                 }
             ],
             "bg": "bg/jungle.png"
@@ -2664,16 +2738,6 @@ export const tree: Tree = {
         },
         "text": "The small man throws your egg onto the jungle floor as hard as it can, and it shatters, along with your hopes and dreams."
     },
-    "49644": {
-        "actions": [],
-        "id": "49644",
-        "label": "Poison settles",
-        "scene": {
-            "actors": [],
-            "bg": "bg/gray.png"
-        },
-        "text": "lorem ipsum dolor sit amet and so on and so forth..."
-    },
     "49719": {
         "actions": [
             {
@@ -2766,58 +2830,6 @@ export const tree: Tree = {
             "bg": "bg/shop.png"
         },
         "text": "Your egg is broken forever, and you fear you can't move on."
-    },
-    "52729": {
-        "actions": [],
-        "addsFlags": [
-            "drunk"
-        ],
-        "id": "52729",
-        "label": "Drink Poison (copy) (copy)",
-        "scene": {
-            "actors": [
-                {
-                    "angle": 0,
-                    "img": "character/parrot/drinking.png",
-                    "scale": 0.95,
-                    "x": 0.495,
-                    "y": 0.53
-                },
-                {
-                    "angle": 0,
-                    "img": "character/rat/rat_1.png",
-                    "needsFlags": [
-                        "haveRatVision"
-                    ],
-                    "scale": 0.16,
-                    "x": 0.875,
-                    "y": 0.92
-                },
-                {
-                    "angle": 0,
-                    "flipped": true,
-                    "img": "character/rat/rat_1.png",
-                    "needsFlags": [
-                        "haveRatVision"
-                    ],
-                    "scale": 0.175,
-                    "x": 0.09211623800840896,
-                    "y": 0.925
-                },
-                {
-                    "angle": 0,
-                    "img": "character/rat/rat_2.png",
-                    "needsFlags": [
-                        "haveRatVision"
-                    ],
-                    "scale": 0.185,
-                    "x": 0.69,
-                    "y": 0.9
-                }
-            ],
-            "bg": "bg/gray.png"
-        },
-        "text": ""
     },
     "53122": {
         "actions": [
@@ -3037,6 +3049,16 @@ export const tree: Tree = {
                     "scale": 0.1,
                     "x": 0.65,
                     "y": 0.45
+                },
+                {
+                    "angle": 0,
+                    "img": "prop/drunk_bubbles.png",
+                    "needsFlags": [
+                        "drunk"
+                    ],
+                    "scale": 0.1,
+                    "x": 0.08,
+                    "y": 0.5937436697826981
                 }
             ],
             "bg": "bg/bar.png"
@@ -3150,7 +3172,9 @@ export const tree: Tree = {
                 "needsFlags": []
             }
         ],
-        "addsFlags": [],
+        "addsFlags": [
+            "haveSeenBar"
+        ],
         "id": "61921",
         "label": "Bar Exterior",
         "scene": {
@@ -3169,21 +3193,34 @@ export const tree: Tree = {
                     "scale": 1,
                     "x": 0.55,
                     "y": 0.5
+                },
+                {
+                    "angle": 0,
+                    "animation": "hop_slow",
+                    "img": "prop/drunk_bubbles.png",
+                    "scale": 0.1,
+                    "x": 0.045,
+                    "y": 0.66
                 }
             ],
             "bg": "bg/city.png"
         },
-        "text": "You arrived to the bar! This place seems a little shady."
-    },
-    "62874": {
-        "actions": [],
-        "id": "62874",
-        "label": "",
-        "scene": {
-            "actors": [],
-            "bg": "bg/shop.png"
-        },
-        "text": "lorem ipsum dolor sit amet and so on and so forth..."
+        "text": "You arrived to the bar! This place seems a little shady.",
+        "textVariants": [
+            {
+                "flags": [
+                    "drunk",
+                    "haveSeenBar"
+                ],
+                "text": "You arrived to the bar! This place still seems shady. You also feel woozy."
+            },
+            {
+                "flags": [
+                    "haveSeenBar"
+                ],
+                "text": "You arrived to the bar! This place still seems shady."
+            }
+        ]
     },
     "62947": {
         "actions": [
@@ -3389,6 +3426,17 @@ export const tree: Tree = {
                     "scale": 0.5,
                     "x": 0.7,
                     "y": 0.2
+                },
+                {
+                    "angle": 0.48,
+                    "animation": "hop_slow",
+                    "img": "prop/drunk_bubbles.png",
+                    "needsFlags": [
+                        "drunk"
+                    ],
+                    "scale": 0.1,
+                    "x": 0.195,
+                    "y": 0.555
                 }
             ],
             "bg": "bg/bar.png"
@@ -4483,6 +4531,17 @@ export const tree: Tree = {
                     "scale": 0.1,
                     "x": 0.05,
                     "y": 0.935
+                },
+                {
+                    "angle": 0,
+                    "animation": "hop_slow",
+                    "img": "prop/drunk_bubbles.png",
+                    "needsFlags": [
+                        "drunk"
+                    ],
+                    "scale": 0.1,
+                    "x": 0.325,
+                    "y": 0.56
                 }
             ],
             "bg": "bg/gray.png"
@@ -4542,11 +4601,30 @@ export const tree: Tree = {
                     "scale": 0.5,
                     "x": 0.7,
                     "y": 0.35
+                },
+                {
+                    "angle": 0.325,
+                    "animation": "hop_slow",
+                    "img": "prop/drunk_bubbles.png",
+                    "needsFlags": [
+                        "drunk"
+                    ],
+                    "scale": 0.1,
+                    "x": 0.09,
+                    "y": 0.555
                 }
             ],
             "bg": "bg/bar.png"
         },
-        "text": "\"Coming right up!\" the strange panda says as he works furiously to make it."
+        "text": "\"Coming right up!\" the strange panda says as he works furiously to make it.",
+        "textVariants": [
+            {
+                "flags": [
+                    "drunk"
+                ],
+                "text": "\"Coming right up!\" the strange panda says as he works furiously to make it. Is the room spinning?"
+            }
+        ]
     },
     "94275": {
         "actions": [
@@ -4657,6 +4735,17 @@ export const tree: Tree = {
                     "scale": 0.65,
                     "x": 0.55,
                     "y": 0.7115674718410626
+                },
+                {
+                    "angle": 0,
+                    "animation": "hop_slow",
+                    "img": "prop/drunk_bubbles.png",
+                    "needsFlags": [
+                        "drunk"
+                    ],
+                    "scale": 0.1,
+                    "x": 0.155,
+                    "y": 0.435
                 }
             ],
             "bg": "bg/bar.png"
