@@ -1042,6 +1042,9 @@ export const tree: Tree = {
                     "angle": 0,
                     "animation": "still",
                     "img": "setting/barCounter.png",
+                    "needsFlags": [
+                        "!drunk"
+                    ],
                     "scale": 0.6,
                     "x": 0.6,
                     "y": 0.65
@@ -1056,6 +1059,16 @@ export const tree: Tree = {
                     "scale": 0.1,
                     "x": 0.14,
                     "y": 0.575
+                },
+                {
+                    "angle": 0,
+                    "img": "setting/barCounter.png",
+                    "needsFlags": [
+                        "drunk"
+                    ],
+                    "scale": 0.62,
+                    "x": 0.62,
+                    "y": 0.71
                 }
             ],
             "bg": "bg/bar.png"
@@ -1064,9 +1077,23 @@ export const tree: Tree = {
         "textVariants": [
             {
                 "flags": [
+                    "drunk",
+                    "meetBear"
+                ],
+                "text": "The panda looks at you and wonders if you'd like anything else. He looks mildly concerned for you."
+            },
+            {
+                "flags": [
                     "meetBear"
                 ],
                 "text": "The panda looks at you and wonders if you'd like anything else."
+            },
+            {
+                "flags": [
+                    "!meetBear",
+                    "drunk"
+                ],
+                "text": "You go inside and encounter some sort of weird panda. You feel like things are moving more than they should."
             }
         ]
     },
@@ -1255,6 +1282,9 @@ export const tree: Tree = {
                 {
                     "angle": 0,
                     "img": "character/koala/neutral.png",
+                    "needsFlags": [
+                        "!drunk"
+                    ],
                     "scale": 0.35,
                     "x": 0.2,
                     "y": 0.33024762083858294
@@ -1264,7 +1294,8 @@ export const tree: Tree = {
                     "flipped": true,
                     "img": "character/jaguar/neutral.png",
                     "needsFlags": [
-                        "!playedWithJaguar"
+                        "!playedWithJaguar",
+                        "!drunk"
                     ],
                     "scale": 0.35,
                     "x": 0.67,
@@ -1290,6 +1321,51 @@ export const tree: Tree = {
                     "scale": 0.145,
                     "x": 0.93,
                     "y": 0.365
+                },
+                {
+                    "angle": 0,
+                    "animation": "spin_slow",
+                    "img": "character/koala/neutral.png",
+                    "needsFlags": [
+                        "drunk"
+                    ],
+                    "scale": 0.355,
+                    "x": 0.23,
+                    "y": 0.31
+                },
+                {
+                    "angle": 0,
+                    "img": "prop/drunk_bubbles.png",
+                    "needsFlags": [
+                        "drunk"
+                    ],
+                    "scale": 0.165,
+                    "x": 0.29,
+                    "y": 0.65
+                },
+                {
+                    "angle": 0,
+                    "flipped": true,
+                    "img": "character/jaguar/neutral.png",
+                    "needsFlags": [
+                        "drunk",
+                        "!playedWithJaguar"
+                    ],
+                    "scale": 0.37,
+                    "x": 0.655,
+                    "y": 0.77
+                },
+                {
+                    "angle": 0,
+                    "flipped": true,
+                    "img": "character/jaguar/neutral.png",
+                    "needsFlags": [
+                        "drunk",
+                        "!playedWithJaguar"
+                    ],
+                    "scale": 0.39,
+                    "x": 0.685,
+                    "y": 0.74
                 }
             ],
             "bg": "bg/jungle.png"
@@ -1367,6 +1443,9 @@ export const tree: Tree = {
                 {
                     "angle": 0,
                     "img": "character/parrot/happy.png",
+                    "needsFlags": [
+                        "!drunk"
+                    ],
                     "scale": 0.2,
                     "x": 0.15,
                     "y": 0.6686595920676749
@@ -1377,6 +1456,26 @@ export const tree: Tree = {
                     "scale": 0.1,
                     "x": 0.05,
                     "y": 0.7224330936908226
+                },
+                {
+                    "angle": 0,
+                    "img": "prop/drunk_bubbles.png",
+                    "needsFlags": [
+                        "drunk"
+                    ],
+                    "scale": 0.1,
+                    "x": 0.25,
+                    "y": 0.53
+                },
+                {
+                    "angle": 0,
+                    "img": "character/parrot/neutral.png",
+                    "needsFlags": [
+                        "drunk"
+                    ],
+                    "scale": 0.22,
+                    "x": 0.155,
+                    "y": 0.665
                 }
             ],
             "bg": "bg/shop.png"
@@ -1632,6 +1731,9 @@ export const tree: Tree = {
                 {
                     "angle": 0,
                     "img": "character/koala/neutral.png",
+                    "needsFlags": [
+                        "!drunk"
+                    ],
                     "scale": 0.35,
                     "x": 0.2,
                     "y": 0.33024762083858294
@@ -1640,14 +1742,69 @@ export const tree: Tree = {
                     "angle": 0,
                     "flipped": true,
                     "img": "character/jaguar/neutral.png",
+                    "needsFlags": [
+                        "!drunk"
+                    ],
                     "scale": 0.35,
                     "x": 0.67,
                     "y": 0.75
+                },
+                {
+                    "angle": 0,
+                    "img": "prop/drunk_bubbles.png",
+                    "needsFlags": [
+                        "drunk"
+                    ],
+                    "scale": 0.135,
+                    "x": 0.29,
+                    "y": 0.69
+                },
+                {
+                    "angle": 0,
+                    "animation": "spin_slow",
+                    "img": "character/koala/neutral.png",
+                    "needsFlags": [
+                        "drunk"
+                    ],
+                    "scale": 0.345,
+                    "x": 0.21,
+                    "y": 0.305
+                },
+                {
+                    "angle": 0,
+                    "flipped": true,
+                    "img": "character/jaguar/neutral.png",
+                    "needsFlags": [
+                        "drunk"
+                    ],
+                    "scale": 0.335,
+                    "x": 0.62,
+                    "y": 0.76
+                },
+                {
+                    "angle": 0,
+                    "flipped": true,
+                    "img": "character/jaguar/neutral.png",
+                    "needsFlags": [
+                        "drunk"
+                    ],
+                    "scale": 0.34,
+                    "x": 0.625,
+                    "y": 0.795
                 }
             ],
             "bg": "bg/jungle.png"
         },
-        "text": "You encounter some strange-looking animals! You think they're called a koala, jaguar, and a small man."
+        "text": "You encounter some strange-looking animals! You think they're called a koala, jaguar, and a small man.",
+        "textVariants": [
+            {
+                "flags": [
+                    "drunk",
+                    "!metAnimals"
+                ],
+                "text": "You encounter some strange-looking animals! You think they're called a koala, jaguar, and a small man but you can't be too sure."
+            }
+        ]
     },
     "23991": {
         "actions": [
@@ -1767,6 +1924,16 @@ export const tree: Tree = {
                     "scale": 0.3,
                     "x": 0.2,
                     "y": 0.7437772492394863
+                },
+                {
+                    "angle": 0,
+                    "img": "prop/drunk_bubbles.png",
+                    "needsFlags": [
+                        "drunk"
+                    ],
+                    "scale": 0.1,
+                    "x": 0.26,
+                    "y": 0.545
                 }
             ],
             "bg": "bg/city.png"
@@ -1793,6 +1960,16 @@ export const tree: Tree = {
                     "scale": 0.95,
                     "x": 0.5,
                     "y": 0.5000827459901062
+                },
+                {
+                    "angle": 0,
+                    "img": "prop/drunk_bubbles.png",
+                    "needsFlags": [
+                        "drunk"
+                    ],
+                    "scale": 0.23,
+                    "x": 0.78,
+                    "y": 0.08
                 }
             ],
             "bg": "bg/shop.png"
@@ -2588,7 +2765,6 @@ export const tree: Tree = {
                 "dest": "87223",
                 "label": "Finish up and follow the rats",
                 "needsFlags": [
-                    "haveGlasses",
                     "haveRatVision",
                     "!discoveredHole"
                 ]
@@ -2604,9 +2780,23 @@ export const tree: Tree = {
                     "animation": "still",
                     "flipped": true,
                     "img": "prop/toilet.png",
+                    "needsFlags": [
+                        "!drunk"
+                    ],
                     "scale": 0.69,
                     "x": 0.26,
                     "y": 0.5146708692031643
+                },
+                {
+                    "angle": 0.025,
+                    "flipped": true,
+                    "img": "prop/toilet.png",
+                    "needsFlags": [
+                        "drunk"
+                    ],
+                    "scale": 0.695,
+                    "x": 0.265,
+                    "y": 0.51
                 },
                 {
                     "angle": 0,
@@ -2642,11 +2832,29 @@ export const tree: Tree = {
                     "scale": 0.16,
                     "x": 0.56,
                     "y": 0.92
+                },
+                {
+                    "angle": 0,
+                    "img": "prop/drunk_bubbles.png",
+                    "needsFlags": [
+                        "drunk"
+                    ],
+                    "scale": 0.2,
+                    "x": 0.435,
+                    "y": 0.155
                 }
             ],
             "bg": "bg/gray.png"
         },
-        "text": "You settle onto the toilet and go about your business."
+        "text": "You settle onto the toilet and go about your business.",
+        "textVariants": [
+            {
+                "flags": [
+                    "drunk"
+                ],
+                "text": "You settle onto the toilet and go about your business. You're not feelin so good."
+            }
+        ]
     },
     "47893": {
         "actions": [
@@ -2684,11 +2892,29 @@ export const tree: Tree = {
                     "scale": 0.7,
                     "x": 0.65,
                     "y": 0.6157597293279373
+                },
+                {
+                    "angle": 0,
+                    "img": "prop/drunk_bubbles.png",
+                    "needsFlags": [
+                        "drunk"
+                    ],
+                    "scale": 0.185,
+                    "x": 0.245,
+                    "y": 0.43
                 }
             ],
             "bg": "bg/shop.png"
         },
-        "text": "You ask the hamster if you can book a room. She looks miffed and says, \"You're a parrot, you don't have any money.\""
+        "text": "You ask the hamster if you can book a room. She looks miffed and says, \"You're a parrot! You don't have any money! I can't give you a room!\"",
+        "textVariants": [
+            {
+                "flags": [
+                    "drunk"
+                ],
+                "text": "You ask the hamster if you can book a room. She looks concerned and a little sympathetic, \"You don't look so good, but you don't have any money so I can't let you stay here.\""
+            }
+        ]
     },
     "48059": {
         "actions": [
@@ -2765,6 +2991,16 @@ export const tree: Tree = {
                     "scale": 0.3,
                     "x": 0.35,
                     "y": 0.7
+                },
+                {
+                    "angle": 0,
+                    "img": "prop/drunk_bubbles.png",
+                    "needsFlags": [
+                        "drunk"
+                    ],
+                    "scale": 0.175,
+                    "x": 0.34,
+                    "y": 0.5
                 }
             ],
             "bg": "bg/jungle.png"
@@ -3094,6 +3330,16 @@ export const tree: Tree = {
                     "scale": 0.445,
                     "x": 0.795,
                     "y": 0.335
+                },
+                {
+                    "angle": 0,
+                    "img": "prop/drunk_bubbles.png",
+                    "needsFlags": [
+                        "drunk"
+                    ],
+                    "scale": 0.175,
+                    "x": 0.36,
+                    "y": 0.45
                 }
             ],
             "bg": "bg/jungle.png"
@@ -3231,6 +3477,16 @@ export const tree: Tree = {
                     "scale": 0.65,
                     "x": 0.55,
                     "y": 0.4915090109536069
+                },
+                {
+                    "angle": 0,
+                    "img": "prop/drunk_bubbles.png",
+                    "needsFlags": [
+                        "drunk"
+                    ],
+                    "scale": 0.215,
+                    "x": 0.22,
+                    "y": 0.45
                 }
             ],
             "bg": "bg/shop.png"
@@ -4040,11 +4296,29 @@ export const tree: Tree = {
                     "scale": 0.65,
                     "x": 0.6,
                     "y": 0.7
+                },
+                {
+                    "angle": 0,
+                    "img": "prop/drunk_bubbles.png",
+                    "needsFlags": [
+                        "drunk"
+                    ],
+                    "scale": 0.185,
+                    "x": 0.23,
+                    "y": 0.465
                 }
             ],
             "bg": "bg/shop.png"
         },
-        "text": "You screw up the courage to ask a somewhat embarrassing question. \"Are you the beagle's girlfriend?\" The hamster smiles and says, \"Oh yes!\" You are shocked. \"Then how do you guys-\" you stop yourself. There's an awkward pause."
+        "text": "You screw up the courage to ask a somewhat embarrassing question. \"Are you the beagle's girlfriend?\" The hamster smiles and says, \"Oh yes!\" You are shocked. \"Then how do you guys-\" you stop yourself. There's an awkward pause.",
+        "textVariants": [
+            {
+                "flags": [
+                    "drunk"
+                ],
+                "text": "You screw up the courage to ask a somewhat embarrassing question. \"Are you the beagle's girlfriend?\" The hamster smiles and says, \"Oh yes!\" You are shocked. \"Then how do you guys-\" you're slurring a little and you trail off."
+            }
+        ]
     },
     "84301": {
         "actions": [
@@ -4453,6 +4727,16 @@ export const tree: Tree = {
                     "scale": 0.1,
                     "x": 0.35,
                     "y": 0.45
+                },
+                {
+                    "angle": 0,
+                    "img": "prop/drunk_bubbles.png",
+                    "needsFlags": [
+                        "drunk"
+                    ],
+                    "scale": 0.18,
+                    "x": 0.265,
+                    "y": 0.19
                 }
             ],
             "bg": "bg/canopy.png"
@@ -4494,11 +4778,29 @@ export const tree: Tree = {
                     "scale": 0.1,
                     "x": 0.35,
                     "y": 0.9
+                },
+                {
+                    "angle": 0,
+                    "img": "prop/drunk_bubbles.png",
+                    "needsFlags": [
+                        "drunk"
+                    ],
+                    "scale": 0.21,
+                    "x": 0.405,
+                    "y": 0.44
                 }
             ],
             "bg": "bg/jungle.png"
         },
-        "text": "The jaguar is really just kind of a large house cat- you play with it and have a nice time."
+        "text": "The jaguar is really just kind of a large house cat- you play with it and have a nice time.",
+        "textVariants": [
+            {
+                "flags": [
+                    "drunk"
+                ],
+                "text": "The jaguar is really just kind of a large house cat- you play with it and have a nice time despite feeling a bit nauseous."
+            }
+        ]
     },
     "90619": {
         "actions": [
@@ -4543,11 +4845,51 @@ export const tree: Tree = {
                     "scale": 0.5,
                     "x": 0.4,
                     "y": 0.6
+                },
+                {
+                    "angle": 0,
+                    "img": "prop/drunk_bubbles.png",
+                    "needsFlags": [
+                        "drunk"
+                    ],
+                    "scale": 0.225,
+                    "x": 0.58,
+                    "y": 0.31
+                },
+                {
+                    "angle": 0,
+                    "img": "character/rat/rat_1.png",
+                    "needsFlags": [
+                        "haveRatVision",
+                        "drunk"
+                    ],
+                    "scale": 0.22,
+                    "x": 0.845,
+                    "y": 0.9
+                },
+                {
+                    "angle": 0,
+                    "flipped": true,
+                    "img": "prop/mask_side.png",
+                    "needsFlags": [
+                        "drunk"
+                    ],
+                    "scale": 0.115,
+                    "x": 0.8,
+                    "y": 0.845
                 }
             ],
             "bg": "bg/jungle.png"
         },
-        "text": "You wander the jungle and wonder where you should go."
+        "text": "You wander the jungle and wonder where you should go.",
+        "textVariants": [
+            {
+                "flags": [
+                    "drunk"
+                ],
+                "text": "You wander the jungle and wonder where you should go. You feel a little disoriented."
+            }
+        ]
     },
     "91030": {
         "actions": [
