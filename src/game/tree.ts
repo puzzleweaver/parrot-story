@@ -183,14 +183,46 @@ export const tree: Tree = {
                     "angle": 0,
                     "flipped": false,
                     "img": "character/parrot/blush.png",
+                    "needsFlags": [
+                        "!drunk"
+                    ],
                     "scale": 0.5,
                     "x": 0.215,
+                    "y": 0.7
+                },
+                {
+                    "angle": 0,
+                    "img": "prop/drunk_bubbles.png",
+                    "needsFlags": [
+                        "drunk"
+                    ],
+                    "scale": 0.19,
+                    "x": 0.235,
+                    "y": 0.3
+                },
+                {
+                    "angle": 0,
+                    "animation": "spin_slow",
+                    "img": "character/parrot/blush.png",
+                    "needsFlags": [
+                        "drunk"
+                    ],
+                    "scale": 0.5,
+                    "x": 0.23,
                     "y": 0.7
                 }
             ],
             "bg": "bg/flower-shop.png"
         },
-        "text": "The possum comes over to you and spreads its mouth in offense. \"No, I'm Pat! Why does everyone keep calling me Jen?\" Your face feels hot. You aren't sure what you were thinking."
+        "text": "The possum comes over to you and spreads its mouth in offense. \"No, I'm Pat! Why does everyone keep calling me Jen?\" Your face feels hot. You aren't sure what you were thinking.",
+        "textVariants": [
+            {
+                "flags": [
+                    "drunk"
+                ],
+                "text": "The possum comes over to you and spreads its mouth in offense. \"No, I'm Pat! Why does everyone keep calling me Jen?\" Your face feels hot. Managing all these social interactions is very confusing and draining."
+            }
+        ]
     },
     "5936": {
         "actions": [],
@@ -609,7 +641,7 @@ export const tree: Tree = {
             ],
             "bg": "bg/shop.png"
         },
-        "text": "The beagle turns to you. \"By the way, I know this is short notice, but can you bring my girlfriend a gift for me? She works at the hotel near here. It would be a great chance for you to see more of the city.\"",
+        "text": "The beagle turns to you. \"It's so nice to meet you! Playing was a blast!\" You smile at him. \"By the way, I know this is short notice, but can you bring my girlfriend a gift for me? She works at the hotel near here. It would be a great chance for you to see more of the city.\"",
         "textVariants": [
             {
                 "flags": [
@@ -666,6 +698,48 @@ export const tree: Tree = {
                     "scale": 0.2,
                     "x": 0.9,
                     "y": 0.7
+                },
+                {
+                    "angle": 0,
+                    "img": "prop/drunk_bubbles.png",
+                    "needsFlags": [
+                        "drunk"
+                    ],
+                    "scale": 0.12,
+                    "x": 0.11532884775633567,
+                    "y": 0.615
+                },
+                {
+                    "angle": -0.63,
+                    "img": "character/rat/rat_3.png",
+                    "needsFlags": [
+                        "drunk",
+                        "haveRatVision"
+                    ],
+                    "scale": 0.1,
+                    "x": 0.41962877191528813,
+                    "y": 0.9414897753894047
+                },
+                {
+                    "angle": -0.755,
+                    "img": "character/rat/rat_3.png",
+                    "needsFlags": [
+                        "drunk",
+                        "haveRatVision"
+                    ],
+                    "scale": 0.1,
+                    "x": 0.42,
+                    "y": 0.1
+                },
+                {
+                    "angle": 0,
+                    "img": "character/rat/rat_1.png",
+                    "needsFlags": [
+                        "haveRatVision"
+                    ],
+                    "scale": 0.115,
+                    "x": 0.66,
+                    "y": 0.81
                 }
             ],
             "bg": "bg/city.png"
@@ -1391,9 +1465,22 @@ export const tree: Tree = {
                 {
                     "angle": 0,
                     "img": "character/parrot/happy2.png",
+                    "needsFlags": [
+                        "!drunk"
+                    ],
                     "scale": 0.5,
                     "x": 0.3,
                     "y": 0.6898671123379214
+                },
+                {
+                    "angle": 0,
+                    "img": "character/parrot/happy.png",
+                    "needsFlags": [
+                        "drunk"
+                    ],
+                    "scale": 0.505,
+                    "x": 0.195,
+                    "y": 0.685
                 },
                 {
                     "angle": 0.51,
@@ -1408,11 +1495,26 @@ export const tree: Tree = {
                     "scale": 0.5,
                     "x": 0.75,
                     "y": 0.7
+                },
+                {
+                    "angle": 0,
+                    "img": "prop/drunk_bubbles.png",
+                    "scale": 0.225,
+                    "x": 0.28,
+                    "y": 0.33
                 }
             ],
             "bg": "bg/flower-shop.png"
         },
-        "text": "You take a lilac. It smells wonderful and you feel confident about your selection!"
+        "text": "You take a lilac. It smells wonderful and you feel confident about your selection!",
+        "textVariants": [
+            {
+                "flags": [
+                    "drunk"
+                ],
+                "text": "You take a lilac. It smells wonderful, but the smell is a little hard on your stomach."
+            }
+        ]
     },
     "22841": {
         "actions": [
@@ -2041,26 +2143,14 @@ export const tree: Tree = {
     "31710": {
         "actions": [
             {
-                "dest": "1826",
-                "label": "give dachshund martini",
-                "needsFlags": [
-                    "haveMartini"
-                ]
-            },
-            {
-                "dest": "75760",
-                "label": "give dachshund cosmopolitan",
-                "needsFlags": [
-                    "haveCosmo"
-                ]
-            },
-            {
                 "dest": "85550",
-                "label": "Back to Dog Park",
+                "label": "Next",
                 "needsFlags": []
             }
         ],
-        "addsFlags": [],
+        "addsFlags": [
+            "haveMetDachshund"
+        ],
         "id": "31710",
         "label": "Play with dachshund",
         "scene": {
@@ -2083,6 +2173,9 @@ export const tree: Tree = {
                 {
                     "angle": 0,
                     "img": "character/parrot/happy2.png",
+                    "needsFlags": [
+                        "!drunk"
+                    ],
                     "scale": 0.25,
                     "x": 0.25,
                     "y": 0.65
@@ -2093,11 +2186,32 @@ export const tree: Tree = {
                     "scale": 0.1,
                     "x": 0.25,
                     "y": 0.8802936574460094
+                },
+                {
+                    "angle": 0,
+                    "img": "prop/drunk_bubbles.png",
+                    "needsFlags": [
+                        "drunk"
+                    ],
+                    "scale": 0.1,
+                    "x": 0.33,
+                    "y": 0.425
+                },
+                {
+                    "angle": 0,
+                    "img": "character/parrot/happy.png",
+                    "needsFlags": [
+                        "drunk"
+                    ],
+                    "scale": 0.25,
+                    "x": 0.275,
+                    "y": 0.6
                 }
             ],
             "bg": "bg/shop.png"
         },
-        "text": "You and the dachshund play together for a few minutes. You're surprised he had it in him- he looked pretty old and confused. Now he's huffing and puffing, so you decide to let him rest."
+        "text": "You and the dachshund play together for a few minutes. You're surprised he had it in him- he looked pretty old and confused. Now he's huffing and puffing, so you decide to let him rest.",
+        "textVariants": []
     },
     "31726": {
         "actions": [
@@ -2407,8 +2521,22 @@ export const tree: Tree = {
                     "angle": 0.11,
                     "animation": "still",
                     "img": "setting/hotel/desk.png",
+                    "needsFlags": [
+                        "!drunk"
+                    ],
                     "scale": 0.5,
                     "x": 0.75,
+                    "y": 0.7
+                },
+                {
+                    "angle": 0,
+                    "animation": "hop_slow",
+                    "img": "setting/hotel/desk.png",
+                    "needsFlags": [
+                        "drunk"
+                    ],
+                    "scale": 0.54,
+                    "x": 0.755,
                     "y": 0.7
                 },
                 {
@@ -2458,6 +2586,16 @@ export const tree: Tree = {
                     "scale": 0.1,
                     "x": 0.73,
                     "y": 0.585
+                },
+                {
+                    "angle": 0.23,
+                    "img": "prop/drunk_bubbles.png",
+                    "needsFlags": [
+                        "drunk"
+                    ],
+                    "scale": 0.16,
+                    "x": 0.42,
+                    "y": 0.465
                 }
             ],
             "bg": "bg/flower-shop.png"
@@ -3246,6 +3384,7 @@ export const tree: Tree = {
                 {
                     "angle": 0,
                     "img": "character/parrot/happy.png",
+                    "needsFlags": [],
                     "scale": 0.4,
                     "x": 0.25,
                     "y": 0.7
@@ -3263,11 +3402,29 @@ export const tree: Tree = {
                     "scale": 0.5,
                     "x": 0.65,
                     "y": 0.65
+                },
+                {
+                    "angle": 0,
+                    "img": "prop/drunk_bubbles.png",
+                    "needsFlags": [
+                        "drunk"
+                    ],
+                    "scale": 0.2,
+                    "x": 0.335,
+                    "y": 0.42
                 }
             ],
             "bg": "bg/flower-shop.png"
         },
-        "text": "You take a daffodil. The daffodil smells amazing and you feel good with your choice."
+        "text": "You take a daffodil. The daffodil smells amazing and you feel good with your choice.",
+        "textVariants": [
+            {
+                "flags": [
+                    "drunk"
+                ],
+                "text": "You take a daffodil. The daffodil smells nice."
+            }
+        ]
     },
     "56699": {
         "actions": [
@@ -3944,6 +4101,16 @@ export const tree: Tree = {
                     "scale": 0.15,
                     "x": 0.4,
                     "y": 0.75
+                },
+                {
+                    "angle": 0,
+                    "img": "prop/drunk_bubbles.png",
+                    "needsFlags": [
+                        "drunk"
+                    ],
+                    "scale": 0.1,
+                    "x": 0.445,
+                    "y": 0.63
                 }
             ],
             "bg": "bg/jungle.png"
@@ -4116,7 +4283,8 @@ export const tree: Tree = {
         "actions": [
             {
                 "dest": "85550",
-                "label": "Back to Dog Park"
+                "label": "Back to Dog Park",
+                "needsFlags": []
             }
         ],
         "addsFlags": [],
@@ -4360,22 +4528,8 @@ export const tree: Tree = {
                 ]
             },
             {
-                "dest": "73855",
-                "label": "Give beagle a martini",
-                "needsFlags": [
-                    "haveMartini"
-                ]
-            },
-            {
-                "dest": "53381",
-                "label": "Give beagle a cosmopolitan",
-                "needsFlags": [
-                    "haveCosmo"
-                ]
-            },
-            {
                 "dest": "85550",
-                "label": "Return to Dog Park",
+                "label": "Next",
                 "needsFlags": []
             },
             {
@@ -4386,7 +4540,9 @@ export const tree: Tree = {
                 ]
             }
         ],
-        "addsFlags": [],
+        "addsFlags": [
+            "haveMetBeagle"
+        ],
         "id": "85368",
         "label": "Playing with beagle",
         "scene": {
@@ -4402,6 +4558,9 @@ export const tree: Tree = {
                 {
                     "angle": 0,
                     "img": "character/parrot/happy2.png",
+                    "needsFlags": [
+                        "!drunk"
+                    ],
                     "scale": 0.2,
                     "x": 0.3,
                     "y": 0.6
@@ -4419,11 +4578,39 @@ export const tree: Tree = {
                     "scale": 0.3,
                     "x": 0.45,
                     "y": 0.55
+                },
+                {
+                    "angle": 0,
+                    "img": "prop/drunk_bubbles.png",
+                    "needsFlags": [
+                        "drunk"
+                    ],
+                    "scale": 0.1,
+                    "x": 0.325,
+                    "y": 0.45
+                },
+                {
+                    "angle": 0,
+                    "img": "character/parrot/neutral.png",
+                    "needsFlags": [
+                        "drunk"
+                    ],
+                    "scale": 0.155,
+                    "x": 0.305,
+                    "y": 0.595
                 }
             ],
             "bg": "bg/shop.png"
         },
-        "text": "You and the beagle have a wonderful time playing together!"
+        "text": "You and the beagle have a wonderful time playing together!",
+        "textVariants": [
+            {
+                "flags": [
+                    "drunk"
+                ],
+                "text": "The beagle is a lot of fun to be around. You do your best to play but you're a bit uncoordinated."
+            }
+        ]
     },
     "85550": {
         "actions": [
@@ -4441,6 +4628,38 @@ export const tree: Tree = {
                 "dest": "11635",
                 "label": "Play with doberman",
                 "needsFlags": []
+            },
+            {
+                "dest": "1826",
+                "label": "Offer dachshund martini",
+                "needsFlags": [
+                    "haveMetDachshund",
+                    "haveMartini"
+                ]
+            },
+            {
+                "dest": "75760",
+                "label": "Offer dachshund cosmo",
+                "needsFlags": [
+                    "haveMetDachshund",
+                    "haveCosmo"
+                ]
+            },
+            {
+                "dest": "73855",
+                "label": "Offer beagle a martini",
+                "needsFlags": [
+                    "haveMartini",
+                    "haveMetBeagle"
+                ]
+            },
+            {
+                "dest": "53381",
+                "label": "Offer beagle a cosmo",
+                "needsFlags": [
+                    "haveCosmo",
+                    "haveMetBeagle"
+                ]
             },
             {
                 "dest": "13631",
@@ -4490,6 +4709,16 @@ export const tree: Tree = {
                     "scale": 0.2,
                     "x": 0.4,
                     "y": 0.75
+                },
+                {
+                    "angle": 0,
+                    "img": "prop/drunk_bubbles.png",
+                    "needsFlags": [
+                        "drunk"
+                    ],
+                    "scale": 0.1,
+                    "x": 0.215,
+                    "y": 0.625
                 }
             ],
             "bg": "bg/shop.png"
@@ -4872,7 +5101,8 @@ export const tree: Tree = {
                     "flipped": true,
                     "img": "prop/mask_side.png",
                     "needsFlags": [
-                        "drunk"
+                        "drunk",
+                        "haveRatVision"
                     ],
                     "scale": 0.115,
                     "x": 0.8,
