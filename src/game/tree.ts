@@ -780,6 +780,13 @@ export const tree: Tree = {
                 "dest": "10255",
                 "label": "Visit city fountain",
                 "needsFlags": []
+            },
+            {
+                "dest": "99585",
+                "label": "Visit therapy mouse",
+                "needsFlags": [
+                    "haveMetTherapyMouse"
+                ]
             }
         ],
         "addsFlags": [
@@ -1067,9 +1074,18 @@ export const tree: Tree = {
     "18822": {
         "actions": [
             {
+                "dest": "82006",
+                "label": "Wander the city again",
+                "needsFlags": [
+                    "!haveMetTherapyMouse"
+                ]
+            },
+            {
                 "dest": "13631",
                 "label": "Wander the city again",
-                "needsFlags": []
+                "needsFlags": [
+                    "haveMetTherapyMouse"
+                ]
             },
             {
                 "dest": "65138",
@@ -2238,6 +2254,30 @@ export const tree: Tree = {
         },
         "text": "The small head wrap falls off of your egg and it begins to shake violently! A few cracks begin to form."
     },
+    "33614": {
+        "actions": [
+            {
+                "dest": "94630",
+                "label": "Next",
+                "needsFlags": []
+            }
+        ],
+        "id": "33614",
+        "label": "Therapy Mouse Prompts User to explore",
+        "scene": {
+            "actors": [
+                {
+                    "angle": 0,
+                    "img": "character/mouse/hiss.png",
+                    "scale": 0.95,
+                    "x": 0.41,
+                    "y": 0.5
+                }
+            ],
+            "bg": "bg/city.png"
+        },
+        "text": "The mouse seems a little offended. \"You need to explore the city more! Once you have sufficiently, we'll have more to talk about!\""
+    },
     "34620": {
         "actions": [
             {
@@ -3145,6 +3185,39 @@ export const tree: Tree = {
         },
         "text": "You approach the koala and try to initiate play. It looks sad and confused. It doesn't know how to play with birds."
     },
+    "48799": {
+        "actions": [
+            {
+                "dest": "64563",
+                "label": "Next",
+                "needsFlags": []
+            }
+        ],
+        "id": "48799",
+        "label": "Therapy Mouse's Day",
+        "scene": {
+            "actors": [
+                {
+                    "angle": 0,
+                    "animation": "hop_slow",
+                    "img": "character/mouse/neutral.png",
+                    "scale": 0.735,
+                    "x": 0.54,
+                    "y": 0.555
+                }
+            ],
+            "bg": "bg/city.png"
+        },
+        "text": "\"I'm so glad you asked!\" he squeals. \"My day has been going well. I've found some really good food in various trash cans around the city.\" ",
+        "textVariants": [
+            {
+                "flags": [
+                    "discoveredHole"
+                ],
+                "text": "\"I'm so glad you asked!\" he squeals. \"Well I got up around 6 AM to attend to my cult duties. I've been trying to infiltrate a very lively rat cult that's based in the sewers.\""
+            }
+        ]
+    },
     "49002": {
         "actions": [],
         "addsFlags": [],
@@ -3365,6 +3438,63 @@ export const tree: Tree = {
         },
         "text": "\"Oh my goodness, thank you so much!\" the beagle exclaims as he takes the cosmopolitan from you. You wonder whether dogs actually drink."
     },
+    "53838": {
+        "actions": [
+            {
+                "dest": "75494",
+                "label": "Next",
+                "needsFlags": []
+            }
+        ],
+        "id": "53838",
+        "label": "Therapy Mouse Travel Advice",
+        "scene": {
+            "actors": [
+                {
+                    "angle": -0.07,
+                    "img": "character/mouse/explaining.png",
+                    "scale": 0.235,
+                    "x": 0.68,
+                    "y": 0.51
+                },
+                {
+                    "angle": 0,
+                    "img": "character/parrot/back.png",
+                    "scale": 0.5,
+                    "x": 0.235,
+                    "y": 0.7
+                },
+                {
+                    "angle": 0,
+                    "img": "prop/drunk_bubbles.png",
+                    "needsFlags": [
+                        "drunk"
+                    ],
+                    "scale": 0.17,
+                    "x": 0.34,
+                    "y": 0.365
+                }
+            ],
+            "bg": "bg/city.png"
+        },
+        "text": "He opens his small mouth again. \"Digging through the city fountain always makes me happy. How could you be bored with that option?\" He seems a little too simple for you. ",
+        "textVariants": [
+            {
+                "flags": [
+                    "haveGlasses",
+                    "!haveRatVision"
+                ],
+                "text": "Therapy mouse opens his small mouth to speak again. \"I sense you have found sunglasses,\" he says, having a strange sixth sense. "
+            },
+            {
+                "flags": [
+                    "haveGlasses",
+                    "haveRatVision"
+                ],
+                "text": "He opens his mouth to speak. \"I sense you have discovered the ways of the rats. I'm surprised you're still bored. You can try looking for the owner of those sunglasses.\""
+            }
+        ]
+    },
     "56065": {
         "actions": [
             {
@@ -3423,6 +3553,39 @@ export const tree: Tree = {
                     "drunk"
                 ],
                 "text": "You take a daffodil. The daffodil smells nice."
+            }
+        ]
+    },
+    "56143": {
+        "actions": [
+            {
+                "dest": "94630",
+                "label": "Next",
+                "needsFlags": []
+            }
+        ],
+        "addsFlags": [],
+        "id": "56143",
+        "label": "Therapy mouse scolds ",
+        "scene": {
+            "actors": [
+                {
+                    "angle": 0,
+                    "img": "character/mouse/explaining.png",
+                    "scale": 0.885,
+                    "x": 0.5666143813116338,
+                    "y": 0.535
+                }
+            ],
+            "bg": "bg/city.png"
+        },
+        "text": "\"Oh no, I'm sorry to hear that,\" the mouse says. \"Make sure you're getting plenty of rest and staying social.\"",
+        "textVariants": [
+            {
+                "flags": [
+                    "drunk"
+                ],
+                "text": "\"It seems you're a bit intoxicated. I suspect you drank something you shouldn't have,\" the mouse scolds."
             }
         ]
     },
@@ -3668,7 +3831,7 @@ export const tree: Tree = {
     "61921": {
         "actions": [
             {
-                "dest": "13631",
+                "dest": "82006",
                 "label": "Wander city",
                 "needsFlags": []
             },
@@ -3795,6 +3958,54 @@ export const tree: Tree = {
             "bg": "bg/shop.png"
         },
         "text": "\"You're very welcome!\" you say to the beagle."
+    },
+    "64042": {
+        "actions": [
+            {
+                "dest": "90619",
+                "label": "Back to jungle hub",
+                "needsFlags": []
+            }
+        ],
+        "id": "64042",
+        "label": "",
+        "scene": {
+            "actors": [],
+            "bg": "bg/shop.png"
+        },
+        "text": "Kava bar will be here in next update."
+    },
+    "64563": {
+        "actions": [
+            {
+                "dest": "94630",
+                "label": "Next",
+                "needsFlags": []
+            }
+        ],
+        "id": "64563",
+        "label": "Therapy Mouse's Day 2",
+        "scene": {
+            "actors": [
+                {
+                    "angle": -0.125,
+                    "img": "character/mouse/explaining.png",
+                    "scale": 1.52,
+                    "x": 0.5737720617455232,
+                    "y": 0.76
+                }
+            ],
+            "bg": "bg/city.png"
+        },
+        "text": "\"I've also have been noticing a lot of rats around lately. They always know what's up.\"",
+        "textVariants": [
+            {
+                "flags": [
+                    "discoveredHole"
+                ],
+                "text": "\"t's a difficult task- rats are very attuned to whether you're a mouse or rat.\" You blink at him. You aren't quite sure if you know the difference between a rat and a mouse."
+            }
+        ]
     },
     "64647": {
         "actions": [
@@ -3962,6 +4173,41 @@ export const tree: Tree = {
                     "termsAgreedTo"
                 ],
                 "text": "Sure thing! What can I get you?"
+            }
+        ]
+    },
+    "69396": {
+        "actions": [
+            {
+                "dest": "99585",
+                "label": "Next",
+                "needsFlags": []
+            }
+        ],
+        "addsFlags": [
+            "haveMetTherapyMouse"
+        ],
+        "id": "69396",
+        "label": "Meet therapy mouse",
+        "scene": {
+            "actors": [
+                {
+                    "angle": 0,
+                    "img": "character/mouse/neutral.png",
+                    "scale": 1.03,
+                    "x": 0.535,
+                    "y": 0.505
+                }
+            ],
+            "bg": "bg/city.png"
+        },
+        "text": "You look down and behold a small mouse on the ground. \"IIIII'm therapy mouse,\" he starts in a small voice. \"I hang  around outside this bar and check on people as they leave because some people really need it.\"",
+        "textVariants": [
+            {
+                "flags": [
+                    "drunk"
+                ],
+                "text": "You look down and behold a small mouse on the ground. \"IIIII'm therapy mouse,\" he starts in a small voice. \"I hang around outside this bar and check on people as they leave because some people really need it.\" His eyes narrow. \"That includes you too, it seems.\""
             }
         ]
     },
@@ -4279,6 +4525,65 @@ export const tree: Tree = {
         },
         "text": "You arrive to the strangest thing you've seen yet. A small rat, shrouded in a strange scarf, is surrounded by chanting rats. You can't quite make out what they're saying so you get closer."
     },
+    "75494": {
+        "actions": [
+            {
+                "dest": "94630",
+                "label": "Next",
+                "needsFlags": [
+                    "haveGlasses",
+                    "!haveRatVision"
+                ]
+            },
+            {
+                "dest": "84892",
+                "label": "Next",
+                "needsFlags": [
+                    "haveRatVision",
+                    "haveGlasses"
+                ]
+            },
+            {
+                "dest": "94630",
+                "label": "Next",
+                "needsFlags": [
+                    "!haveRatVision",
+                    "!haveGlasses"
+                ]
+            }
+        ],
+        "id": "75494",
+        "label": "Therapy Mouse Travel Advice 2",
+        "scene": {
+            "actors": [
+                {
+                    "angle": 0,
+                    "img": "character/mouse/explaining.png",
+                    "scale": 0.99,
+                    "x": 0.6,
+                    "y": 0.53
+                }
+            ],
+            "bg": "bg/city.png"
+        },
+        "text": "\"Well,\" he interrupts your thoughts. Perhaps he saw you looking bored and disappointed. \"There are also several lively cults around these parts. They're always looking for new members.\" This comment seems very strange to you.",
+        "textVariants": [
+            {
+                "flags": [
+                    "haveGlasses",
+                    "!haveRatVision"
+                ],
+                "text": "\"Once you get the opportunity, you should put them on. I promise you will be bored no longer.\" He seems a little sinister. You have no idea what he means."
+            },
+            {
+                "flags": [
+                    "haveRatVision",
+                    "haveGlasses"
+                ],
+                "text": "\"...Whoever it is will have mysteries of the universe to tell you about. They far exceed my simple mouse brain.\" "
+            }
+        ]
+    },
     "75760": {
         "actions": [
             {
@@ -4419,14 +4724,62 @@ export const tree: Tree = {
         "text": "You and your egg sink into the warm water and rest. It feels amazing!"
     },
     "82006": {
-        "actions": [],
+        "actions": [
+            {
+                "dest": "69396",
+                "label": "Inspect",
+                "needsFlags": []
+            },
+            {
+                "dest": "13631",
+                "label": "Shrug it off and wander the city",
+                "needsFlags": []
+            }
+        ],
+        "addsFlags": [
+            "!haveMetTherapyMouse"
+        ],
         "id": "82006",
-        "label": "",
+        "label": "Kick therapy mouse",
         "scene": {
-            "actors": [],
-            "bg": "bg/shop.png"
+            "actors": [
+                {
+                    "angle": 0,
+                    "img": "character/parrot/backWingsSpread.png",
+                    "scale": 0.5,
+                    "x": 0.315,
+                    "y": 0.73
+                },
+                {
+                    "angle": 0,
+                    "animation": "spin_fast",
+                    "img": "character/mouse/kicked.png",
+                    "scale": 0.1,
+                    "x": 0.66,
+                    "y": 0.505
+                },
+                {
+                    "angle": 0,
+                    "img": "prop/drunk_bubbles.png",
+                    "needsFlags": [
+                        "drunk"
+                    ],
+                    "scale": 0.19,
+                    "x": 0.325,
+                    "y": 0.395
+                }
+            ],
+            "bg": "bg/city.png"
         },
-        "text": "lorem ipsum dolor sit amet and so on and so forth..."
+        "text": "Oh wow what was that! You kicked something on your way out of the bar!",
+        "textVariants": [
+            {
+                "flags": [
+                    "drunk"
+                ],
+                "text": "Oh wow what was that! You kicked something on your way out of the bar! Or did you just imagine it?"
+            }
+        ]
     },
     "82129": {
         "actions": [
@@ -4517,6 +4870,34 @@ export const tree: Tree = {
             "bg": "bg/jungle.png"
         },
         "text": "You manage to locate some rocks and you pick them up. The volcano is smoking and you second-guess whether it's a good idea to throw them in."
+    },
+    "84892": {
+        "actions": [
+            {
+                "dest": "94630",
+                "label": "Next",
+                "needsFlags": []
+            }
+        ],
+        "addsFlags": [
+            "kavaBarOpen"
+        ],
+        "id": "84892",
+        "label": "Kava Bar Opening Tag",
+        "scene": {
+            "actors": [
+                {
+                    "angle": 0,
+                    "animation": "spin_slow",
+                    "img": "character/parrot/neutral.png",
+                    "scale": 0.5,
+                    "x": 0.41,
+                    "y": 0.595
+                }
+            ],
+            "bg": "bg/city.png"
+        },
+        "text": "You feel something calling to you from the jungle and know that you must go back there."
     },
     "85368": {
         "actions": [
@@ -5061,6 +5442,13 @@ export const tree: Tree = {
                 "dest": "45463",
                 "label": "Go to city",
                 "needsFlags": []
+            },
+            {
+                "dest": "64042",
+                "label": "Go to kava bar",
+                "needsFlags": [
+                    "kavaBarOpen"
+                ]
             }
         ],
         "addsFlags": [],
@@ -5406,6 +5794,45 @@ export const tree: Tree = {
             }
         ]
     },
+    "94630": {
+        "actions": [
+            {
+                "dest": "13631",
+                "label": "Return to wandering the city",
+                "needsFlags": []
+            },
+            {
+                "dest": "48799",
+                "label": "Ask therapy mouse about his day",
+                "needsFlags": []
+            },
+            {
+                "dest": "53838",
+                "label": "Ask him about what there is to do",
+                "needsFlags": []
+            },
+            {
+                "dest": "33614",
+                "label": "Complain to him that he hasn't offered new ideas for a while",
+                "needsFlags": []
+            }
+        ],
+        "id": "94630",
+        "label": "Therapy Mouse Hub",
+        "scene": {
+            "actors": [
+                {
+                    "angle": 0,
+                    "img": "character/mouse/neutral.png",
+                    "scale": 2,
+                    "x": 0.49,
+                    "y": 0.965
+                }
+            ],
+            "bg": "bg/city.png"
+        },
+        "text": "There seems to be a pause in your conversation. You feel the mouse watching you closely."
+    },
     "94709": {
         "actions": [
             {
@@ -5589,5 +6016,82 @@ export const tree: Tree = {
             "bg": "bg/gray.png"
         },
         "text": "You turn right and follow the rats down the tunnel."
+    },
+    "96204": {
+        "actions": [
+            {
+                "dest": "94630",
+                "label": "Next",
+                "needsFlags": []
+            }
+        ],
+        "id": "96204",
+        "label": "Therapy Mouse Glad",
+        "scene": {
+            "actors": [
+                {
+                    "angle": 0,
+                    "img": "character/mouse/neutral.png",
+                    "scale": 0.88,
+                    "x": 0.495,
+                    "y": 0.57
+                }
+            ],
+            "bg": "bg/city.png"
+        },
+        "text": "\"I'm so glad to hear it!\" he says. "
+    },
+    "99585": {
+        "actions": [
+            {
+                "dest": "56143",
+                "label": "\"I haven't been feeling so good.\"",
+                "needsFlags": [
+                    "drunk"
+                ]
+            },
+            {
+                "dest": "96204",
+                "label": "\"I'm doing great!\"",
+                "needsFlags": []
+            },
+            {
+                "dest": "53838",
+                "label": "\"I'm a little bored, there isn't much to do.\"",
+                "needsFlags": []
+            }
+        ],
+        "id": "99585",
+        "label": "Therapy Mouse 1",
+        "scene": {
+            "actors": [
+                {
+                    "angle": 0,
+                    "img": "character/parrot/back.png",
+                    "scale": 0.5,
+                    "x": 0.205,
+                    "y": 0.73
+                },
+                {
+                    "angle": 0,
+                    "img": "character/mouse/neutral.png",
+                    "scale": 0.18,
+                    "x": 0.54,
+                    "y": 0.605
+                },
+                {
+                    "angle": 0,
+                    "img": "prop/drunk_bubbles.png",
+                    "needsFlags": [
+                        "drunk"
+                    ],
+                    "scale": 0.195,
+                    "x": 0.32,
+                    "y": 0.38
+                }
+            ],
+            "bg": "bg/city.png"
+        },
+        "text": "Therapy mouse looks closely at you. \"So how have you been doing, parrot? Are you enjoying the city?\""
     }
 };
