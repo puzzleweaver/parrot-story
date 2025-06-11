@@ -297,7 +297,7 @@ export const tree: Tree = {
                     "y": 0.575
                 }
             ],
-            "bg": "bg/gray.png"
+            "bg": "bg/insideSewer.png"
         },
         "text": "\"My dear brothers and sisters,\" the leader rat begins, \"we are coming up on an unprecedented time in the universe. The fifth dimension is here. It's upon us. Our minds are open to the secrets of the universe, filling us with warmth and happiness. Happiness is all there is.\" "
     },
@@ -469,7 +469,7 @@ export const tree: Tree = {
                     "y": 0.65
                 }
             ],
-            "bg": "bg/city.png"
+            "bg": "bg/citySquare.png"
         },
         "text": "You arrive to the fountain! You love the smell of the water.",
         "textVariants": [
@@ -587,7 +587,7 @@ export const tree: Tree = {
                     "y": 0.385
                 }
             ],
-            "bg": "bg/city.png"
+            "bg": "bg/citySquare.png"
         },
         "text": "You dig through the fountain!"
     },
@@ -1059,7 +1059,7 @@ export const tree: Tree = {
                     "y": 0.38
                 }
             ],
-            "bg": "bg/city.png"
+            "bg": "bg/citySquare.png"
         },
         "text": "You found a cool pair of sunglasses! You put them on briefly and then put them away in your plumage.",
         "textVariants": [
@@ -1811,7 +1811,7 @@ export const tree: Tree = {
                     "y": 0.4
                 }
             ],
-            "bg": "bg/gray.png"
+            "bg": "bg/insideSewer.png"
         },
         "text": "The rats continue chanting loudly, in the most crazed way possible."
     },
@@ -2152,7 +2152,7 @@ export const tree: Tree = {
                     "y": 0.365
                 }
             ],
-            "bg": "bg/gray.png"
+            "bg": "bg/insideSewer.png"
         },
         "text": "\"Don't we feel so happy? So blessed?\" he screeched! The rats erupted in applause and cheers."
     },
@@ -2274,7 +2274,7 @@ export const tree: Tree = {
                     "y": 0.5
                 }
             ],
-            "bg": "bg/city.png"
+            "bg": "bg/backAlley.png"
         },
         "text": "The mouse seems a little offended. \"You need to explore the city more! Once you have sufficiently, we'll have more to talk about!\""
     },
@@ -3206,7 +3206,7 @@ export const tree: Tree = {
                     "y": 0.555
                 }
             ],
-            "bg": "bg/city.png"
+            "bg": "bg/backAlley.png"
         },
         "text": "\"I'm so glad you asked!\" he squeals. \"My day has been going well. I've found some really good food in various trash cans around the city.\" ",
         "textVariants": [
@@ -3475,7 +3475,7 @@ export const tree: Tree = {
                     "y": 0.365
                 }
             ],
-            "bg": "bg/city.png"
+            "bg": "bg/backAlley.png"
         },
         "text": "He opens his small mouth again. \"Digging through the city fountain always makes me happy. How could you be bored with that option?\" He seems a little too simple for you. ",
         "textVariants": [
@@ -3577,7 +3577,7 @@ export const tree: Tree = {
                     "y": 0.535
                 }
             ],
-            "bg": "bg/city.png"
+            "bg": "bg/backAlley.png"
         },
         "text": "\"Oh no, I'm sorry to hear that,\" the mouse says. \"Make sure you're getting plenty of rest and staying social.\"",
         "textVariants": [
@@ -3995,7 +3995,7 @@ export const tree: Tree = {
                     "y": 0.76
                 }
             ],
-            "bg": "bg/city.png"
+            "bg": "bg/backAlley.png"
         },
         "text": "\"I've also have been noticing a lot of rats around lately. They always know what's up.\"",
         "textVariants": [
@@ -4199,7 +4199,7 @@ export const tree: Tree = {
                     "y": 0.505
                 }
             ],
-            "bg": "bg/city.png"
+            "bg": "bg/backAlley.png"
         },
         "text": "You look down and behold a small mouse on the ground. \"IIIII'm therapy mouse,\" he starts in a small voice. \"I hang  around outside this bar and check on people as they leave because some people really need it.\"",
         "textVariants": [
@@ -4233,7 +4233,7 @@ export const tree: Tree = {
                     "y": 0.575
                 }
             ],
-            "bg": "bg/gray.png"
+            "bg": "bg/insideSewer.png"
         },
         "text": "\"I have received a download from a great high spirit. It is of greatest importance that we spread the news: We must love others, nurture others, and forgive others.\" "
     },
@@ -4449,15 +4449,15 @@ export const tree: Tree = {
                     "animation": "still",
                     "img": "text/cult_writing.png",
                     "scale": 0.105,
-                    "x": 0.15,
+                    "x": 0.515,
                     "y": 0.0806238762464404
                 },
                 {
                     "angle": 0,
                     "animation": "still",
                     "img": "text/cult_logo.png",
-                    "scale": 0.15,
-                    "x": 0.95,
+                    "scale": 0.155,
+                    "x": 0.93,
                     "y": 0.125
                 },
                 {
@@ -4521,7 +4521,7 @@ export const tree: Tree = {
                     "y": 0.21
                 }
             ],
-            "bg": "bg/gray.png"
+            "bg": "bg/insideSewer.png"
         },
         "text": "You arrive to the strangest thing you've seen yet. A small rat, shrouded in a strange scarf, is surrounded by chanting rats. You can't quite make out what they're saying so you get closer."
     },
@@ -4564,7 +4564,7 @@ export const tree: Tree = {
                     "y": 0.53
                 }
             ],
-            "bg": "bg/city.png"
+            "bg": "bg/backAlley.png"
         },
         "text": "\"Well,\" he interrupts your thoughts. Perhaps he saw you looking bored and disappointed. \"There are also several lively cults around these parts. They're always looking for new members.\" This comment seems very strange to you.",
         "textVariants": [
@@ -4769,9 +4769,9 @@ export const tree: Tree = {
                     "y": 0.395
                 }
             ],
-            "bg": "bg/city.png"
+            "bg": "bg/backAlley.png"
         },
-        "text": "Oh wow what was that! You kicked something on your way out of the bar!",
+        "text": "You go out the back door of the bar. Oh wow what was that! You kicked something on your way out!",
         "textVariants": [
             {
                 "flags": [
@@ -4895,7 +4895,7 @@ export const tree: Tree = {
                     "y": 0.595
                 }
             ],
-            "bg": "bg/city.png"
+            "bg": "bg/backAlley.png"
         },
         "text": "You feel something calling to you from the jungle and know that you must go back there."
     },
@@ -5144,7 +5144,7 @@ export const tree: Tree = {
                     "y": 0.435
                 }
             ],
-            "bg": "bg/gray.png"
+            "bg": "bg/insideSewer.png"
         },
         "text": "\"Now rise with me!!!! Put on your masks of the spirit!!!!\""
     },
@@ -5776,7 +5776,7 @@ export const tree: Tree = {
                     "y": 0.195
                 }
             ],
-            "bg": "bg/city.png"
+            "bg": "bg/citySquare.png"
         },
         "text": "You climb the fountain and almost slip! It's extremely slick, you should be MUCH more careful when you're carrying your egg!",
         "textVariants": [
@@ -5829,7 +5829,7 @@ export const tree: Tree = {
                     "y": 0.965
                 }
             ],
-            "bg": "bg/city.png"
+            "bg": "bg/backAlley.png"
         },
         "text": "There seems to be a pause in your conversation. You feel the mouse watching you closely."
     },
@@ -6037,7 +6037,7 @@ export const tree: Tree = {
                     "y": 0.57
                 }
             ],
-            "bg": "bg/city.png"
+            "bg": "bg/backAlley.png"
         },
         "text": "\"I'm so glad to hear it!\" he says. "
     },
@@ -6090,7 +6090,7 @@ export const tree: Tree = {
                     "y": 0.38
                 }
             ],
-            "bg": "bg/city.png"
+            "bg": "bg/backAlley.png"
         },
         "text": "Therapy mouse looks closely at you. \"So how have you been doing, parrot? Are you enjoying the city?\""
     }
