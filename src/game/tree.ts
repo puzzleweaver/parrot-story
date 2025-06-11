@@ -43,7 +43,8 @@ export const tree: Tree = {
         "actions": [
             {
                 "dest": "85550",
-                "label": "leave the dachshund for now"
+                "label": "leave the dachshund for now",
+                "needsFlags": []
             }
         ],
         "addsFlags": [],
@@ -67,7 +68,7 @@ export const tree: Tree = {
                     "y": 0.75
                 }
             ],
-            "bg": "bg/shop.png"
+            "bg": "bg/dogPark.png"
         },
         "text": "The dachshund looks sad and confused. \"I'm a dog, I don't drink.\" You feel a little awkward."
     },
@@ -272,7 +273,7 @@ export const tree: Tree = {
                     "y": 0.7784893917831026
                 }
             ],
-            "bg": "bg/city.png"
+            "bg": "bg/citySquare.png"
         },
         "text": "Your egg splatters across the fountain. You're devastated."
     },
@@ -396,7 +397,7 @@ export const tree: Tree = {
                     "y": 0.955
                 }
             ],
-            "bg": "bg/gray.png"
+            "bg": "bg/bathroom_tiling.png"
         },
         "text": "The rats lead you to the corner of the bathroom where there's a hole in the wall! It's just big enough for you to fit through!"
     },
@@ -492,7 +493,8 @@ export const tree: Tree = {
         "actions": [
             {
                 "dest": "13849",
-                "label": "Next"
+                "label": "Next",
+                "needsFlags": []
             }
         ],
         "addsFlags": [],
@@ -509,7 +511,7 @@ export const tree: Tree = {
                     "y": 0.5
                 }
             ],
-            "bg": "bg/shop.png"
+            "bg": "bg/dogPark.png"
         },
         "text": "Oh no! The doberman lunges at you, takes your egg from your beak, and breaks it between his teeth! "
     },
@@ -639,7 +641,7 @@ export const tree: Tree = {
                     "y": 0.7
                 }
             ],
-            "bg": "bg/shop.png"
+            "bg": "bg/dogPark.png"
         },
         "text": "The beagle turns to you. \"It's so nice to meet you! Playing was a blast!\" You smile at him. \"By the way, I know this is short notice, but can you bring my girlfriend a gift for me? She works at the hotel near here. It would be a great chance for you to see more of the city.\"",
         "textVariants": [
@@ -846,7 +848,7 @@ export const tree: Tree = {
                     "y": 0.9
                 }
             ],
-            "bg": "bg/shop.png"
+            "bg": "bg/hotelLobby.png"
         },
         "text": "\"It's a keycard to our pool area!\" she says. \"Please enjoy a free swim in our hot tub.\""
     },
@@ -854,7 +856,8 @@ export const tree: Tree = {
         "actions": [
             {
                 "dest": "51350",
-                "label": "Next"
+                "label": "Next",
+                "needsFlags": []
             }
         ],
         "addsFlags": [],
@@ -871,7 +874,7 @@ export const tree: Tree = {
                     "y": 0.5
                 }
             ],
-            "bg": "bg/shop.png"
+            "bg": "bg/dogPark.png"
         },
         "text": "You feel shock and horror!"
     },
@@ -1287,7 +1290,7 @@ export const tree: Tree = {
                     "y": 0.84
                 }
             ],
-            "bg": "bg/gray.png"
+            "bg": "bg/bathroom_tiling.png"
         },
         "text": "You put on the glasses. Your mind feels like it has opened up! You suddenly see multiple rats! Guess you now have rat vision."
     },
@@ -1358,7 +1361,7 @@ export const tree: Tree = {
                     "animation": "hop_slow",
                     "img": "character/parrot/in-transit.png",
                     "scale": 0.235,
-                    "x": 0.205,
+                    "x": 0.32,
                     "y": 0.815
                 },
                 {
@@ -1456,6 +1459,21 @@ export const tree: Tree = {
                     "scale": 0.39,
                     "x": 0.685,
                     "y": 0.74
+                },
+                {
+                    "angle": 0,
+                    "img": "prop/jungle_plants/philodendron.png",
+                    "scale": 0.28,
+                    "x": 0.155,
+                    "y": 0.86
+                },
+                {
+                    "angle": 0,
+                    "flipped": true,
+                    "img": "prop/jungle_plants/monstera.png",
+                    "scale": 0.385,
+                    "x": 0.865,
+                    "y": 0.835
                 }
             ],
             "bg": "bg/jungle.png"
@@ -1679,7 +1697,7 @@ export const tree: Tree = {
                     "animation": "still",
                     "img": "text/cult_writing.png",
                     "scale": 0.105,
-                    "x": 0.15,
+                    "x": 0.535,
                     "y": 0.0806238762464404
                 },
                 {
@@ -1835,7 +1853,7 @@ export const tree: Tree = {
                     "animation": "hop_slow",
                     "img": "character/parrot/in-transit.png",
                     "scale": 0.235,
-                    "x": 0.205,
+                    "x": 0.33,
                     "y": 0.815
                 },
                 {
@@ -1909,6 +1927,21 @@ export const tree: Tree = {
                     "scale": 0.34,
                     "x": 0.625,
                     "y": 0.795
+                },
+                {
+                    "angle": 0,
+                    "img": "prop/jungle_plants/philodendron.png",
+                    "scale": 0.405,
+                    "x": 0.14,
+                    "y": 0.825
+                },
+                {
+                    "angle": 0,
+                    "flipped": true,
+                    "img": "prop/jungle_plants/monstera.png",
+                    "scale": 0.375,
+                    "x": 0.885,
+                    "y": 0.84
                 }
             ],
             "bg": "bg/jungle.png"
@@ -1950,7 +1983,7 @@ export const tree: Tree = {
                     "y": 0.5
                 }
             ],
-            "bg": "bg/shop.png"
+            "bg": "bg/hotelLobby.png"
         },
         "text": "The front of the keycard says \"Welcome, Enjoy the Pool\" on it."
     },
@@ -1985,7 +2018,7 @@ export const tree: Tree = {
                     "y": 0.93
                 }
             ],
-            "bg": "bg/gray.png"
+            "bg": "bg/backAlley.png"
         },
         "text": "The substance does NOT settle well in your stomach. You regret your life choices."
     },
@@ -2090,7 +2123,7 @@ export const tree: Tree = {
                     "y": 0.08
                 }
             ],
-            "bg": "bg/shop.png"
+            "bg": "bg/hotelLobby.png"
         },
         "text": "Poor thing! You seem to have embarassed yourself!"
     },
@@ -2173,14 +2206,6 @@ export const tree: Tree = {
             "actors": [
                 {
                     "angle": 0,
-                    "animation": "still",
-                    "img": "setting/dogPark.png",
-                    "scale": 1.2,
-                    "x": 0.55,
-                    "y": 0.5
-                },
-                {
-                    "angle": 0,
                     "img": "character/dachshund/playing.png",
                     "scale": 0.25,
                     "x": 0.55,
@@ -2224,7 +2249,7 @@ export const tree: Tree = {
                     "y": 0.6
                 }
             ],
-            "bg": "bg/shop.png"
+            "bg": "bg/dogPark.png"
         },
         "text": "You and the dachshund play together for a few minutes. You're surprised he had it in him- he looked pretty old and confused. Now he's huffing and puffing, so you decide to let him rest.",
         "textVariants": []
@@ -2852,7 +2877,7 @@ export const tree: Tree = {
                     "y": 0.9
                 }
             ],
-            "bg": "bg/gray.png"
+            "bg": "bg/backAlley.png"
         },
         "text": "You don't know what possessed you to do this, but you toss your head back and drink the substance. It tastes bitter and malty."
     },
@@ -3022,7 +3047,7 @@ export const tree: Tree = {
                     "y": 0.155
                 }
             ],
-            "bg": "bg/gray.png"
+            "bg": "bg/bathroom_tiling.png"
         },
         "text": "You settle onto the toilet and go about your business.",
         "textVariants": [
@@ -3082,7 +3107,7 @@ export const tree: Tree = {
                     "y": 0.43
                 }
             ],
-            "bg": "bg/shop.png"
+            "bg": "bg/hotelLobby.png"
         },
         "text": "You ask the hamster if you can book a room. She looks miffed and says, \"You're a parrot! You don't have any money! I can't give you a room!\"",
         "textVariants": [
@@ -3372,7 +3397,7 @@ export const tree: Tree = {
                     "y": 0.65
                 }
             ],
-            "bg": "bg/shop.png"
+            "bg": "bg/dogPark.png"
         },
         "text": "Your egg is broken forever, and you fear you can't move on."
     },
@@ -3402,7 +3427,7 @@ export const tree: Tree = {
                     "y": 0.5
                 }
             ],
-            "bg": "bg/shop.png"
+            "bg": "bg/hotelLobby.png"
         },
         "text": "You flip the keycard over. It has instructions for how to get into the pool area on it."
     },
@@ -3434,7 +3459,7 @@ export const tree: Tree = {
                     "y": 0.75
                 }
             ],
-            "bg": "bg/shop.png"
+            "bg": "bg/dogPark.png"
         },
         "text": "\"Oh my goodness, thank you so much!\" the beagle exclaims as he takes the cosmopolitan from you. You wonder whether dogs actually drink."
     },
@@ -3610,7 +3635,7 @@ export const tree: Tree = {
                     "y": 0.635
                 }
             ],
-            "bg": "bg/shop.png"
+            "bg": "bg/hotelLobby.png"
         },
         "text": "The hamster smiles. \"Anytime, buddy!\" "
     },
@@ -3786,17 +3811,17 @@ export const tree: Tree = {
                 {
                     "angle": 0,
                     "img": "character/hamster/neutral.png",
-                    "scale": 0.2,
-                    "x": 0.65,
-                    "y": 0.25
+                    "scale": 0.105,
+                    "x": 0.885,
+                    "y": 0.675
                 },
                 {
-                    "angle": 0,
+                    "angle": 0.06,
                     "animation": "still",
                     "img": "setting/hotel/desk.png",
-                    "scale": 0.65,
-                    "x": 0.55,
-                    "y": 0.4915090109536069
+                    "scale": 0.33,
+                    "x": 0.81,
+                    "y": 0.78
                 },
                 {
                     "angle": 0,
@@ -3809,7 +3834,7 @@ export const tree: Tree = {
                     "y": 0.45
                 }
             ],
-            "bg": "bg/shop.png"
+            "bg": "bg/hotelLobby.png"
         },
         "text": "You enter the hotel and find a hamster behind the desk.",
         "textVariants": [
@@ -3861,12 +3886,12 @@ export const tree: Tree = {
                     "y": 0.8
                 },
                 {
-                    "angle": 0,
+                    "angle": 0.06,
                     "animation": "still",
                     "img": "setting/pub.png",
-                    "scale": 1,
-                    "x": 0.55,
-                    "y": 0.5
+                    "scale": 0.955,
+                    "x": 0.515,
+                    "y": 0.41
                 },
                 {
                     "angle": 0,
@@ -3923,7 +3948,7 @@ export const tree: Tree = {
                     "y": 0.67
                 }
             ],
-            "bg": "bg/shop.png"
+            "bg": "bg/dogPark.png"
         },
         "text": "You decline the beagle's request. He looks a little dejected."
     },
@@ -3955,7 +3980,7 @@ export const tree: Tree = {
                     "y": 0.555
                 }
             ],
-            "bg": "bg/shop.png"
+            "bg": "bg/dogPark.png"
         },
         "text": "\"You're very welcome!\" you say to the beagle."
     },
@@ -4090,7 +4115,7 @@ export const tree: Tree = {
                     "y": 0.51
                 }
             ],
-            "bg": "bg/gray.png"
+            "bg": "bg/backAlley.png"
         },
         "text": "You pick up one of the bottles and look at it closely. It appears to maybe be an alcoholic beverage? You're a bird so you can't read."
     },
@@ -4305,7 +4330,7 @@ export const tree: Tree = {
                     "y": 0.75
                 }
             ],
-            "bg": "bg/shop.png"
+            "bg": "bg/dogPark.png"
         },
         "text": "\"Oh my goodness, thank you so much!\" the beagle exclaims as he takes the martini from you. You wonder whether dogs actually drink."
     },
@@ -4613,7 +4638,7 @@ export const tree: Tree = {
                     "y": 0.75
                 }
             ],
-            "bg": "bg/shop.png"
+            "bg": "bg/dogPark.png"
         },
         "text": "The dachshund looks sad and confused. \"I'm a dog, I don't drink.\" You feel a little awkward."
     },
@@ -4640,7 +4665,7 @@ export const tree: Tree = {
                     "y": 0.55
                 }
             ],
-            "bg": "bg/shop.png"
+            "bg": "bg/dogPark.png"
         },
         "text": "The beagle says, \"Excellent! Please bring her this dog bone, it's her favorite!\" You take the present."
     },
@@ -4930,14 +4955,6 @@ export const tree: Tree = {
             "actors": [
                 {
                     "angle": 0,
-                    "animation": "still",
-                    "img": "setting/dogPark.png",
-                    "scale": 1.25,
-                    "x": 0.5,
-                    "y": 0.5
-                },
-                {
-                    "angle": 0,
                     "img": "character/parrot/happy2.png",
                     "needsFlags": [
                         "!drunk"
@@ -4981,7 +4998,7 @@ export const tree: Tree = {
                     "y": 0.595
                 }
             ],
-            "bg": "bg/shop.png"
+            "bg": "bg/dogPark.png"
         },
         "text": "You and the beagle have a wonderful time playing together!",
         "textVariants": [
@@ -5057,14 +5074,6 @@ export const tree: Tree = {
             "actors": [
                 {
                     "angle": 0,
-                    "animation": "still",
-                    "img": "setting/dogPark.png",
-                    "scale": 1.05,
-                    "x": 0.5,
-                    "y": 0.48829693637298377
-                },
-                {
-                    "angle": 0,
                     "img": "character/parrot/in-transit.png",
                     "scale": 0.2,
                     "x": 0.2061067679975821,
@@ -5074,15 +5083,15 @@ export const tree: Tree = {
                     "angle": 0,
                     "img": "character/doberman/neutral.png",
                     "scale": 0.5,
-                    "x": 0.7,
-                    "y": 0.5539293602867958
+                    "x": 0.85,
+                    "y": 0.615
                 },
                 {
                     "angle": 0,
                     "img": "character/dachshund/neutral.png",
                     "scale": 0.15,
-                    "x": 0.35,
-                    "y": 0.2602888007370219
+                    "x": 0.58,
+                    "y": 0.63
                 },
                 {
                     "angle": 0,
@@ -5102,7 +5111,7 @@ export const tree: Tree = {
                     "y": 0.625
                 }
             ],
-            "bg": "bg/shop.png"
+            "bg": "bg/dogPark.png"
         },
         "text": "You seem to have found some dogs at the dog park! The dachshund and beagle seem friendly enough, but you get a shiver down your spine when you see the doberman.",
         "textVariants": [
@@ -5495,6 +5504,43 @@ export const tree: Tree = {
                     "scale": 0.115,
                     "x": 0.8,
                     "y": 0.845
+                },
+                {
+                    "angle": 0,
+                    "animation": "still",
+                    "img": "prop/jungle_plants/tree_trunk.png",
+                    "scale": 1.365,
+                    "x": 0.845,
+                    "y": 0.485
+                },
+                {
+                    "angle": 0,
+                    "animation": "still",
+                    "img": "prop/jungle_plants/vines.png",
+                    "scale": 1.55,
+                    "x": 0.185,
+                    "y": 0.4267470347022603
+                },
+                {
+                    "angle": 0,
+                    "img": "prop/jungle_plants/flower.png",
+                    "scale": 0.32,
+                    "x": 0.21,
+                    "y": 0.165
+                },
+                {
+                    "angle": 0,
+                    "img": "prop/jungle_plants/monstera.png",
+                    "scale": 0.305,
+                    "x": 0.285,
+                    "y": 0.87
+                },
+                {
+                    "angle": 0,
+                    "img": "prop/jungle_plants/philodendron.png",
+                    "scale": 0.695,
+                    "x": 1,
+                    "y": 0.34
                 }
             ],
             "bg": "bg/jungle.png"
@@ -5573,6 +5619,12 @@ export const tree: Tree = {
                 "dest": "61921",
                 "label": "Leave the back alley",
                 "needsFlags": []
+            },
+            {
+                "label": "Next",
+                "needsFlags": [
+                    "haveRatVision"
+                ]
             }
         ],
         "addsFlags": [
@@ -5585,9 +5637,9 @@ export const tree: Tree = {
                 {
                     "angle": 0,
                     "img": "character/parrot/backWingsSpread.png",
-                    "scale": 0.5,
-                    "x": 0.25,
-                    "y": 0.735
+                    "scale": 0.14,
+                    "x": 0.12,
+                    "y": 0.905
                 },
                 {
                     "angle": -1.535,
@@ -5611,11 +5663,127 @@ export const tree: Tree = {
                         "drunk"
                     ],
                     "scale": 0.1,
-                    "x": 0.325,
-                    "y": 0.56
+                    "x": 0.12,
+                    "y": 0.79
+                },
+                {
+                    "angle": 0,
+                    "animation": "still",
+                    "img": "prop/drum_lower_left.png",
+                    "needsFlags": [
+                        "haveRatVision"
+                    ],
+                    "scale": 0.25,
+                    "x": 0.37,
+                    "y": 0.85
+                },
+                {
+                    "angle": 0,
+                    "img": "character/rat/drum_cirlce_rat_lowerLeft.png",
+                    "needsFlags": [
+                        "haveRatVision"
+                    ],
+                    "scale": 0.29,
+                    "x": 0.305,
+                    "y": 0.855
+                },
+                {
+                    "angle": 0,
+                    "animation": "hop_slow",
+                    "img": "character/rat/rat_hands.png",
+                    "needsFlags": [
+                        "haveRatVision"
+                    ],
+                    "scale": 0.14,
+                    "x": 0.36,
+                    "y": 0.825
+                },
+                {
+                    "angle": 0,
+                    "img": "character/rat/drum_circle_rat_upperLeft.png",
+                    "needsFlags": [
+                        "haveRatVision"
+                    ],
+                    "scale": 0.275,
+                    "x": 0.385,
+                    "y": 0.6
+                },
+                {
+                    "angle": 0,
+                    "img": "text/music_notes_1.png",
+                    "needsFlags": [
+                        "!haveRatVision"
+                    ],
+                    "scale": 0.1,
+                    "x": 0.54,
+                    "y": 0.655
+                },
+                {
+                    "angle": 0,
+                    "animation": "still",
+                    "img": "prop/drum_lower_right.png",
+                    "needsFlags": [
+                        "haveRatVision"
+                    ],
+                    "scale": 0.255,
+                    "x": 0.68,
+                    "y": 0.8503258298768752
+                },
+                {
+                    "angle": 0,
+                    "img": "text/music_notes_1.png",
+                    "needsFlags": [
+                        "haveRatVision"
+                    ],
+                    "scale": 0.23,
+                    "x": 0.53,
+                    "y": 0.24
+                },
+                {
+                    "angle": 0,
+                    "animation": "hop_slow",
+                    "flipped": true,
+                    "img": "character/rat/rat_hands.png",
+                    "needsFlags": [
+                        "haveRatVision"
+                    ],
+                    "scale": 0.135,
+                    "x": 0.69,
+                    "y": 0.785
+                },
+                {
+                    "angle": 0,
+                    "img": "character/rat/drum_circle_rat_lowerRight.png",
+                    "needsFlags": [
+                        "haveRatVision"
+                    ],
+                    "scale": 0.31,
+                    "x": 0.745,
+                    "y": 0.815
+                },
+                {
+                    "angle": 0.2,
+                    "animation": "still",
+                    "img": "prop/drum_upper_right.png",
+                    "needsFlags": [
+                        "haveRatVision"
+                    ],
+                    "scale": 0.205,
+                    "x": 0.62,
+                    "y": 0.62
+                },
+                {
+                    "angle": 0,
+                    "img": "character/rat/drum_circle_rat_upperRight.png",
+                    "needsFlags": [
+                        "haveRatVision"
+                    ],
+                    "scale": 0.23,
+                    "x": 0.685,
+                    "y": 0.555
                 }
             ],
-            "bg": "bg/gray.png"
+            "bg": "bg/backAlley.png"
         },
         "text": "You find a spooky alley behind the bar. It gives you the creeps. You hear faint chanting and drumming but don't see anything other than mysterious bottles strewn about.",
         "textVariants": [
