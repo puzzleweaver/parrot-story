@@ -5790,6 +5790,13 @@ export const tree: Tree = {
             },
             {
                 "flags": [
+                    "haveSeenBackAlley",
+                    "haveRatVision"
+                ],
+                "text": "You return to the back alley and behold a bizarre scene. Rats seem to have formed a drum circle and are chanting in a crazed way."
+            },
+            {
+                "flags": [
                     "haveSeenBackAlley"
                 ],
                 "text": "The back alley looks spookier by the minute. What do you do?"
