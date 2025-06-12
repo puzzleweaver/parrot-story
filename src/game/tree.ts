@@ -5619,12 +5619,6 @@ export const tree: Tree = {
                 "dest": "61921",
                 "label": "Leave the back alley",
                 "needsFlags": []
-            },
-            {
-                "label": "Next",
-                "needsFlags": [
-                    "haveRatVision"
-                ]
             }
         ],
         "addsFlags": [
