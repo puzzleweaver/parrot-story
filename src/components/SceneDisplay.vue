@@ -3,6 +3,9 @@ import { computed, onMounted, onUnmounted, ref, watch } from 'vue';
 import { type Scene } from '../game/scene';
 import { SceneRenderer } from '../game/scene-renderer';
 
+const urlParams = new URLSearchParams(window.location.search);
+const NOLOW = urlParams.get('nolow') !== null;
+
 const props = defineProps<{
     scene: Scene,
     flags?: string[],
@@ -44,9 +47,11 @@ onMounted(() => {
 if (!props.animate) watch(props, render);
 
 const width = computed(() => {
+    if (NOLOW) return 600;
     return props.lowRes ? 90 : 600;
 })
 const height = computed(() => {
+    if (NOLOW) return 400;
     return props.lowRes ? 60 : 400;
 })
 

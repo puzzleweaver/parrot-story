@@ -11,11 +11,11 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: resolve(__dirname, 'index.html'),
-        developer: resolve(__dirname, 'developer/index.html'),
+        // developer: resolve(__dirname, 'developer/index.html'),
       },
     },
   },
   define: {
     'process.env.NODE_ENV': '"production"'
-  }
+  },
 });

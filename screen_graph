@@ -8,26 +8,33 @@ adds talkedToKoala2, canThrowRocks"]
 	4443 [label="\"Hotel Egg Hatching 1\""]
 	5565 [label="\"Possum Offended\"
 adds askForPossumName"]
+	5936 [label="\"Egg breaks on fountain\"" color=red]
 	7769 [label="\"Rat Leader 1\""]
 	9403 [label="\"bear pours cosmo\"
 adds haveCosmo"]
 	9785 [label="\"Discover hole\""]
-	10255 [label="\"City Fountain Arrival\"
+	10255 [label="\"Fountain Hub\"
 adds sawFountain"]
 	11635 [label="\"Doberman attack\""]
 	11989 [label="\"Digging through fountain\""]
 	12073 [label="\"Beagle asks for favor\"
 adds talkedToBeagle"]
-	13097 [label="\"Flower shop exterior\""]
-	13631 [label="\"City Hub\""]
+	13097 [label="\"Flower shop exterior\"
+adds haveSeenFlowerShop"]
+	13631 [label="\"City Hub\"
+adds haveSeenCity"]
 	13817 [label="\"Receive Hamster Gift\"
 adds haveKeycard"]
 	13849 [label="\"Shock\""]
 	14923 [label="\"Koala Cult Talk 3 \"
 adds talkedToKoala3, talkedToKoala3"]
+	16163 [label="\"Parrot says thanks to bear\"
+adds meetBear"]
 	17556 [label="\"Koala Follow Up\""]
-	18632 [label="\"Nothing found in fountain 2\""]
-	18822 [label="\"Inside Bar\""]
+	18632 [label="\"Fountain Dig Result\"
+adds haveGlasses"]
+	18822 [label="\"Bar Hub\"
+adds meetBear"]
 	18968 [label="\"Volcano gets rocks\""]
 	19418 [label="\"rat vision discovered\"
 adds haveRatVision"]
@@ -39,26 +46,31 @@ adds haveLilac, haveFlower"]
 	23888 [label="\"Meet animals first time\"
 adds metAnimals"]
 	23991 [label="\"Keycard front\""]
-	26526 [label="\"City Fountain Visit Again\""]
-	26946 [label="\"Meet therapy mouse\"
-adds metTherapyMouse"]
+	24072 [label="\"Poison Settles\""]
 	27438 [label="\"Volcano Destruction\"" color=red]
 	27595 [label="\"Hotel exterior\""]
 	28006 [label="\"Embarassed\""]
 	28035 [label="\"Inspecting Cosmo\""]
 	29900 [label="\"Rat Leader 3 (copy)\""]
-	31710 [label="\"Play with dachshund\""]
+	31710 [label="\"Play with dachshund\"
+adds haveMetDachshund"]
 	31726 [label="\"Egg Hatching 1\""]
+	33614 [label="\"Therapy Mouse Prompts User to explore\""]
 	34620 [label="\"Hot Spring Bath\""]
 	35030 [label="\"Taking a bath\""]
 	35747 [label="\"City Arrival\""]
 	37515 [label="\"Forked path\""]
 	38201 [label="\"Egg Hatching 4\"" color=green]
-	40581 [label="\"Flower shop interior\""]
+	40581 [label="\"Flower shop interior\"
+adds haveBeenInsideFlowerShop"]
 	43130 [label="\"Egg breaks in flower shop\"" color=red]
 	45412 [label="\"Inspecting martini\""]
-	45463 [label="\"Bus ride\""]
-	46692 [label="\"bear shakes cosmopolitan\""]
+	45463 [label="\"Bus ride\"
+adds haveHadFirstBusRide"]
+	46692 [label="\"bear shakes cosmopolitan\"
+adds hasDrink"]
+	47187 [label="\"Drink Poison\"
+adds drunk"]
 	47389 [label="\"Volcano Erruption\""]
 	47586 [label="\"Hotel Egg Hatching 4\"" color=green]
 	47626 [label="\"Inside bathroom\""]
@@ -68,43 +80,60 @@ adds triedToBook"]
 adds sawEgg"]
 	48268 [label="\"Play with koala\"
 adds playedWithKoala"]
+	48799 [label="\"Therapy Mouse's Day\""]
 	49002 [label="\"Monkey attack 2\"" color=red]
 	49719 [label="\"Hotel Egg Hatching 3\""]
 	49884 [label="\"Hotel Egg Hatching 2\""]
 	51350 [label="\"Mourning\"" color=red]
 	53122 [label="\"Back of keycard\""]
 	53381 [label="\"Beagle accepts cosmo\""]
-	55660 [label="\"Volcano visit no rocks\""]
+	53838 [label="\"Therapy Mouse Travel Advice\""]
 	56065 [label="\"You take daffodil\"
 adds haveDaffodil, haveFlower"]
+	56143 [label="\"Therapy mouse scolds \""]
 	56699 [label="\"Thanking Hamster\""]
 	57590 [label="\"Done with Jaguar\""]
-	58259 [label="\"Bear pours martini\""]
-	59840 [label="\"Inside hotel\""]
-	61921 [label="\"Bar Exterior\""]
-	62947 [label="\"Rejected Beagle\""]
+	58259 [label="\"Bear pours martini\"
+adds haveMartini"]
+	59840 [label="\"Inside hotel\"
+adds haveSeenHotel"]
+	61921 [label="\"Bar Exterior\"
+adds haveSeenBar"]
+	62947 [label="\"Rejected Beagle\"
+adds beagleRejected"]
+	63647 [label="\"Bird says you're welcome\""]
+	64042 [label="\"\""]
+	64563 [label="\"Therapy Mouse's Day 2\""]
 	64647 [label="\"Koala Cult Talk\"
 adds talkedToKoala"]
-	64686 [label="\"\""]
 	64950 [label="\"Discover jungle path\""]
-	65138 [label="\"Bird refused a drink\""]
+	64965 [label="\"Bottle of poison\""]
+	65138 [label="\"Bear responds to drink request\""]
+	69396 [label="\"Meet therapy mouse\"
+adds haveMetTherapyMouse"]
 	69799 [label="\"Rat Leader 2\""]
 	71284 [label="\"Nest Opening Scene\""]
 	73855 [label="\"Beagle accepts martini\""]
-	74372 [label="\"Volcano visit after cult talk\""]
+	74372 [label="\"Volcano visit\""]
 	75362 [label="\"Cult opening scene\"
 adds discoverCult"]
+	75494 [label="\"Therapy Mouse Travel Advice 2\""]
 	75760 [label="\"Dachshund rejects cosmo\""]
-	77796 [label="\"Therapy Mouse Again\""]
 	78527 [label="\"Dog Bone Acquired\"
 adds haveDogBone"]
 	78752 [label="\"Monkey attack 1\""]
 	79680 [label="\"Hotel bath\""]
+	82006 [label="\"Kick therapy mouse\"
+adds !haveMetTherapyMouse"]
 	82129 [label="\"Ask hamster for info\"
-adds askGFQuestion"]
+adds askedGFQuestion"]
 	84301 [label="\"Rock Pile\""]
-	85368 [label="\"Playing with beagle\""]
-	85550 [label="\"Dog Park\""]
+	84892 [label="\"Kava Bar Opening Tag\"
+adds kavaBarOpen"]
+	85368 [label="\"Playing with beagle\"
+adds haveMetBeagle"]
+	85550 [label="\"Dog Park\"
+adds haveBeenToDogPark"]
 	85914 [label="\"Rat Leader 3\""]
 	85940 [label="\"Egg Hatching 2\""]
 	86146 [label="\"Flower Purchase\""]
@@ -116,61 +145,76 @@ adds playedWithJaguar"]
 	90619 [label="\"Jungle Hub\""]
 	91030 [label="\"Sunflower sneeze\"
 adds haveSunflowers, haveFlower"]
-	91471 [label="\"Bear shakes martini\""]
-	91498 [label="\"Find sunglasses\"
-adds haveGlasses"]
-	94709 [label="\"Bear offers drinks\""]
-	95956 [label="\"Gift Hamster\""]
+	91404 [label="\"Bar back alley\"
+adds haveSeenBackAlley"]
+	91471 [label="\"Bear shakes martini\"
+adds hasDrink"]
+	94275 [label="\"Climbing Fountain\"
+adds hasClimbedFountain"]
+	94630 [label="\"Therapy Mouse Hub\""]
+	94709 [label="\"Bear offers drinks\"
+adds termsAgreedTo"]
+	95956 [label="\"Gift Hamster\"
+adds haveGivenBone"]
 	95982 [label="\"Right Tunnel\"
 adds discoverJunglePath"]
+	96204 [label="\"Therapy Mouse Glad\""]
+	99585 [label="\"Therapy Mouse 1\""]
 	0 -> 71284 [label="Let's go!"]
 	1826 -> 85550 [label="leave the dachshund for now"]
-	2739 -> 14923 [label="Continue talking to koala
-if talkedToKoala2,!talkedToKoala3"]
+	2739 -> 14923 [label="Continue talking to koala"]
 	2739 -> 20907 [label="Return to animals to get away from this conversation"]
 	2839 -> 38201 [label=Next]
 	4443 -> 49884 [label="..."]
-	5565 -> 13097 [label="Leave the store! You're so embarassed!"]
+	5565 -> 40581 [label=Next]
 	7769 -> 69799 [label=Next]
-	9403 -> 28035 [label="inspect drink"]
-	9403 -> 26946 [label="Say \"thanks!\" and leave bar
-if !metTherapyMouse"]
-	9403 -> 94709 [label="Say \"thanks!\" and ask for another drink"]
-	9403 -> 77796 [label="Say \"thanks!\" and leave the bar
-if metTherapyMouse"]
+	9403 -> 28035 [label="Inspect drink"]
+	9403 -> 16163 [label="Thank him"]
 	9785 -> 87223 [label="Follow the rats through the hole"]
 	9785 -> 18822 [label="Leave the Bathroom"]
-	10255 -> 11989 [label="Dig through the fountain and look for treasure
-if haveGlasses"]
 	10255 -> 13631 [label="Wander the city again"]
-	10255 -> 11989 [label="Dig through the fountain and look for treasure
-if !haveGlasses"]
+	10255 -> 11989 [label="Dig through the fountain"]
+	10255 -> 94275 [label="Climb on the fountain
+if !hasClimbedFountain,!drunk"]
+	10255 -> 94275 [label="Push your luck and climb the fountain again
+if hasClimbedFountain"]
+	10255 -> 94275 [label="Climb fountain while tipsy
+if drunk"]
 	11635 -> 13849 [label=Next]
-	11989 -> 18632 [label="Next
-if haveGlasses"]
-	11989 -> 91498 [label="Next
-if !haveGlasses"]
-	12073 -> 78527 [label="Accept request"]
-	12073 -> 62947 [label="\"No thanks\""]
-	13097 -> 13631 [label="Leave and Wander the City"]
+	11989 -> 18632 [label=Next]
+	12073 -> 78527 [label="Accept request
+if !haveDogBone"]
+	12073 -> 62947 [label="\"No thanks\"
+if !beagleRejected,!haveDogBone"]
+	12073 -> 62947 [label="Refuse offer again
+if beagleRejected,!haveDogBone"]
+	12073 -> 63647 [label="Say \"You're welcome!\"
+if haveDogBone"]
+	13097 -> 13631 [label="Wander the city"]
 	13097 -> 40581 [label="Go in!"]
 	13631 -> 27595 [label="Go to hotel"]
 	13631 -> 85550 [label="Go to dog park"]
 	13631 -> 61921 [label="Go to bar"]
 	13631 -> 13097 [label="Go to flower shop"]
-	13631 -> 10255 [label="Visit city fountain
-if !sawFountain"]
-	13631 -> 26526 [label="Visit city fountain again
-if sawFountain"]
+	13631 -> 10255 [label="Visit city fountain"]
+	13631 -> 99585 [label="Visit therapy mouse
+if haveMetTherapyMouse"]
 	13817 -> 23991 [label="Inspect Keycard"]
 	13817 -> 56699 [label="Say \"Thanks!\""]
 	13849 -> 51350 [label=Next]
 	14923 -> 20907 [label="Back to the animals"]
+	16163 -> 18822 [label=Next]
 	17556 -> 20907 [label="Return to other animals"]
-	18632 -> 10255 [label="Exit the Water"]
-	18822 -> 65138 [label="Ask for a drink"]
+	18632 -> 10255 [label=Next]
+	18822 -> 82006 [label="Wander the city again
+if !haveMetTherapyMouse"]
+	18822 -> 13631 [label="Wander the city again
+if haveMetTherapyMouse"]
+	18822 -> 65138 [label="Ask for a drink
+if !hasDrink"]
+	18822 -> 65138 [label="Ask for another drink
+if hasDrink"]
 	18822 -> 47626 [label="Use their bathroom"]
-	18822 -> 61921 [label="Leave Bar"]
 	18968 -> 47389 [label="Next. No other options."]
 	19418 -> 9785 [label="Follow the rats"]
 	19418 -> 18822 [label="Leave the Bathroom"]
@@ -181,13 +225,13 @@ if !playedWithJaguar"]
 if !playedWithKoala"]
 	20907 -> 64647 [label="Talk to the koala
 if !talkedToKoala"]
-	20907 -> 90619 [label="Wander the jungle some more"]
 	20907 -> 2739 [label="Talk to the koala again
 if talkedToKoala,!talkedToKoala2"]
 	20907 -> 14923 [label="Talk to the koala again
 if talkedToKoala2,!talkedToKoala3"]
 	20907 -> 17556 [label="Talk to the koala again
 if talkedToKoala3"]
+	20907 -> 90619 [label="Wander the jungle some more"]
 	22555 -> 40581 [label=Next]
 	22841 -> 59840 [label="Back to Hotel Lobby"]
 	22841 -> 79680 [label="Go into the pool"]
@@ -195,21 +239,16 @@ if talkedToKoala3"]
 	23888 -> 20907 [label=Next]
 	23991 -> 56699 [label="Say \"Thanks!\""]
 	23991 -> 53122 [label="Flip Keycard Over"]
-	26526 -> 11989 [label="Dig Through Fountain"]
-	26526 -> 13631 [label="Wander city again"]
-	26946 -> 13631 [label="Shrug it off and wander city"]
-	27595 -> 59840 [label="Go inside"]
+	24072 -> 91404 [label=Next]
 	27595 -> 13631 [label="Wander city instead"]
+	27595 -> 59840 [label="Go inside"]
 	28006 -> 59840 [label="Trail Off"]
-	28035 -> 18822 [label="Inspection Complete"]
+	28035 -> 18822 [label="Inspection complete"]
 	29900 -> 37515 [label="Go back to the fork in the sewer system"]
 	29900 -> 23253 [label="Continue watching"]
-	31710 -> 1826 [label="give dachshund martini
-if haveMartini"]
-	31710 -> 75760 [label="give dachshund cosmopolitan
-if haveCosmo"]
-	31710 -> 85550 [label="Back to Dog Park"]
+	31710 -> 85550 [label=Next]
 	31726 -> 85940 [label="Oh my gosh!"]
+	33614 -> 94630 [label=Next]
 	34620 -> 74372 [label="Back to the volcano"]
 	34620 -> 35030 [label="Take a bath"]
 	35030 -> 31726 [label="What is your egg doing!"]
@@ -224,83 +263,116 @@ if discoverCult"]
 if discoverJunglePath"]
 	40581 -> 5565 [label="Ask the possum \"Are you Jen?\"
 if !askForPossumName"]
-	40581 -> 86146 [label="Ask if you can buy flowers"]
-	40581 -> 13097 [label="Leave the shop"]
+	40581 -> 86146 [label="Ask if you can buy flowers
+if !haveFlower"]
+	40581 -> 86146 [label="Ask to purchase more flowers
+if haveFlower"]
+	40581 -> 13631 [label="Leave the shop"]
 	45412 -> 18822 [label="Inspection Complete"]
 	45463 -> 35747 [label=Next]
 	46692 -> 9403 [label=Next]
+	47187 -> 24072 [label="Uh oh"]
 	47389 -> 27438 [label="Oh no"]
 	47626 -> 19418 [label="Bored, Put on Sunglasses
 if haveGlasses,!haveRatVision"]
 	47626 -> 18822 [label="Finish up and Leave Bathroom"]
-	47626 -> 87223 [label="Take the Rat Tunnel
+	47626 -> 87223 [label="Finish up and take the Rat Tunnel
 if discoveredHole"]
+	47626 -> 87223 [label="Finish up and follow the rats
+if haveRatVision,!discoveredHole"]
 	47893 -> 28006 [label=Next]
 	48059 -> 87790 [label="inspection complete"]
 	48268 -> 20907 [label="Back to the animals"]
+	48799 -> 64563 [label=Next]
 	49719 -> 47586 [label="Oh My!!!"]
 	49884 -> 49719 [label="..."]
 	53122 -> 56699 [label="Say \"Thanks!\""]
 	53122 -> 23991 [label="Flip Keycard Back Over"]
 	53381 -> 85550 [label="Back to Dog Park"]
-	55660 -> 34620 [label="Go to hot spring"]
-	55660 -> 90619 [label="wander jungle some more"]
+	53838 -> 75494 [label=Next]
 	56065 -> 40581 [label=Next]
+	56143 -> 94630 [label=Next]
 	56699 -> 59840 [label=Next]
 	57590 -> 20907 [label="Back to Animals"]
-	58259 -> 45412 [label="inspect martini"]
-	58259 -> 26946 [label="Say \"thanks\" and leave bar
-if !metTherapyMouse"]
-	58259 -> 94709 [label="Say \"thanks\" and ask for another drink"]
+	58259 -> 45412 [label="Inspect martini"]
+	58259 -> 16163 [label="Thank him"]
 	59840 -> 47893 [label="Ask to book your stay
 if !triedToBook"]
 	59840 -> 82129 [label="Ask her, \"Are you the beagle's girlfriend?\"
-if talkedToBeagle,!askGFQuestion"]
-	59840 -> 27595 [label="Exit Hotel"]
+if talkedToBeagle,!askedGFQuestion"]
 	59840 -> 22841 [label="Go to Hotel Pool
 if haveKeycard"]
+	59840 -> 95956 [label="Give her the dog bone from the beagle
+if askedGFQuestion,!haveGivenBone,talkedToBeagle,haveDogBone"]
+	59840 -> 13631 [label="Exit Hotel"]
+	61921 -> 82006 [label="Wander city"]
 	61921 -> 18822 [label="Go inside"]
-	61921 -> 13631 [label="Wander city"]
+	61921 -> 91404 [label="Explore back alley"]
 	62947 -> 85550 [label="Back to Dog Park"]
+	63647 -> 85550 [label="Back to dog park"]
+	64042 -> 90619 [label="Back to jungle hub"]
+	64563 -> 94630 [label=Next]
 	64647 -> 2739 [label="Say \"Sure, what did you want to tell me?\""]
 	64647 -> 20907 [label="Say \"No Thanks\""]
 	64950 -> 90619 [label=Next]
-	65138 -> 94709 [label="Agree to his terms"]
-	65138 -> 26946 [label="Refuse his terms and leave to wander city again
-if !metTherapyMouse"]
+	64965 -> 47187 [label="Drink it"]
+	64965 -> 91404 [label="But it back down"]
+	65138 -> 94709 [label="Agree to his terms
+if !termsAgreedTo"]
+	65138 -> 18822 [label="Refuse his terms
+if !termsAgreedTo"]
+	65138 -> 91471 [label="Martini
+if termsAgreedTo"]
+	65138 -> 46692 [label="Cosmopolitan
+if termsAgreedTo"]
+	69396 -> 99585 [label=Next]
 	69799 -> 85914 [label=Next]
 	71284 -> 87790 [label="Take a Deep Breath"]
 	73855 -> 85550 [label="Back to Dog Park"]
-	74372 -> 84301 [label="Look for rocks to make a sacrifice"]
+	74372 -> 84301 [label="Look for rocks to make a sacrifice
+if canThrowRocks"]
 	74372 -> 34620 [label="Cool off in a hot spring"]
 	74372 -> 90619 [label="Back to the Jungle"]
 	75362 -> 7769 [label=Next]
+	75494 -> 94630 [label="Next
+if haveGlasses,!haveRatVision"]
+	75494 -> 84892 [label="Next
+if haveRatVision,haveGlasses"]
+	75494 -> 94630 [label="Next
+if !haveRatVision,!haveGlasses"]
 	75760 -> 85550 [label="Back to Dog Park"]
-	77796 -> 13631 [label="Go back to wandering city"]
 	78527 -> 85550 [label="Back to Dog Park"]
 	78752 -> 49002 [label=Next]
 	79680 -> 4443 [label="What is your egg doing!"]
-	82129 -> 59840 [label="..."]
-	82129 -> 95956 [label="Give her the beagle's gift
-if haveDogBone"]
+	82006 -> 69396 [label=Inspect]
+	82006 -> 13631 [label="Shrug it off and wander the city"]
+	82129 -> 59840 [label=Next]
 	84301 -> 18968 [label="Throw them in! Complete the sacrifice!"]
 	84301 -> 74372 [label="Put the rocks down and step Away From The Edge"]
+	84892 -> 94630 [label=Next]
 	85368 -> 12073 [label="Talk to beagle
 if !talkedToBeagle"]
-	85368 -> 73855 [label="Give beagle a martini
-if haveMartini"]
-	85368 -> 53381 [label="Give beagle a cosmopolitan
-if haveCosmo"]
-	85368 -> 85550 [label="Return to Dog Park"]
+	85368 -> 85550 [label=Next]
+	85368 -> 12073 [label="Talk to beagle again
+if talkedToBeagle"]
 	85550 -> 85368 [label="Play with beagle"]
 	85550 -> 31710 [label="Play with dachshund"]
 	85550 -> 11635 [label="Play with doberman"]
+	85550 -> 1826 [label="Offer dachshund martini
+if haveMetDachshund,haveMartini"]
+	85550 -> 75760 [label="Offer dachshund cosmo
+if haveMetDachshund,haveCosmo"]
+	85550 -> 73855 [label="Offer beagle a martini
+if haveMartini,haveMetBeagle"]
+	85550 -> 53381 [label="Offer beagle a cosmo
+if haveCosmo,haveMetBeagle"]
 	85550 -> 13631 [label="Return to wandering city"]
 	85914 -> 29900 [label="What is happening"]
 	85940 -> 2839 [label=Next]
 	86146 -> 91030 [label=Sunflowers]
 	86146 -> 22555 [label=Lilac]
 	86146 -> 56065 [label=Daffodil]
+	86146 -> 40581 [label="Change your mind"]
 	87223 -> 37515 [label=Next]
 	87790 -> 48059 [label="Inspect Egg
 if !sawEgg"]
@@ -308,19 +380,32 @@ if !sawEgg"]
 	87811 -> 57590 [label=Next]
 	90619 -> 20907 [label="Visit animals again
 if metAnimals"]
-	90619 -> 55660 [label="Go to volcano
-if !canThrowRocks"]
-	90619 -> 45463 [label="Go to city"]
-	90619 -> 74372 [label="Go to volcano
-if canThrowRocks"]
-	90619 -> 87790 [label="return to the nest"]
+	90619 -> 74372 [label="Go to volcano"]
+	90619 -> 87790 [label="Return to the nest"]
 	90619 -> 23888 [label="Look for animals
 if !metAnimals"]
+	90619 -> 45463 [label="Go to city"]
+	90619 -> 64042 [label="Go to kava bar
+if kavaBarOpen"]
 	91030 -> 43130 [label="Oh no!"]
+	91404 -> 64965 [label="Pick up one of the bottles"]
+	91404 -> 61921 [label="Leave the back alley"]
 	91471 -> 58259 [label=Next]
-	91498 -> 10255 [label=Nice]
+	94275 -> 10255 [label="Shame on you!
+if !drunk"]
+	94275 -> 5936 [label="Ruh roh
+if drunk"]
+	94630 -> 13631 [label="Return to wandering the city"]
+	94630 -> 48799 [label="Ask therapy mouse about his day"]
+	94630 -> 53838 [label="Ask him about what there is to do"]
+	94630 -> 33614 [label="Complain to him that he hasn't offered new ideas for a while"]
 	94709 -> 91471 [label=Martini]
 	94709 -> 46692 [label=Cosmopolitan]
 	95956 -> 13817 [label="Accept Gift"]
 	95982 -> 64950 [label="Follow the tunnel"]
+	96204 -> 94630 [label=Next]
+	99585 -> 56143 [label="\"I haven't been feeling so good.\"
+if drunk"]
+	99585 -> 96204 [label="\"I'm doing great!\""]
+	99585 -> 53838 [label="\"I'm a little bored, there isn't much to do.\""]
 }
