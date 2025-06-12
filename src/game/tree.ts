@@ -110,7 +110,8 @@ export const tree: Tree = {
         "actions": [
             {
                 "dest": "38201",
-                "label": "Next"
+                "label": "Next",
+                "needsFlags": []
             }
         ],
         "addsFlags": [],
@@ -130,6 +131,30 @@ export const tree: Tree = {
             "bg": "bg/shop.png"
         },
         "text": "The shell begins to open, and you can see part of a small creature."
+    },
+    "4219": {
+        "actions": [
+            {
+                "dest": "93644",
+                "label": "Next",
+                "needsFlags": []
+            }
+        ],
+        "id": "4219",
+        "label": "Dunnot talking 2",
+        "scene": {
+            "actors": [
+                {
+                    "angle": 0,
+                    "img": "character/dunnock/dunnock_talking.png",
+                    "scale": 1.005,
+                    "x": 0.505,
+                    "y": 0.565
+                }
+            ],
+            "bg": "bg/kavaBar.png"
+        },
+        "text": "\"If you really think about this universe, in its boundless wisdom, you can use your inner instrument to look closely at your own personal solipsistic viewpoint.\" "
     },
     "4443": {
         "actions": [
@@ -1226,7 +1251,7 @@ export const tree: Tree = {
                     "y": 0.4923805290438986
                 }
             ],
-            "bg": "bg/jungle.png"
+            "bg": "bg/volcano.png"
         },
         "text": "You launch the rocks into the volcano! They land into the lava and the ground begins to shake!"
     },
@@ -1293,6 +1318,136 @@ export const tree: Tree = {
             "bg": "bg/bathroom_tiling.png"
         },
         "text": "You put on the glasses. Your mind feels like it has opened up! You suddenly see multiple rats! Guess you now have rat vision."
+    },
+    "20169": {
+        "actions": [
+            {
+                "dest": "79292",
+                "label": "Next",
+                "needsFlags": []
+            }
+        ],
+        "addsFlags": [
+            "haveWatchedDrumRoutine"
+        ],
+        "id": "20169",
+        "label": "Drum Circle 2",
+        "scene": {
+            "actors": [
+                {
+                    "angle": -1.535,
+                    "img": "prop/poisonBottle.png",
+                    "scale": 0.1,
+                    "x": 0.945,
+                    "y": 0.9
+                },
+                {
+                    "angle": 1.715,
+                    "img": "prop/poisonBottle.png",
+                    "scale": 0.1,
+                    "x": 0.05,
+                    "y": 0.935
+                },
+                {
+                    "angle": 0,
+                    "animation": "still",
+                    "img": "prop/drum_lower_left.png",
+                    "needsFlags": [],
+                    "scale": 0.25,
+                    "x": 0.37,
+                    "y": 0.85
+                },
+                {
+                    "angle": 0,
+                    "img": "character/rat/drum_cirlce_rat_lowerLeft.png",
+                    "needsFlags": [],
+                    "scale": 0.29,
+                    "x": 0.305,
+                    "y": 0.855
+                },
+                {
+                    "angle": 0,
+                    "animation": "hop_slow",
+                    "img": "character/rat/rat_hands.png",
+                    "needsFlags": [],
+                    "scale": 0.14,
+                    "x": 0.36,
+                    "y": 0.825
+                },
+                {
+                    "angle": 0,
+                    "animation": "hop_slow",
+                    "img": "character/rat/drum_circle_rat_upperLeft.png",
+                    "needsFlags": [],
+                    "scale": 0.275,
+                    "x": 0.385,
+                    "y": 0.6
+                },
+                {
+                    "angle": 0,
+                    "animation": "still",
+                    "img": "prop/drum_lower_right.png",
+                    "needsFlags": [],
+                    "scale": 0.255,
+                    "x": 0.68,
+                    "y": 0.8503258298768752
+                },
+                {
+                    "angle": 0,
+                    "img": "text/music_notes_2.png",
+                    "needsFlags": [],
+                    "scale": 0.23,
+                    "x": 0.53,
+                    "y": 0.24
+                },
+                {
+                    "angle": 0,
+                    "animation": "hop_slow",
+                    "flipped": true,
+                    "img": "character/rat/rat_hands.png",
+                    "needsFlags": [],
+                    "scale": 0.135,
+                    "x": 0.69,
+                    "y": 0.785
+                },
+                {
+                    "angle": 0,
+                    "img": "character/rat/drum_circle_rat_lowerRight.png",
+                    "needsFlags": [],
+                    "scale": 0.31,
+                    "x": 0.745,
+                    "y": 0.815
+                },
+                {
+                    "angle": 0.2,
+                    "animation": "still",
+                    "img": "prop/drum_upper_right.png",
+                    "needsFlags": [],
+                    "scale": 0.205,
+                    "x": 0.62,
+                    "y": 0.62
+                },
+                {
+                    "angle": 0,
+                    "animation": "hop_slow",
+                    "img": "character/rat/drum_circle_rat_upperRight.png",
+                    "needsFlags": [],
+                    "scale": 0.23,
+                    "x": 0.685,
+                    "y": 0.555
+                },
+                {
+                    "angle": 0,
+                    "img": "text/music_notes_crescendo.png",
+                    "scale": 0.16,
+                    "x": 0.47,
+                    "y": 0.38
+                }
+            ],
+            "bg": "bg/backAlley.png"
+        },
+        "text": "The rats start to drum a bit faster and grow louder.",
+        "textVariants": []
     },
     "20907": {
         "actions": [
@@ -1533,6 +1688,9 @@ export const tree: Tree = {
                 {
                     "angle": 0,
                     "img": "prop/drunk_bubbles.png",
+                    "needsFlags": [
+                        "drunk"
+                    ],
                     "scale": 0.225,
                     "x": 0.28,
                     "y": 0.33
@@ -2039,7 +2197,7 @@ export const tree: Tree = {
                     "y": 0.5
                 }
             ],
-            "bg": "bg/jungle.png"
+            "bg": "bg/volcano.png"
         },
         "text": "You are covered by magma and ash. There is no escape. Your egg is destroyed along with your hopes and dreams."
     },
@@ -2152,6 +2310,127 @@ export const tree: Tree = {
         },
         "text": "That's a good-looking cosmo!"
     },
+    "29274": {
+        "actions": [],
+        "addsFlags": [],
+        "id": "29274",
+        "label": "Drum Circle 2",
+        "scene": {
+            "actors": [
+                {
+                    "angle": -1.535,
+                    "img": "prop/poisonBottle.png",
+                    "scale": 0.1,
+                    "x": 0.945,
+                    "y": 0.9
+                },
+                {
+                    "angle": 1.715,
+                    "img": "prop/poisonBottle.png",
+                    "scale": 0.1,
+                    "x": 0.05,
+                    "y": 0.935
+                },
+                {
+                    "angle": 0,
+                    "animation": "still",
+                    "img": "prop/drum_lower_left.png",
+                    "needsFlags": [],
+                    "scale": 0.25,
+                    "x": 0.37,
+                    "y": 0.85
+                },
+                {
+                    "angle": 0,
+                    "img": "character/rat/drum_cirlce_rat_lowerLeft.png",
+                    "needsFlags": [],
+                    "scale": 0.29,
+                    "x": 0.305,
+                    "y": 0.855
+                },
+                {
+                    "angle": 0,
+                    "animation": "hop_slow",
+                    "img": "character/rat/rat_hands.png",
+                    "needsFlags": [],
+                    "scale": 0.14,
+                    "x": 0.36,
+                    "y": 0.825
+                },
+                {
+                    "angle": 0,
+                    "img": "character/rat/drum_circle_rat_upperLeft.png",
+                    "needsFlags": [],
+                    "scale": 0.275,
+                    "x": 0.385,
+                    "y": 0.6
+                },
+                {
+                    "angle": 0,
+                    "img": "text/music_notes_1.png",
+                    "needsFlags": [],
+                    "scale": 0.1,
+                    "x": 0.54,
+                    "y": 0.655
+                },
+                {
+                    "angle": 0,
+                    "animation": "still",
+                    "img": "prop/drum_lower_right.png",
+                    "needsFlags": [],
+                    "scale": 0.255,
+                    "x": 0.68,
+                    "y": 0.8503258298768752
+                },
+                {
+                    "angle": 0,
+                    "img": "text/music_notes_1.png",
+                    "needsFlags": [],
+                    "scale": 0.23,
+                    "x": 0.53,
+                    "y": 0.24
+                },
+                {
+                    "angle": 0,
+                    "animation": "hop_slow",
+                    "flipped": true,
+                    "img": "character/rat/rat_hands.png",
+                    "needsFlags": [],
+                    "scale": 0.135,
+                    "x": 0.69,
+                    "y": 0.785
+                },
+                {
+                    "angle": 0,
+                    "img": "character/rat/drum_circle_rat_lowerRight.png",
+                    "needsFlags": [],
+                    "scale": 0.31,
+                    "x": 0.745,
+                    "y": 0.815
+                },
+                {
+                    "angle": 0.2,
+                    "animation": "still",
+                    "img": "prop/drum_upper_right.png",
+                    "needsFlags": [],
+                    "scale": 0.205,
+                    "x": 0.62,
+                    "y": 0.62
+                },
+                {
+                    "angle": 0,
+                    "img": "character/rat/drum_circle_rat_upperRight.png",
+                    "needsFlags": [],
+                    "scale": 0.23,
+                    "x": 0.685,
+                    "y": 0.555
+                }
+            ],
+            "bg": "bg/backAlley.png"
+        },
+        "text": "",
+        "textVariants": []
+    },
     "29900": {
         "actions": [
             {
@@ -2258,7 +2537,8 @@ export const tree: Tree = {
         "actions": [
             {
                 "dest": "85940",
-                "label": "Oh my gosh!"
+                "label": "Oh my gosh!",
+                "needsFlags": []
             }
         ],
         "addsFlags": [],
@@ -2329,7 +2609,7 @@ export const tree: Tree = {
                     "y": 0.5
                 }
             ],
-            "bg": "bg/jungle.png"
+            "bg": "bg/volcano.png"
         },
         "text": "You find the hot spring and feel like it's calling to you. You feel very heavy and sleepy."
     },
@@ -2337,7 +2617,8 @@ export const tree: Tree = {
         "actions": [
             {
                 "dest": "31726",
-                "label": "What is your egg doing!"
+                "label": "What is your egg doing!",
+                "needsFlags": []
             }
         ],
         "addsFlags": [],
@@ -2367,7 +2648,7 @@ export const tree: Tree = {
                     "y": 0.65
                 }
             ],
-            "bg": "bg/jungle.png"
+            "bg": "bg/volcano.png"
         },
         "text": "This bath is just what you needed! You feel refreshed!"
     },
@@ -2985,7 +3266,7 @@ export const tree: Tree = {
                     "y": 0.5
                 }
             ],
-            "bg": "bg/jungle.png"
+            "bg": "bg/volcano.png"
         },
         "text": "The volcano erupts with the force of a thousand suns!"
     },
@@ -3602,6 +3883,16 @@ export const tree: Tree = {
             }
         ]
     },
+    "55920": {
+        "actions": [],
+        "id": "55920",
+        "label": "",
+        "scene": {
+            "actors": [],
+            "bg": "bg/shop.png"
+        },
+        "text": "lorem ipsum dolor sit amet and so on and so forth..."
+    },
     "56065": {
         "actions": [
             {
@@ -3772,6 +4063,130 @@ export const tree: Tree = {
             "bg": "bg/jungle.png"
         },
         "text": "The jaguar leaves to go take a nap. You're pooped!"
+    },
+    "58101": {
+        "actions": [
+            {
+                "dest": "18822",
+                "label": "Go back into bar",
+                "needsFlags": []
+            },
+            {
+                "dest": "13631",
+                "label": "Wander city",
+                "needsFlags": []
+            }
+        ],
+        "addsFlags": [],
+        "id": "58101",
+        "label": "Rats Still",
+        "scene": {
+            "actors": [
+                {
+                    "angle": -1.535,
+                    "img": "prop/poisonBottle.png",
+                    "scale": 0.1,
+                    "x": 0.945,
+                    "y": 0.9
+                },
+                {
+                    "angle": 1.715,
+                    "img": "prop/poisonBottle.png",
+                    "scale": 0.1,
+                    "x": 0.05,
+                    "y": 0.935
+                },
+                {
+                    "angle": 0,
+                    "animation": "still",
+                    "img": "prop/drum_lower_left.png",
+                    "needsFlags": [],
+                    "scale": 0.25,
+                    "x": 0.37,
+                    "y": 0.85
+                },
+                {
+                    "angle": 0,
+                    "img": "character/rat/drum_cirlce_rat_lowerLeft.png",
+                    "needsFlags": [],
+                    "scale": 0.29,
+                    "x": 0.305,
+                    "y": 0.855
+                },
+                {
+                    "angle": 0,
+                    "animation": "still",
+                    "img": "character/rat/rat_hands.png",
+                    "needsFlags": [],
+                    "scale": 0.14,
+                    "x": 0.36,
+                    "y": 0.825
+                },
+                {
+                    "angle": 0,
+                    "img": "character/rat/drum_circle_rat_upperLeft.png",
+                    "needsFlags": [],
+                    "scale": 0.275,
+                    "x": 0.385,
+                    "y": 0.6
+                },
+                {
+                    "angle": 0,
+                    "animation": "still",
+                    "img": "prop/drum_lower_right.png",
+                    "needsFlags": [],
+                    "scale": 0.255,
+                    "x": 0.68,
+                    "y": 0.8503258298768752
+                },
+                {
+                    "angle": 0,
+                    "img": "text/music_notes_rest.png",
+                    "needsFlags": [],
+                    "scale": 0.23,
+                    "x": 0.53,
+                    "y": 0.24
+                },
+                {
+                    "angle": 0,
+                    "animation": "still",
+                    "flipped": true,
+                    "img": "character/rat/rat_hands.png",
+                    "needsFlags": [],
+                    "scale": 0.135,
+                    "x": 0.69,
+                    "y": 0.785
+                },
+                {
+                    "angle": 0,
+                    "img": "character/rat/drum_circle_rat_lowerRight.png",
+                    "needsFlags": [],
+                    "scale": 0.31,
+                    "x": 0.745,
+                    "y": 0.815
+                },
+                {
+                    "angle": 0.2,
+                    "animation": "still",
+                    "img": "prop/drum_upper_right.png",
+                    "needsFlags": [],
+                    "scale": 0.205,
+                    "x": 0.62,
+                    "y": 0.62
+                },
+                {
+                    "angle": 0,
+                    "img": "character/rat/drum_circle_rat_upperRight.png",
+                    "needsFlags": [],
+                    "scale": 0.23,
+                    "x": 0.685,
+                    "y": 0.555
+                }
+            ],
+            "bg": "bg/backAlley.png"
+        },
+        "text": "The rats seem to stop just as fast as they started. They're waiting for something to appear. Maybe they'll try again later?",
+        "textVariants": []
     },
     "58259": {
         "actions": [
@@ -4070,17 +4485,93 @@ export const tree: Tree = {
         "actions": [
             {
                 "dest": "90619",
-                "label": "Back to jungle hub",
+                "label": "Return to the jungle",
+                "needsFlags": []
+            },
+            {
+                "dest": "74823",
+                "label": "Eavesdrop on the weird bird",
                 "needsFlags": []
             }
         ],
+        "addsFlags": [
+            "haveBeenToKavaBar"
+        ],
         "id": "64042",
-        "label": "",
+        "label": "Kava Bar Hub",
         "scene": {
-            "actors": [],
-            "bg": "bg/shop.png"
+            "actors": [
+                {
+                    "angle": 0,
+                    "flipped": true,
+                    "img": "character/woodpecker.png",
+                    "scale": 0.235,
+                    "x": 0.855,
+                    "y": 0.57
+                },
+                {
+                    "angle": 0,
+                    "img": "character/flamingo.png",
+                    "scale": 0.355,
+                    "x": 0.505,
+                    "y": 0.575
+                },
+                {
+                    "angle": 0,
+                    "flipped": true,
+                    "img": "character/toucan.png",
+                    "scale": 0.185,
+                    "x": 0.65,
+                    "y": 0.61
+                },
+                {
+                    "angle": 0,
+                    "img": "prop/kava_juice_cocktail.png",
+                    "scale": 0.1,
+                    "x": 0.39,
+                    "y": 0.485
+                },
+                {
+                    "angle": 0,
+                    "flipped": true,
+                    "img": "character/dunnock/dunnock_talking.png",
+                    "scale": 0.5,
+                    "x": 0.425,
+                    "y": 0.705
+                },
+                {
+                    "angle": 0,
+                    "img": "prop/kava_juice.png",
+                    "scale": 0.1,
+                    "x": 0.2,
+                    "y": 0.56
+                },
+                {
+                    "angle": 0,
+                    "img": "prop/kava_juice_cocktail.png",
+                    "scale": 0.1,
+                    "x": 0.785,
+                    "y": 0.525
+                },
+                {
+                    "angle": 0,
+                    "img": "prop/kava_juice_cocktail.png",
+                    "scale": 0.1,
+                    "x": 0.735,
+                    "y": 0.515
+                }
+            ],
+            "bg": "bg/kavaBar.png"
         },
-        "text": "Kava bar will be here in next update."
+        "text": "You enter the kava bar for the first time. Immediately, your attention is grabbed by a tailless bird with.. well.. a tail! It makes you strangely uncomfortable! ",
+        "textVariants": [
+            {
+                "flags": [
+                    "haveBeenToKavaBar"
+                ],
+                "text": "It's a little loopy but still kinda nice in here. What will you do next?"
+            }
+        ]
     },
     "64563": {
         "actions": [
@@ -4283,6 +4774,128 @@ export const tree: Tree = {
             }
         ]
     },
+    "68361": {
+        "actions": [
+            {
+                "dest": "58101",
+                "label": "Next",
+                "needsFlags": []
+            }
+        ],
+        "addsFlags": [],
+        "id": "68361",
+        "label": "Drum Circle 4",
+        "scene": {
+            "actors": [
+                {
+                    "angle": -1.535,
+                    "img": "prop/poisonBottle.png",
+                    "scale": 0.1,
+                    "x": 0.945,
+                    "y": 0.9
+                },
+                {
+                    "angle": 1.715,
+                    "img": "prop/poisonBottle.png",
+                    "scale": 0.1,
+                    "x": 0.05,
+                    "y": 0.935
+                },
+                {
+                    "angle": 0,
+                    "animation": "still",
+                    "img": "prop/drum_lower_left.png",
+                    "needsFlags": [],
+                    "scale": 0.25,
+                    "x": 0.37,
+                    "y": 0.85
+                },
+                {
+                    "angle": 0,
+                    "img": "character/rat/drum_cirlce_rat_lowerLeft.png",
+                    "needsFlags": [],
+                    "scale": 0.29,
+                    "x": 0.305,
+                    "y": 0.855
+                },
+                {
+                    "angle": 0,
+                    "animation": "hop_fast",
+                    "img": "character/rat/rat_hands.png",
+                    "needsFlags": [],
+                    "scale": 0.14,
+                    "x": 0.36,
+                    "y": 0.825
+                },
+                {
+                    "angle": 0,
+                    "animation": "hop_fast",
+                    "img": "character/rat/drum_circle_rat_upperLeft.png",
+                    "needsFlags": [],
+                    "scale": 0.275,
+                    "x": 0.385,
+                    "y": 0.6
+                },
+                {
+                    "angle": 0,
+                    "animation": "still",
+                    "img": "prop/drum_lower_right.png",
+                    "needsFlags": [],
+                    "scale": 0.255,
+                    "x": 0.68,
+                    "y": 0.8503258298768752
+                },
+                {
+                    "angle": 0,
+                    "animation": "hop_fast",
+                    "img": "text/music_notes_4.png",
+                    "needsFlags": [],
+                    "scale": 0.26,
+                    "x": 0.495,
+                    "y": 0.24
+                },
+                {
+                    "angle": 0,
+                    "animation": "hop_fast",
+                    "flipped": true,
+                    "img": "character/rat/rat_hands.png",
+                    "needsFlags": [],
+                    "scale": 0.135,
+                    "x": 0.69,
+                    "y": 0.785
+                },
+                {
+                    "angle": 0,
+                    "img": "character/rat/drum_circle_rat_lowerRight.png",
+                    "needsFlags": [],
+                    "scale": 0.31,
+                    "x": 0.745,
+                    "y": 0.815
+                },
+                {
+                    "angle": 0.2,
+                    "animation": "still",
+                    "img": "prop/drum_upper_right.png",
+                    "needsFlags": [],
+                    "scale": 0.205,
+                    "x": 0.62,
+                    "y": 0.62
+                },
+                {
+                    "angle": 0,
+                    "animation": "hop_fast",
+                    "img": "character/rat/drum_circle_rat_upperRight.png",
+                    "needsFlags": [],
+                    "scale": 0.23,
+                    "x": 0.685,
+                    "y": 0.555
+                }
+            ],
+            "bg": "bg/backAlley.png"
+        },
+        "text": "Their drumming is ear-splitting! It seems almost like they're trying to summon something.",
+        "textVariants": []
+    },
     "69396": {
         "actions": [
             {
@@ -4466,7 +5079,7 @@ export const tree: Tree = {
                     "y": 0.63
                 }
             ],
-            "bg": "bg/jungle.png"
+            "bg": "bg/volcano.png"
         },
         "text": "You've reached the volcano. You can't get the koala's words out of your head and you wonder about the nature of existence.",
         "textVariants": [
@@ -4477,6 +5090,31 @@ export const tree: Tree = {
                 "text": "You've reached the volcano! There isn't much to do here."
             }
         ]
+    },
+    "74823": {
+        "actions": [
+            {
+                "dest": "4219",
+                "label": "What is he saying",
+                "needsFlags": []
+            }
+        ],
+        "id": "74823",
+        "label": "Dunnot talking 1",
+        "scene": {
+            "actors": [
+                {
+                    "angle": -0.17,
+                    "flipped": true,
+                    "img": "character/dunnock/dunnock_talking.png",
+                    "scale": 1.14,
+                    "x": 0.555,
+                    "y": 0.535
+                }
+            ],
+            "bg": "bg/kavaBar.png"
+        },
+        "text": "\"If you turn this calculation around, you can really consider the infinite consciousness of the cell.\" Oh no, what did you walk in on?"
     },
     "75362": {
         "actions": [
@@ -4791,6 +5429,125 @@ export const tree: Tree = {
         },
         "text": "You wander to the small man and attempt to play with it. It screams out an ear-splitting sound and steals your egg!"
     },
+    "79292": {
+        "actions": [
+            {
+                "dest": "68361",
+                "label": "Next",
+                "needsFlags": []
+            }
+        ],
+        "addsFlags": [],
+        "id": "79292",
+        "label": "Drum Circle 3",
+        "scene": {
+            "actors": [
+                {
+                    "angle": -1.535,
+                    "img": "prop/poisonBottle.png",
+                    "scale": 0.1,
+                    "x": 0.945,
+                    "y": 0.9
+                },
+                {
+                    "angle": 1.715,
+                    "img": "prop/poisonBottle.png",
+                    "scale": 0.1,
+                    "x": 0.05,
+                    "y": 0.935
+                },
+                {
+                    "angle": 0,
+                    "animation": "still",
+                    "img": "prop/drum_lower_left.png",
+                    "needsFlags": [],
+                    "scale": 0.25,
+                    "x": 0.37,
+                    "y": 0.85
+                },
+                {
+                    "angle": 0,
+                    "img": "character/rat/drum_cirlce_rat_lowerLeft.png",
+                    "needsFlags": [],
+                    "scale": 0.29,
+                    "x": 0.305,
+                    "y": 0.855
+                },
+                {
+                    "angle": 0,
+                    "animation": "hop_fast",
+                    "img": "character/rat/rat_hands.png",
+                    "needsFlags": [],
+                    "scale": 0.14,
+                    "x": 0.36,
+                    "y": 0.825
+                },
+                {
+                    "angle": 0,
+                    "img": "character/rat/drum_circle_rat_upperLeft.png",
+                    "needsFlags": [],
+                    "scale": 0.275,
+                    "x": 0.385,
+                    "y": 0.6
+                },
+                {
+                    "angle": 0,
+                    "animation": "still",
+                    "img": "prop/drum_lower_right.png",
+                    "needsFlags": [],
+                    "scale": 0.255,
+                    "x": 0.68,
+                    "y": 0.8503258298768752
+                },
+                {
+                    "angle": 0,
+                    "img": "text/music_notes_3.png",
+                    "needsFlags": [],
+                    "scale": 0.32,
+                    "x": 0.53,
+                    "y": 0.24
+                },
+                {
+                    "angle": 0,
+                    "animation": "hop_fast",
+                    "flipped": true,
+                    "img": "character/rat/rat_hands.png",
+                    "needsFlags": [],
+                    "scale": 0.135,
+                    "x": 0.69,
+                    "y": 0.785
+                },
+                {
+                    "angle": 0,
+                    "img": "character/rat/drum_circle_rat_lowerRight.png",
+                    "needsFlags": [],
+                    "scale": 0.31,
+                    "x": 0.745,
+                    "y": 0.815
+                },
+                {
+                    "angle": 0.2,
+                    "animation": "still",
+                    "img": "prop/drum_upper_right.png",
+                    "needsFlags": [],
+                    "scale": 0.205,
+                    "x": 0.62,
+                    "y": 0.62
+                },
+                {
+                    "angle": 0,
+                    "img": "character/rat/drum_circle_rat_upperRight.png",
+                    "needsFlags": [],
+                    "scale": 0.23,
+                    "x": 0.685,
+                    "y": 0.555
+                }
+            ],
+            "bg": "bg/backAlley.png"
+        },
+        "text": "Oh wow, they're really reving up! ",
+        "textVariants": []
+    },
     "79680": {
         "actions": [
             {
@@ -4974,7 +5731,7 @@ export const tree: Tree = {
                     "y": 0.6
                 }
             ],
-            "bg": "bg/jungle.png"
+            "bg": "bg/volcano.png"
         },
         "text": "You manage to locate some rocks and you pick them up. The volcano is smoking and you second-guess whether it's a good idea to throw them in."
     },
@@ -5243,7 +6000,8 @@ export const tree: Tree = {
         "actions": [
             {
                 "dest": "2839",
-                "label": "Next"
+                "label": "Next",
+                "needsFlags": []
             }
         ],
         "addsFlags": [],
@@ -5701,6 +6459,13 @@ export const tree: Tree = {
                 "dest": "61921",
                 "label": "Leave the back alley",
                 "needsFlags": []
+            },
+            {
+                "dest": "20169",
+                "label": "Continue watching the drum circle",
+                "needsFlags": [
+                    "haveRatVision"
+                ]
             }
         ],
         "addsFlags": [
@@ -5865,6 +6630,12 @@ export const tree: Tree = {
         "textVariants": [
             {
                 "flags": [
+                    "haveWatchedDrumRoutine"
+                ],
+                "text": "You return to the back alley and the rats are at it again!"
+            },
+            {
+                "flags": [
                     "haveRatVision",
                     "!haveSeenBackAlley"
                 ],
@@ -5947,6 +6718,35 @@ export const tree: Tree = {
                 "text": "\"Coming right up!\" the strange panda says as he works furiously to make it. Is the room spinning?"
             }
         ]
+    },
+    "93644": {
+        "actions": [
+            {
+                "dest": "55920",
+                "label": "Interrupt him",
+                "needsFlags": []
+            },
+            {
+                "dest": "64042",
+                "label": "Stop Listening In",
+                "needsFlags": []
+            }
+        ],
+        "id": "93644",
+        "label": "Dunnock talking 3",
+        "scene": {
+            "actors": [
+                {
+                    "angle": 0,
+                    "img": "character/dunnock/dunnock_talking_happy.png",
+                    "scale": 1.115,
+                    "x": 0.54,
+                    "y": 0.515
+                }
+            ],
+            "bg": "bg/kavaBar.png"
+        },
+        "text": "\"Really, the god of the universe gave us enough self-awareness to see everything- all of existence- in its discreteness.\" He seems to be turning his head every which way wildly, hoping everyone hears him."
     },
     "94275": {
         "actions": [
