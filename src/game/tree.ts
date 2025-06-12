@@ -2379,7 +2379,9 @@ export const tree: Tree = {
                 "needsFlags": []
             }
         ],
-        "addsFlags": [],
+        "addsFlags": [
+            "haveBeenToCity"
+        ],
         "id": "35747",
         "label": "City Arrival",
         "scene": {
@@ -2408,7 +2410,21 @@ export const tree: Tree = {
             ],
             "bg": "bg/city.png"
         },
-        "text": "You finally arrive in the city! The options here are endless. Maybe you can make some friends!"
+        "text": "You finally arrive in the city! The options here are endless. Maybe you can make some friends!",
+        "textVariants": [
+            {
+                "flags": [
+                    "sawGiantRat"
+                ],
+                "text": "You finally arrive in the city after a very long ride with the yelling rat."
+            },
+            {
+                "flags": [
+                    "haveBeenToCity"
+                ],
+                "text": "You're back to the city!"
+            }
+        ]
     },
     "37515": {
         "actions": [
@@ -2538,6 +2554,49 @@ export const tree: Tree = {
             "bg": "bg/shop.png"
         },
         "text": "A small yellow bird emerges! It doesn't really look like a baby parrot, so you're confused about that, but you still feel a sense of pride and motherhood."
+    },
+    "38916": {
+        "actions": [
+            {
+                "dest": "35747",
+                "label": "Oh god",
+                "needsFlags": []
+            }
+        ],
+        "addsFlags": [
+            "sawGiantRat"
+        ],
+        "id": "38916",
+        "label": "Bus Interior",
+        "scene": {
+            "actors": [
+                {
+                    "angle": 0,
+                    "img": "character/rat/busRat_no_tail.png",
+                    "scale": 0.485,
+                    "x": 0.36,
+                    "y": 0.475
+                },
+                {
+                    "angle": 0,
+                    "animation": "hop_slow",
+                    "img": "character/rat/busRat_tail.png",
+                    "scale": 0.5,
+                    "x": 0.56,
+                    "y": 0.56
+                }
+            ],
+            "bg": "bg/bus_interior.png"
+        },
+        "text": "You see a horrific, huge rat on the bus, screaming its head off. ",
+        "textVariants": [
+            {
+                "flags": [
+                    "sawGiantRat"
+                ],
+                "text": "That giant rat is still screaming."
+            }
+        ]
     },
     "40581": {
         "actions": [
@@ -2724,6 +2783,16 @@ export const tree: Tree = {
         },
         "text": "Your egg smashes against the flower shop floor and breaks! You feel immense sadness."
     },
+    "43914": {
+        "actions": [],
+        "id": "43914",
+        "label": "",
+        "scene": {
+            "actors": [],
+            "bg": "bg/shop.png"
+        },
+        "text": "lorem ipsum dolor sit amet and so on and so forth..."
+    },
     "45412": {
         "actions": [
             {
@@ -2754,6 +2823,13 @@ export const tree: Tree = {
                 "dest": "35747",
                 "label": "Next",
                 "needsFlags": []
+            },
+            {
+                "dest": "38916",
+                "label": "Who done it?",
+                "needsFlags": [
+                    "haveRatVision"
+                ]
             }
         ],
         "addsFlags": [
@@ -2792,6 +2868,12 @@ export const tree: Tree = {
                     "haveHadFirstBusRide"
                 ],
                 "text": "You take the bus back to the city!"
+            },
+            {
+                "flags": [
+                    "haveRatVision"
+                ],
+                "text": "You board the bus and hear horrific screaming once more!"
             }
         ]
     },
