@@ -6722,11 +6722,6 @@ export const tree: Tree = {
     "93644": {
         "actions": [
             {
-                "dest": "55920",
-                "label": "Interrupt him",
-                "needsFlags": []
-            },
-            {
                 "dest": "64042",
                 "label": "Stop Listening In",
                 "needsFlags": []
